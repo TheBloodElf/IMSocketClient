@@ -37,7 +37,6 @@
 		047298AB205AA5BC00930A83 /* RLMObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 04729885205AA5BC00930A83 /* RLMObject+JSON.m */; };
 		047298B2205AA5C200930A83 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 047298AE205AA5C200930A83 /* AppDelegate.m */; };
 		047298B3205AA5C200930A83 /* AppCustoms.m in Sources */ = {isa = PBXBuildFile; fileRef = 047298B1205AA5C200930A83 /* AppCustoms.m */; };
-		047298B5205AA5E200930A83 /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 047298B4205AA5E200930A83 /* readme.md */; };
 		047298B9205AACD200930A83 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 047298B8205AACD200930A83 /* User.m */; };
 		047298BF205AAF9B00930A83 /* CMDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 047298BE205AAF9B00930A83 /* CMDeviceInfo.m */; };
 		047C439B202D7D0F00BB3400 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047C439A202D7D0F00BB3400 /* Assets.xcassets */; };
@@ -47,6 +46,7 @@
 		048569472061E7F9007C4C53 /* NSStringCategoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 048569462061E7F9007C4C53 /* NSStringCategoryTest.m */; };
 		048569492061E80F007C4C53 /* CMDeviceInfoTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 048569482061E80F007C4C53 /* CMDeviceInfoTest.m */; };
 		0485694B2061EB16007C4C53 /* UIColorFlatUITest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0485694A2061EB16007C4C53 /* UIColorFlatUITest.m */; };
+		0485694D2061F939007C4C53 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0485694C2061F938007C4C53 /* README.md */; };
 		04C79023205FA43800D976A3 /* HostResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C79021205FA43800D976A3 /* HostResolver.m */; };
 		04D48556205CC45600140C73 /* ChatMineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D48555205CC45600140C73 /* ChatMineView.m */; };
 		BB3DEFB7F44A3728ED0FDEF5 /* libPods-SocketIMDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60E31DF6636A636A70262FDC /* libPods-SocketIMDemo.a */; };
@@ -126,7 +126,6 @@
 		047298AE205AA5C200930A83 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		047298B0205AA5C200930A83 /* AppCustoms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCustoms.h; sourceTree = "<group>"; };
 		047298B1205AA5C200930A83 /* AppCustoms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppCustoms.m; sourceTree = "<group>"; };
-		047298B4205AA5E200930A83 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		047298B6205AAC1D00930A83 /* InterfaceService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceService.h; sourceTree = "<group>"; };
 		047298B7205AACD200930A83 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		047298B8205AACD200930A83 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
@@ -143,6 +142,7 @@
 		048569462061E7F9007C4C53 /* NSStringCategoryTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSStringCategoryTest.m; sourceTree = "<group>"; };
 		048569482061E80F007C4C53 /* CMDeviceInfoTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMDeviceInfoTest.m; sourceTree = "<group>"; };
 		0485694A2061EB16007C4C53 /* UIColorFlatUITest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIColorFlatUITest.m; sourceTree = "<group>"; };
+		0485694C2061F938007C4C53 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		04C79021205FA43800D976A3 /* HostResolver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostResolver.m; sourceTree = "<group>"; };
 		04C79022205FA43800D976A3 /* HostResolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostResolver.h; sourceTree = "<group>"; };
 		04D48554205CC45600140C73 /* ChatMineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMineView.h; sourceTree = "<group>"; };
@@ -392,6 +392,7 @@
 		047C4385202D7D0F00BB3400 = {
 			isa = PBXGroup;
 			children = (
+				0485694C2061F938007C4C53 /* README.md */,
 				047C4390202D7D0F00BB3400 /* SocketIMDemo */,
 				048569392061E738007C4C53 /* SocketIMDemoTests */,
 				047C438F202D7D0F00BB3400 /* Products */,
@@ -412,7 +413,6 @@
 		047C4390202D7D0F00BB3400 /* SocketIMDemo */ = {
 			isa = PBXGroup;
 			children = (
-				047298B4205AA5E200930A83 /* readme.md */,
 				048569322060F9E3007C4C53 /* iOS代码规范文档.pdf */,
 				047298AC205AA5C200930A83 /* AppDelegate */,
 				0472986F205AA5BC00930A83 /* Utikles */,
@@ -583,9 +583,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0485694D2061F939007C4C53 /* README.md in Resources */,
 				047C439E202D7D0F00BB3400 /* LaunchScreen.storyboard in Resources */,
 				047298A2205AA5BC00930A83 /* readme.md in Resources */,
-				047298B5205AA5E200930A83 /* readme.md in Resources */,
 				047C439B202D7D0F00BB3400 /* Assets.xcassets in Resources */,
 				048569332060F9E3007C4C53 /* iOS代码规范文档.pdf in Resources */,
 			);
