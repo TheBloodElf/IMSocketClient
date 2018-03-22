@@ -20,4 +20,7 @@
 //聊天组件
 #import <IMServer/IMServer.h>
 
+//基础组件
+#import <Common/Common.h>
+
 #endif /* PrefixHeader_pch */

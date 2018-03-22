@@ -8,6 +8,3 @@
 
 #import "UserIMSocket.h"
 #import "Chater.h"
-
-//基础组件
-#import <Common/Common.h>
