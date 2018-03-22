@@ -13,7 +13,6 @@
 
 //Managers
 #import "UserManager.h"
-#import "UserIMSocket.h"
 
 @implementation AppDelegate 
 

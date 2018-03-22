@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 /**
- 应用全局配置，比如ui颜色等
+ 应用全局配置，比如UI颜色等
  */
 @interface AppCustoms : NSObject
 

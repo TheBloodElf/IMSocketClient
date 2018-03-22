@@ -8,10 +8,6 @@
 
 #import "ChatMineController.h"
 
-//Managers
-#import "UserManager.h"
-#import "UserIMSocket.h"
-
 //Views
 #import "ChatMineView.h"
 

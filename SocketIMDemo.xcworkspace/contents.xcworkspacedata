@@ -2,6 +2,18 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:HttpServer/HttpServer.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Common/Common.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ModelManager/ModelManager.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:IMServer/IMServer.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:SocketIMDemo.xcodeproj">
    </FileRef>
    <FileRef
