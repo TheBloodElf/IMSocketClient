@@ -21,7 +21,7 @@
 		048950D12063475A00BC0ECE /* IMSocketControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 048950CB2063475A00BC0ECE /* IMSocketControl.m */; };
 		048950D22063475A00BC0ECE /* UserIMSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 048950CD2063475A00BC0ECE /* UserIMSocket.m */; };
 		048950D5206347AB00BC0ECE /* Chater.m in Sources */ = {isa = PBXBuildFile; fileRef = 048950D4206347AB00BC0ECE /* Chater.m */; };
-		04D430BF2063B1B600B9D5D8 /* libCommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D430C02063B1B600B9D5D8 /* libCommon.a */; };
+		04D430F62063C37700B9D5D8 /* libCommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D430F72063C37700B9D5D8 /* libCommon.a */; };
 		D02ACBDD3DCCFFF73038B8B2 /* libPods-IMServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04AC7C5620639724000DB907 /* libPods-IMServer.a */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +89,7 @@
 		04D430AC2063AB1D00B9D5D8 /* libCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D430B42063AD5B00B9D5D8 /* libCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D430C02063B1B600B9D5D8 /* libCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D430F72063C37700B9D5D8 /* libCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C321C8B2679E4F284989C8C8 /* libPods-IMServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IMServer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF9BBED2D35EEA88C65C7683 /* Pods-IMServer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMServer.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-IMServer/Pods-IMServer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04D430BF2063B1B600B9D5D8 /* libCommon.a in Frameworks */,
+				04D430F62063C37700B9D5D8 /* libCommon.a in Frameworks */,
 				D02ACBDD3DCCFFF73038B8B2 /* libPods-IMServer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,6 +199,7 @@
 		A6F96CFFCDF101FEE500D8F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04D430F72063C37700B9D5D8 /* libCommon.a */,
 				04D430C02063B1B600B9D5D8 /* libCommon.a */,
 				04D430B42063AD5B00B9D5D8 /* libCommon.a */,
 				04D430AC2063AB1D00B9D5D8 /* libCommon.a */,

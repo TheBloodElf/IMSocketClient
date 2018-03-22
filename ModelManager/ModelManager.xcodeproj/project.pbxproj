@@ -10,7 +10,7 @@
 		048950382063413000BC0ECE /* ModelManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 048950352063413000BC0ECE /* ModelManager.h */; };
 		048950BE2063431400BC0ECE /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 048950BA2063431400BC0ECE /* UserManager.m */; };
 		048950BF2063431400BC0ECE /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 048950BD2063431400BC0ECE /* User.m */; };
-		04D430C22063B1E700B9D5D8 /* libIMServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D430C42063B1E700B9D5D8 /* libIMServer.a */; };
+		04D430F42063C36000B9D5D8 /* libIMServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D430F52063C36000B9D5D8 /* libIMServer.a */; };
 		3CFA6DCF145B2DD54339DB66 /* libPods-ModelManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04AC7C542063971A000DB907 /* libPods-ModelManager.a */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +50,7 @@
 		04D430C32063B1E700B9D5D8 /* libCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D430C42063B1E700B9D5D8 /* libIMServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libIMServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D430D02063B94E00B9D5D8 /* libCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D430F52063C36000B9D5D8 /* libIMServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libIMServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		39205746C885935B30BBD34F /* Pods-ModelManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ModelManager.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ModelManager/Pods-ModelManager.debug.xcconfig"; sourceTree = "<group>"; };
 		8C962F3C320A9FF00783F545 /* Pods-ModelManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ModelManager.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ModelManager/Pods-ModelManager.release.xcconfig"; sourceTree = "<group>"; };
 		F9AAD5D59F6D1F70F6C27A0D /* libPods-ModelManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ModelManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04D430C22063B1E700B9D5D8 /* libIMServer.a in Frameworks */,
+				04D430F42063C36000B9D5D8 /* libIMServer.a in Frameworks */,
 				3CFA6DCF145B2DD54339DB66 /* libPods-ModelManager.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,6 +128,7 @@
 		B568A170E5D39E825947D148 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04D430F52063C36000B9D5D8 /* libIMServer.a */,
 				04D430D02063B94E00B9D5D8 /* libCommon.a */,
 				04D430C32063B1E700B9D5D8 /* libCommon.a */,
 				04D430C42063B1E700B9D5D8 /* libIMServer.a */,
