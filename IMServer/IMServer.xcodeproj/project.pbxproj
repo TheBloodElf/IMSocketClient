@@ -21,7 +21,6 @@
 		048950D12063475A00BC0ECE /* IMSocketControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 048950CB2063475A00BC0ECE /* IMSocketControl.m */; };
 		048950D22063475A00BC0ECE /* UserIMSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 048950CD2063475A00BC0ECE /* UserIMSocket.m */; };
 		048950D5206347AB00BC0ECE /* Chater.m in Sources */ = {isa = PBXBuildFile; fileRef = 048950D4206347AB00BC0ECE /* Chater.m */; };
-		04D430F62063C37700B9D5D8 /* libCommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D430F72063C37700B9D5D8 /* libCommon.a */; };
 		D02ACBDD3DCCFFF73038B8B2 /* libPods-IMServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04AC7C5620639724000DB907 /* libPods-IMServer.a */; };
 /* End PBXBuildFile section */
 
@@ -99,7 +98,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04D430F62063C37700B9D5D8 /* libCommon.a in Frameworks */,
 				D02ACBDD3DCCFFF73038B8B2 /* libPods-IMServer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

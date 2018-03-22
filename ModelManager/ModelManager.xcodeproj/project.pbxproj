@@ -10,7 +10,6 @@
 		048950382063413000BC0ECE /* ModelManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 048950352063413000BC0ECE /* ModelManager.h */; };
 		048950BE2063431400BC0ECE /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 048950BA2063431400BC0ECE /* UserManager.m */; };
 		048950BF2063431400BC0ECE /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 048950BD2063431400BC0ECE /* User.m */; };
-		04D430F42063C36000B9D5D8 /* libIMServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D430F52063C36000B9D5D8 /* libIMServer.a */; };
 		3CFA6DCF145B2DD54339DB66 /* libPods-ModelManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04AC7C542063971A000DB907 /* libPods-ModelManager.a */; };
 /* End PBXBuildFile section */
 
@@ -61,7 +60,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04D430F42063C36000B9D5D8 /* libIMServer.a in Frameworks */,
 				3CFA6DCF145B2DD54339DB66 /* libPods-ModelManager.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
