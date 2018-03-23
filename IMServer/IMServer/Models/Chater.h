@@ -9,7 +9,6 @@
 /**
  聊天体系中的用户
  */
-
 @interface Chater : RLMObject
 
 /**唯一标识符，和用户体系uid一样*/

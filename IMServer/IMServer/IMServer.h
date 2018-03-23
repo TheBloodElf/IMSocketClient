@@ -6,5 +6,6 @@
 //  Copyright © 2018年 Mac. All rights reserved.
 //
 
+#import "IMUserManager.h"
 #import "UserIMSocket.h"
 #import "Chater.h"

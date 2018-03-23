@@ -9,7 +9,7 @@
 #import "UserManager.h"
 
 /**UserManager单例对象*/
-static UserManager *_userManagerInstance;
+static UserManager *USER_MANAGER_INSTANCE;
 
 @interface UserManager () {
     /**realm数据库路径*/
@@ -30,7 +30,7 @@ static UserManager *_userManagerInstance;
         //得到用户对应的数据库路径
         NSArray *pathArr = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
         _pathUrl = pathArr[0];
-        //user是随便写的，因为客户端所有的数据都存在一个数据库
+        //user是随便写的，因为客户端所有的数据都存在一个数据库，因为登录用户是固定写死的，没有做登录操作
         _pathUrl = [_pathUrl stringByAppendingPathComponent:@"user"];
         //创建数据库
         _mainThreadRLMRealm = [RLMRealm realmWithURL:[NSURL URLWithString:_pathUrl]];
@@ -58,9 +58,9 @@ static UserManager *_userManagerInstance;
 + (instancetype)manager {
     static dispatch_once_t predicate;
     dispatch_once(&predicate, ^{
-        _userManagerInstance = [[self class] new];
+        USER_MANAGER_INSTANCE = [[self class] new];
     });
-    return _userManagerInstance;
+    return USER_MANAGER_INSTANCE;
 }
 
 - (void)updateCurrUser:(User*)user {

@@ -9,6 +9,7 @@
 #import "UserIMSocket.h"
 #import "IMSocketModules.h"
 #import "HostResolver.h"
+#import "IMUserManager.h"
 
 /**UserIMSocket单例对象*/
 static UserIMSocket * USER_IMSOCKET_SINGLETON;
@@ -117,8 +118,8 @@ static int RECONNECT_SERVER_COUNT = 5;
 - (void)execLoginProcesses {
     //构建一个登录请求
     UserLoginReq *loginReq = [UserLoginReq new];
-    //设置应用系统中的用户标志符 TODO:这里不能用UserManager了，不然就相互依赖了，所以我们需要另外想办法。
-    loginReq.username = @"10001";
+    //设置应用系统中的用户标志符
+    loginReq.username = @([IMUserManager manager].chater.imid).stringValue;
     //TODO:设置获取到的设备Token，暂时设置为这个，后面做apns时再加
     loginReq.device_token = @"device_token";
     //开始登录

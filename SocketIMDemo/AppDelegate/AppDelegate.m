@@ -11,14 +11,10 @@
 //ViewControlles
 #import "MainViewController.h"
 
-//Managers
-#import "UserManager.h"
-
 @implementation AppDelegate 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //伪造三个用户体系中的用户User对象
-    UserManager *userManager = [UserManager manager];
     User *user1 = [User new];
     user1.uid = 10001;
     user1.nick = @"用户10001";
@@ -31,15 +27,22 @@
     user3.uid = 10003;
     user3.nick = @"用户10003";
     user3.avatar = @"http://files-t.59bang.com//@/30152/0/avatar/2017122820171228130710_2280.jpg";
-    [userManager updateUsers:[@[user1,user2,user3] mutableCopy]];
+    [[UserManager manager] updateUsers:[@[user1,user2,user3] mutableCopy]];
     
-    //设置当前登录用户信息
+    //设置当前登录用户信息 写死，没登录操作
     User *currUser = [User new];
     currUser.uid = 10002;
     currUser.nick = @"用户10002";
     currUser.avatar = @"http://files-t.59bang.com//@/30149/0/avatar/2017122720171227185301_1553.jpg";
-    [userManager updateCurrUser:currUser];
+    [[UserManager manager] updateCurrUser:currUser];
     
+    //设置当前聊天用户信息 这里的信息是根据当前登录用户信息来的 写死，没登录操作
+    IMUserManager *iMUserManager = [IMUserManager manager];
+    Chater *chater = [Chater new];
+    chater.imid = currUser.uid;
+    chater.nick = currUser.nick;
+    chater.avatar = currUser.avatar;
+    [iMUserManager updateCurrChater:chater];
     //连接聊天服务器
     [[UserIMSocket socket] connect];
     

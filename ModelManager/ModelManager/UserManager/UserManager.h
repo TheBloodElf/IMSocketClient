@@ -9,7 +9,8 @@
 #import "User.h"
 
 /**
- 数据库管理器，所有的数据操作通过本类完成
+ 应用体系中的数据库管理器，所有的数据操作通过本类完成
+ 聊天体系有单独的manager
  */
 @interface UserManager : NSObject
 
