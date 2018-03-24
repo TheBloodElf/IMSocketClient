@@ -41,16 +41,19 @@
 - (UIViewController*)listController {
     UINavigationController *viewController = [[UINavigationController alloc] initWithRootViewController:[ChatListController new]];
     viewController.tabBarItem.title = @"会话";
+    viewController.navigationBar.translucent = NO;
     return viewController;
 }
 - (UIViewController*)friendController {
     UINavigationController *viewController = [[UINavigationController alloc] initWithRootViewController:[ChatFriendController new]];
     viewController.tabBarItem.title = @"好友";
+    viewController.navigationBar.translucent = NO;
     return viewController;
 }
 - (UIViewController*)mineController {
     UINavigationController *viewController = [[UINavigationController alloc] initWithRootViewController:[ChatMineController new]];
     viewController.tabBarItem.title = @"我的";
+    viewController.navigationBar.translucent = NO;
     return viewController;
 }
 

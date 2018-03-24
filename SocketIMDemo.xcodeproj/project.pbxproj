@@ -23,6 +23,10 @@
 		0485694B2061EB16007C4C53 /* UIColorFlatUITest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0485694A2061EB16007C4C53 /* UIColorFlatUITest.m */; };
 		0485694D2061F939007C4C53 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0485694C2061F938007C4C53 /* README.md */; };
 		04D48556205CC45600140C73 /* ChatMineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D48555205CC45600140C73 /* ChatMineView.m */; };
+		04FC7A9A2065EC3F0085D9F2 /* ChatFriendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FC7A992065EC3F0085D9F2 /* ChatFriendView.m */; };
+		04FC7AA62065F76F0085D9F2 /* ChatFriendTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FC7AA42065F76F0085D9F2 /* ChatFriendTableCell.m */; };
+		04FC7AA72065F76F0085D9F2 /* ChatFriendTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04FC7AA52065F76F0085D9F2 /* ChatFriendTableCell.xib */; };
+		04FC7AAA2065FCBF0085D9F2 /* ChatFriendTableViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FC7AA92065FCBF0085D9F2 /* ChatFriendTableViewManager.m */; };
 		04FF1DA32064953B00E2702C /* libCommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04FF1DA42064953B00E2702C /* libCommon.a */; };
 		04FF1DA52064953E00E2702C /* libIMServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04FF1DA62064953E00E2702C /* libIMServer.a */; };
 		04FF1DA72064954300E2702C /* libModelManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04FF1DA82064954300E2702C /* libModelManager.a */; };
@@ -109,6 +113,14 @@
 		04D48554205CC45600140C73 /* ChatMineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMineView.h; sourceTree = "<group>"; };
 		04D48555205CC45600140C73 /* ChatMineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatMineView.m; sourceTree = "<group>"; };
 		04D48557205CC47B00140C73 /* ChatMineViewTag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMineViewTag.h; sourceTree = "<group>"; };
+		04FC7A972065EC2C0085D9F2 /* ChatFriendViewTag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatFriendViewTag.h; sourceTree = "<group>"; };
+		04FC7A982065EC3F0085D9F2 /* ChatFriendView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatFriendView.h; sourceTree = "<group>"; };
+		04FC7A992065EC3F0085D9F2 /* ChatFriendView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatFriendView.m; sourceTree = "<group>"; };
+		04FC7AA32065F76F0085D9F2 /* ChatFriendTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatFriendTableCell.h; sourceTree = "<group>"; };
+		04FC7AA42065F76F0085D9F2 /* ChatFriendTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatFriendTableCell.m; sourceTree = "<group>"; };
+		04FC7AA52065F76F0085D9F2 /* ChatFriendTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatFriendTableCell.xib; sourceTree = "<group>"; };
+		04FC7AA82065FCBF0085D9F2 /* ChatFriendTableViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatFriendTableViewManager.h; sourceTree = "<group>"; };
+		04FC7AA92065FCBF0085D9F2 /* ChatFriendTableViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatFriendTableViewManager.m; sourceTree = "<group>"; };
 		04FF1D702063C6ED00E2702C /* libCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		04FF1D722063C6F100E2702C /* libIMServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libIMServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		04FF1DA22064943F00E2702C /* libIMServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libIMServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,8 +169,16 @@
 		04729828205AA5BB00930A83 /* ChatFriendController */ = {
 			isa = PBXGroup;
 			children = (
+				04FC7A972065EC2C0085D9F2 /* ChatFriendViewTag.h */,
+				04FC7A982065EC3F0085D9F2 /* ChatFriendView.h */,
+				04FC7A992065EC3F0085D9F2 /* ChatFriendView.m */,
+				04FC7AA82065FCBF0085D9F2 /* ChatFriendTableViewManager.h */,
+				04FC7AA92065FCBF0085D9F2 /* ChatFriendTableViewManager.m */,
 				04729829205AA5BB00930A83 /* ChatFriendController.h */,
 				0472982A205AA5BB00930A83 /* ChatFriendController.m */,
+				04FC7AA32065F76F0085D9F2 /* ChatFriendTableCell.h */,
+				04FC7AA42065F76F0085D9F2 /* ChatFriendTableCell.m */,
+				04FC7AA52065F76F0085D9F2 /* ChatFriendTableCell.xib */,
 			);
 			path = ChatFriendController;
 			sourceTree = "<group>";
@@ -440,6 +460,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0485694D2061F939007C4C53 /* README.md in Resources */,
+				04FC7AA72065F76F0085D9F2 /* ChatFriendTableCell.xib in Resources */,
 				047C439E202D7D0F00BB3400 /* LaunchScreen.storyboard in Resources */,
 				047C439B202D7D0F00BB3400 /* Assets.xcassets in Resources */,
 				048569332060F9E3007C4C53 /* iOS代码规范文档.pdf in Resources */,
@@ -515,7 +536,10 @@
 				047298A1205AA5BC00930A83 /* main.m in Sources */,
 				0472988D205AA5BC00930A83 /* MainViewController.m in Sources */,
 				047298B2205AA5C200930A83 /* AppDelegate.m in Sources */,
+				04FC7AAA2065FCBF0085D9F2 /* ChatFriendTableViewManager.m in Sources */,
 				047298B3205AA5C200930A83 /* AppCustoms.m in Sources */,
+				04FC7A9A2065EC3F0085D9F2 /* ChatFriendView.m in Sources */,
+				04FC7AA62065F76F0085D9F2 /* ChatFriendTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
