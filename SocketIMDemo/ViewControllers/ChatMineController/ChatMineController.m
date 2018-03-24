@@ -15,7 +15,7 @@
     /**用户数据管理器*/
     UserManager *_userManager;
     /**聊天模块*/
-    UserIMSocket *_userIMSocket;
+    IMUserSocket *_iMUserSocket;
     
 }
 
@@ -29,7 +29,7 @@
     if(self = [super init]) {
         self.navigationItem.title = @"我";
         _userManager = [UserManager manager];
-        _userIMSocket = [UserIMSocket socket];
+        _iMUserSocket = [IMUserSocket socket];
     }
     return self;
 }
@@ -78,7 +78,7 @@
 
 - (void)navigationRightItemClick:(UIBarButtonItem*)item {
     //退出聊天服务器
-    [_userIMSocket disconnect];
+    [_iMUserSocket disconnect];
 }
 
 @end

@@ -1,5 +1,5 @@
 //
-//  ProtocolClientReq.h
+//  IMProtocolClientReq.h
 //  SocketIMDemo
 //
 //  Created by 李勇 on 18/3/15.
@@ -7,9 +7,9 @@
 //
 
 /**
- IMSocketControl收到一个IMSocketReqContext后会构建一个ProtocolClientReq对象，并把ProtocolClientReq对象转换成NSData传给SocketIO进行传输，body是IMSocketReqContext的body
+ IMSocketControl收到一个IMSocketReqContext后会构建一个IMProtocolClientReq对象，并把IMProtocolClientReq对象转换成NSData传给SocketIO进行传输，body是IMSocketReqContext的body
  */
-@interface ProtocolClientReq : NSObject
+@interface IMProtocolClientReq : NSObject
 
 /**请求唯一标识符*/
 @property(nonatomic, assign) int seq;

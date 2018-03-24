@@ -1,12 +1,12 @@
 //
-//  CMHostResolver.m
+//  HostResolver.m
 //  CMChatSocket
 //
 //  Created by C.Maverick on 15/7/17.
 //  Copyright (c) 2015年 C.Maverick. All rights reserved.
 //
 
-#import "HostResolver.h"
+#import "IMHostResolver.h"
 
 #if TARGET_OS_IPHONE
     #include <CFNetwork/CFNetwork.h>
@@ -21,7 +21,7 @@
 #import <sys/types.h>
 #import <netdb.h>
 
-@interface HostResolver () {
+@interface IMHostResolver () {
 
 }
 
@@ -35,7 +35,7 @@
 @end
 
 
-@implementation HostResolver
+@implementation IMHostResolver
 
 @synthesize name = _name;
 @synthesize address = _address;
@@ -306,10 +306,10 @@
 // Called by CFHost when the resolution finishes.  The implementation just extracts the
 // object pointer from the info parameter and then calls -stopWithError:notify: on that.
 static void HostResolutionCallback(CFHostRef theHost, CFHostInfoType typeInfo, const CFStreamError *error, void *info) {
-    HostResolver *    obj;
+    IMHostResolver *    obj;
     
-    obj = (__bridge HostResolver *) info;
-    assert([obj isKindOfClass:[HostResolver class]]);
+    obj = (__bridge IMHostResolver *) info;
+    assert([obj isKindOfClass:[IMHostResolver class]]);
     assert(theHost == obj->_host);
     assert(typeInfo == obj.infoType);
     

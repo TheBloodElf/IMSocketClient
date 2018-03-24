@@ -8,8 +8,8 @@
 
 #import "IMSocketControl.h"
 #import "IMSocketIO.h"
-#import "ProtocolClientReq.h"
-#import "ProtocolServerResp.h"
+#import "IMProtocolClientReq.h"
+#import "IMProtocolServerResp.h"
 
 @interface IMSocketControl ()<IMSocketIODelegate> {
     /**用来获取每个请求对应的唯一标识符*/
@@ -153,7 +153,7 @@
 }
 
 - (void)disconnect {
-    //主动断开连接，清除断开连接回调 这样UserIMSocket内部就不会进行重连了
+    //主动断开连接，清除断开连接回调 这样IMUserSocket内部就不会进行重连了
     _disconnectCallBackBlock = nil;
     //发送退出登录的消息
     if (_iMSocketIO && [_iMSocketIO isSocketConnect]) {
@@ -180,7 +180,7 @@
         //把这个请求放到operationMaps中，用seq做唯一标识符
         [self.operationMaps setObject:reqContext forKey:@(seq).stringValue];
         //把reqContext封装成一个消息体，再转成NSData给SocketIO对象
-        ProtocolClientReq *clientReq = [ProtocolClientReq new];
+        IMProtocolClientReq *clientReq = [IMProtocolClientReq new];
         clientReq.cmd = reqContext.cmd;
         clientReq.sub_cmd = reqContext.sub_cmd;
         clientReq.seq = seq;
@@ -189,7 +189,7 @@
         //资源类型为ios
         clientReq.source_type = E_SOCKET_CLIENT_TYPE_PHONE_IOS;
         clientReq.body = reqContext.body;
-        //把ProtocolClientReq转换成NSData
+        //把IMProtocolClientReq转换成NSData
         NSString *reqString = [clientReq mj_JSONString];
         NSData *reqData = [reqString dataUsingEncoding:NSUTF8StringEncoding];
         //加解密
@@ -236,7 +236,7 @@
 - (void)parseContent:(NSData*)data type:(E_MSG_TYPE)type {
     @synchronized(self) {
         //解析服务器的响应
-        ProtocolServerResp *serverResp = [ProtocolServerResp new];
+        IMProtocolServerResp *serverResp = [IMProtocolServerResp new];
         NSString *serverString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         [serverResp mj_setKeyValues:serverString.mj_keyValues];
         //得到该请求的cmd类别对应的监听者

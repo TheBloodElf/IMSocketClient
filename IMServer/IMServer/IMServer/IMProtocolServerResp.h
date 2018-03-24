@@ -1,5 +1,5 @@
 //
-//  ProtocolServerResp.h
+//  IMProtocolServerResp.h
 //  SocketIMDemo
 //
 //  Created by 李勇 on 18/3/15.
@@ -7,9 +7,9 @@
 //
 
 /**
- 服务器返回的data可以转变成ProtocolServerResp对象
+ 服务器返回的data可以转变成IMProtocolServerResp对象
  */
-@interface ProtocolServerResp : NSObject
+@interface IMProtocolServerResp : NSObject
 
 /**请求唯一标识符，和ProtocolClientReq的seq保持一致返回给客户端*/
 @property(nonatomic, assign) int seq;

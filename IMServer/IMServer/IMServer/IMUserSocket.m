@@ -1,28 +1,28 @@
 //
-//  UserIMSocket.m
+//  IMUserSocket.m
 //  SocketIMDemo
 //
 //  Created by 李勇 on 18/3/15.
 //  Copyright (c) 2018年李勇. All rights reserved.
 //
 
-#import "UserIMSocket.h"
+#import "IMUserSocket.h"
 #import "IMSocketModules.h"
-#import "HostResolver.h"
+#import "IMHostResolver.h"
 #import "IMUserManager.h"
 
-/**UserIMSocket单例对象*/
-static UserIMSocket * USER_IMSOCKET_SINGLETON;
+/**IMUserSocket单例对象*/
+static IMUserSocket * USER_IMSOCKET_SINGLETON;
 /**断开连接后，与服务器重连次数*/
 static int RECONNECT_SERVER_COUNT = 5;
 
-@interface UserIMSocket ()<HostResolverDelegate> {
+@interface IMUserSocket ()<IMHostResolverDelegate> {
     /**当前Socket状态*/
     IM_SOCKET_STATUS _socketStatus;
     /**聊天模块，需要接收什么消息就注册在模块中*/
     IMSocketModules *_iMSocketModules;
     /**域名解析*/
-    HostResolver *_hostResolver;
+    IMHostResolver *_hostResolver;
     
     /**当前重连次数*/
     int _currReConnectCount;
@@ -30,7 +30,7 @@ static int RECONNECT_SERVER_COUNT = 5;
 
 @end
 
-@implementation UserIMSocket
+@implementation IMUserSocket
 
 #pragma mark -- Init Methods
 
@@ -43,7 +43,7 @@ static int RECONNECT_SERVER_COUNT = 5;
         //聊天模块初始化
         _iMSocketModules = [IMSocketModules new];
         //初始化域名解析
-        _hostResolver = [[HostResolver alloc] initWithName:@"localhost"];
+        _hostResolver = [[IMHostResolver alloc] initWithName:@"localhost"];
         _hostResolver.delegate = self;
         
         //注册被踢下线的回调
@@ -181,15 +181,15 @@ static int RECONNECT_SERVER_COUNT = 5;
     [_iMSocketModules disconnect];
 }
 
-#pragma mark -- HostResolverDelegate
+#pragma mark -- IMHostResolverDelegate
 
-- (void)hostResolverDidFinish:(HostResolver *)resolver {
+- (void)hostResolverDidFinish:(IMHostResolver *)resolver {
     [resolver cancel];
     //进行连接操作
     [self execConnectProcesses];
 }
 
-- (void)hostResolver:(HostResolver *)resolver didFailWithError:(NSError *)error {
+- (void)hostResolver:(IMHostResolver *)resolver didFailWithError:(NSError *)error {
     [resolver cancel];
     //进行连接操作
     [self execConnectProcesses];

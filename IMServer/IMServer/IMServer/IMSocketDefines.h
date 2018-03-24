@@ -23,7 +23,7 @@ typedef enum {
     E_SOCKET_HEADER_CMD_LOGOUT      = 5
 } E_SOCKET_HEADER_CMD_TYPE;
 
-//Socket连接状态 在UserIMSocket中使用，作为连接->登录->登录完成的标志
+//Socket连接状态 在IMUserSocket中使用，作为连接->登录->登录完成的标志
 typedef NS_ENUM(NSUInteger, IM_SOCKET_STATUS) {
     /**初始化状态*/
     IM_SOCKET_STATUS_NONE = 0,

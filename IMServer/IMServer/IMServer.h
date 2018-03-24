@@ -7,5 +7,5 @@
 //
 
 #import "IMUserManager.h"
-#import "UserIMSocket.h"
+#import "IMUserSocket.h"
 #import "Chater.h"

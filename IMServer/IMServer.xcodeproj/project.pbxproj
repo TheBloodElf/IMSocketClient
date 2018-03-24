@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		04894FED2063363400BC0ECE /* IMServer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04894FEA2063363400BC0ECE /* IMServer.h */; };
 		048950D5206347AB00BC0ECE /* Chater.m in Sources */ = {isa = PBXBuildFile; fileRef = 048950D4206347AB00BC0ECE /* Chater.m */; };
-		04FF1D91206491B900E2702C /* HostResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FF1D77206491B900E2702C /* HostResolver.m */; };
+		04FC7A842065E81C0085D9F2 /* IMProtocolClientReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FC7A832065E81C0085D9F2 /* IMProtocolClientReq.m */; };
+		04FC7A872065E85D0085D9F2 /* IMProtocolServerResp.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FC7A852065E85C0085D9F2 /* IMProtocolServerResp.m */; };
+		04FC7A8A2065E88F0085D9F2 /* IMUserSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FC7A892065E88F0085D9F2 /* IMUserSocket.m */; };
+		04FC7A8D2065E9110085D9F2 /* IMHostResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FC7A8B2065E9100085D9F2 /* IMHostResolver.m */; };
 		04FF1D92206491B900E2702C /* IMSocketControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FF1D7A206491B900E2702C /* IMSocketControl.m */; };
 		04FF1D93206491B900E2702C /* IMSocketHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FF1D7D206491B900E2702C /* IMSocketHeader.m */; };
 		04FF1D94206491B900E2702C /* IMSocketIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FF1D7F206491B900E2702C /* IMSocketIO.m */; };
@@ -18,9 +21,6 @@
 		04FF1D97206491B900E2702C /* IMSocketReqContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FF1D86206491B900E2702C /* IMSocketReqContext.m */; };
 		04FF1D98206491B900E2702C /* IMSocketRespAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FF1D88206491B900E2702C /* IMSocketRespAgent.m */; };
 		04FF1D99206491B900E2702C /* IMSocketUserHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FF1D8A206491B900E2702C /* IMSocketUserHandler.m */; };
-		04FF1D9A206491B900E2702C /* ProtocolClientReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FF1D8C206491B900E2702C /* ProtocolClientReq.m */; };
-		04FF1D9B206491B900E2702C /* ProtocolServerResp.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FF1D8E206491B900E2702C /* ProtocolServerResp.m */; };
-		04FF1D9C206491B900E2702C /* UserIMSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FF1D90206491B900E2702C /* UserIMSocket.m */; };
 		04FF1DA02064921100E2702C /* IMUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FF1D9F2064921100E2702C /* IMUserManager.m */; };
 		D02ACBDD3DCCFFF73038B8B2 /* libPods-IMServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04AC7C5620639724000DB907 /* libPods-IMServer.a */; };
 /* End PBXBuildFile section */
@@ -63,8 +63,14 @@
 		04D430B42063AD5B00B9D5D8 /* libCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D430C02063B1B600B9D5D8 /* libCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D430F72063C37700B9D5D8 /* libCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		04FF1D76206491B900E2702C /* HostResolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostResolver.h; sourceTree = "<group>"; };
-		04FF1D77206491B900E2702C /* HostResolver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostResolver.m; sourceTree = "<group>"; };
+		04FC7A822065E81C0085D9F2 /* IMProtocolClientReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMProtocolClientReq.h; sourceTree = "<group>"; };
+		04FC7A832065E81C0085D9F2 /* IMProtocolClientReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMProtocolClientReq.m; sourceTree = "<group>"; };
+		04FC7A852065E85C0085D9F2 /* IMProtocolServerResp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMProtocolServerResp.m; sourceTree = "<group>"; };
+		04FC7A862065E85C0085D9F2 /* IMProtocolServerResp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMProtocolServerResp.h; sourceTree = "<group>"; };
+		04FC7A882065E88F0085D9F2 /* IMUserSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMUserSocket.h; sourceTree = "<group>"; };
+		04FC7A892065E88F0085D9F2 /* IMUserSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMUserSocket.m; sourceTree = "<group>"; };
+		04FC7A8B2065E9100085D9F2 /* IMHostResolver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMHostResolver.m; sourceTree = "<group>"; };
+		04FC7A8C2065E9110085D9F2 /* IMHostResolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMHostResolver.h; sourceTree = "<group>"; };
 		04FF1D78206491B900E2702C /* IMSocketCallBackBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMSocketCallBackBlock.h; sourceTree = "<group>"; };
 		04FF1D79206491B900E2702C /* IMSocketControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMSocketControl.h; sourceTree = "<group>"; };
 		04FF1D7A206491B900E2702C /* IMSocketControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMSocketControl.m; sourceTree = "<group>"; };
@@ -84,12 +90,6 @@
 		04FF1D88206491B900E2702C /* IMSocketRespAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMSocketRespAgent.m; sourceTree = "<group>"; };
 		04FF1D89206491B900E2702C /* IMSocketUserHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMSocketUserHandler.h; sourceTree = "<group>"; };
 		04FF1D8A206491B900E2702C /* IMSocketUserHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMSocketUserHandler.m; sourceTree = "<group>"; };
-		04FF1D8B206491B900E2702C /* ProtocolClientReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolClientReq.h; sourceTree = "<group>"; };
-		04FF1D8C206491B900E2702C /* ProtocolClientReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProtocolClientReq.m; sourceTree = "<group>"; };
-		04FF1D8D206491B900E2702C /* ProtocolServerResp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolServerResp.h; sourceTree = "<group>"; };
-		04FF1D8E206491B900E2702C /* ProtocolServerResp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProtocolServerResp.m; sourceTree = "<group>"; };
-		04FF1D8F206491B900E2702C /* UserIMSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserIMSocket.h; sourceTree = "<group>"; };
-		04FF1D90206491B900E2702C /* UserIMSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserIMSocket.m; sourceTree = "<group>"; };
 		04FF1D9E2064921100E2702C /* IMUserManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMUserManager.h; sourceTree = "<group>"; };
 		04FF1D9F2064921100E2702C /* IMUserManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IMUserManager.m; sourceTree = "<group>"; };
 		C321C8B2679E4F284989C8C8 /* libPods-IMServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IMServer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,8 +150,8 @@
 		04FF1D75206491B900E2702C /* IMServer */ = {
 			isa = PBXGroup;
 			children = (
-				04FF1D76206491B900E2702C /* HostResolver.h */,
-				04FF1D77206491B900E2702C /* HostResolver.m */,
+				04FC7A8C2065E9110085D9F2 /* IMHostResolver.h */,
+				04FC7A8B2065E9100085D9F2 /* IMHostResolver.m */,
 				04FF1D78206491B900E2702C /* IMSocketCallBackBlock.h */,
 				04FF1D79206491B900E2702C /* IMSocketControl.h */,
 				04FF1D7A206491B900E2702C /* IMSocketControl.m */,
@@ -171,12 +171,12 @@
 				04FF1D88206491B900E2702C /* IMSocketRespAgent.m */,
 				04FF1D89206491B900E2702C /* IMSocketUserHandler.h */,
 				04FF1D8A206491B900E2702C /* IMSocketUserHandler.m */,
-				04FF1D8B206491B900E2702C /* ProtocolClientReq.h */,
-				04FF1D8C206491B900E2702C /* ProtocolClientReq.m */,
-				04FF1D8D206491B900E2702C /* ProtocolServerResp.h */,
-				04FF1D8E206491B900E2702C /* ProtocolServerResp.m */,
-				04FF1D8F206491B900E2702C /* UserIMSocket.h */,
-				04FF1D90206491B900E2702C /* UserIMSocket.m */,
+				04FC7A822065E81C0085D9F2 /* IMProtocolClientReq.h */,
+				04FC7A832065E81C0085D9F2 /* IMProtocolClientReq.m */,
+				04FC7A862065E85C0085D9F2 /* IMProtocolServerResp.h */,
+				04FC7A852065E85C0085D9F2 /* IMProtocolServerResp.m */,
+				04FC7A882065E88F0085D9F2 /* IMUserSocket.h */,
+				04FC7A892065E88F0085D9F2 /* IMUserSocket.m */,
 			);
 			path = IMServer;
 			sourceTree = "<group>";
@@ -318,18 +318,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				04FF1DA02064921100E2702C /* IMUserManager.m in Sources */,
+				04FC7A8A2065E88F0085D9F2 /* IMUserSocket.m in Sources */,
+				04FC7A842065E81C0085D9F2 /* IMProtocolClientReq.m in Sources */,
+				04FC7A8D2065E9110085D9F2 /* IMHostResolver.m in Sources */,
 				04FF1D95206491B900E2702C /* IMSocketListener.m in Sources */,
 				04FF1D98206491B900E2702C /* IMSocketRespAgent.m in Sources */,
+				04FC7A872065E85D0085D9F2 /* IMProtocolServerResp.m in Sources */,
 				04FF1D99206491B900E2702C /* IMSocketUserHandler.m in Sources */,
 				04FF1D96206491B900E2702C /* IMSocketModules.m in Sources */,
 				04FF1D94206491B900E2702C /* IMSocketIO.m in Sources */,
 				04FF1D97206491B900E2702C /* IMSocketReqContext.m in Sources */,
 				04FF1D92206491B900E2702C /* IMSocketControl.m in Sources */,
 				048950D5206347AB00BC0ECE /* Chater.m in Sources */,
-				04FF1D9A206491B900E2702C /* ProtocolClientReq.m in Sources */,
-				04FF1D91206491B900E2702C /* HostResolver.m in Sources */,
-				04FF1D9B206491B900E2702C /* ProtocolServerResp.m in Sources */,
-				04FF1D9C206491B900E2702C /* UserIMSocket.m in Sources */,
 				04FF1D93206491B900E2702C /* IMSocketHeader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

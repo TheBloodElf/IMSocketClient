@@ -1,5 +1,5 @@
 //
-//  CMHostResolver.h
+//  IMHostResolver.h
 //  CMChatSocket
 //
 //  Created by C.Maverick on 15/7/17.
@@ -11,7 +11,7 @@
  You can use the object to map from a DNS name to a set of addresses or from a
  address to a set of DNS names.  To do this:
  
- 1. create the QCFHostResolver object with the info you have
+ 1. create the IMHostResolver object with the info you have
  
  2. set a delegate
  
@@ -22,11 +22,11 @@
  5. extract the information you need from the resolvedXxx properties
  */
 
-@protocol HostResolverDelegate;
+@protocol IMHostResolverDelegate;
 /**
  域名、ip解析，并没有缓存到本地，而是启动应用都重新解析，因为dns服务器缓存时间无法固定
  */
-@interface HostResolver : NSObject {
+@interface IMHostResolver : NSObject {
 
 }
 
@@ -44,7 +44,7 @@
 @property (nonatomic, copy,   readonly ) NSString * addressString;
 
 // properties you can set at any time
-@property (nonatomic, weak,   readwrite) id<HostResolverDelegate> delegate;
+@property (nonatomic, weak,   readwrite) id<IMHostResolverDelegate> delegate;
 
 // Starts the resolution process.
 // It's not safe to call this is if the resolve is running.
@@ -60,15 +60,15 @@
 
 @end
 
-@protocol HostResolverDelegate <NSObject>
+@protocol IMHostResolverDelegate <NSObject>
 
 @optional
 // Called when resolution completes succesfully.  Either the resolvedAddress[es|Strings]
 // or the resolvedNames properties will contain meaningful results depending on whether
 // the object was initialised for name-to-address or address-to-name translation.
-- (void)hostResolverDidFinish:(HostResolver *)resolver;
+- (void)hostResolverDidFinish:(IMHostResolver *)resolver;
 // Called when resolution fails.  The error parameter reflects the value in the error
 // property
-- (void)hostResolver:(HostResolver *)resolver didFailWithError:(NSError *)error;
+- (void)hostResolver:(IMHostResolver *)resolver didFailWithError:(NSError *)error;
 
 @end

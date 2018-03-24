@@ -44,19 +44,20 @@
     chater.avatar = currUser.avatar;
     [iMUserManager updateCurrChater:chater];
     //连接聊天服务器
-    [[UserIMSocket socket] connect];
+    [[IMUserSocket socket] connect];
     
     //初始化rootVc
     MainViewController *mainViewController = [MainViewController new];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = mainViewController;
     [self.window makeKeyAndVisible];
-    
     return YES;
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     
 }
+
+#pragma mark -- Private Methods
 
 @end
