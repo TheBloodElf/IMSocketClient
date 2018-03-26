@@ -9,7 +9,7 @@
 /**
  聊天体系中的用户
  */
-@interface Chater : RLMObject
+@interface IMChater : RLMObject
 
 /**唯一标识符，和用户体系uid一样*/
 @property (nonatomic, assign) int64_t imid;

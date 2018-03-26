@@ -10,9 +10,9 @@
 
 @interface PrivateChatController () {
     /**自己对应聊天体系中哪个人*/
-    Chater *_ownerChater;
+    IMChater *_ownerChater;
     /**当前和哪个人在聊天*/
-    Chater *_otherChater;
+    IMChater *_otherChater;
     
     /**用户模型管理器*/
     UserManager *_userManager;
@@ -35,7 +35,7 @@
         _iMUserManager = [IMUserManager manager];
         _iMUserSocket = [IMUserSocket socket];
         //获取自己
-        _ownerChater = [Chater new];
+        _ownerChater = [IMChater new];
         _ownerChater.imid = _userManager.user.uid;
         _ownerChater.avatar = _userManager.user.avatar;
         _ownerChater.nick = _userManager.user.nick;
@@ -45,7 +45,7 @@
                 continue;
             }
             //赋值
-            _otherChater = [Chater new];
+            _otherChater = [IMChater new];
             _otherChater.imid = currUser.uid;
             _otherChater.avatar = currUser.avatar;
             _otherChater.nick = currUser.nick;

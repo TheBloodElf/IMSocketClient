@@ -38,7 +38,7 @@
     
     //设置当前聊天用户信息 这里的信息是根据当前登录用户信息来的 写死，没登录操作
     IMUserManager *iMUserManager = [IMUserManager manager];
-    Chater *chater = [Chater new];
+    IMChater *chater = [IMChater new];
     chater.imid = currUser.uid;
     chater.nick = currUser.nick;
     chater.avatar = currUser.avatar;

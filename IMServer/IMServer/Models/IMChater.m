@@ -6,9 +6,9 @@
 //  Copyright (c) 2018年李勇. All rights reserved.
 //
 
-#import "Chater.h"
+#import "IMChater.h"
 
-@implementation Chater
+@implementation IMChater
 
 MJExtensionCodingImplementation
 

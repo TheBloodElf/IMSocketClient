@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "Chater.h"
+#import "IMChater.h"
 
 /**
 聊天体系中的数据库管理器，所有的数据操作通过本类完成
@@ -17,7 +17,7 @@
 @interface IMUserManager : NSObject
 
 /**当前登录的聊天用户*/
-@property (nonatomic, strong) Chater *chater;
+@property (nonatomic, strong) IMChater *chater;
 
 /**
  创建单例方法
@@ -31,6 +31,6 @@
  
  @param chater 最新的用户信息
  */
-- (void)updateCurrChater:(Chater*)chater;
+- (void)updateCurrChater:(IMChater*)chater;
 
 @end

@@ -68,10 +68,10 @@ static IMUserManager *IM_USER_MANAGER_INSTANCE;
     return IM_USER_MANAGER_INSTANCE;
 }
 
-- (void)updateCurrChater:(Chater*)chater {
+- (void)updateCurrChater:(IMChater*)chater {
     RLMRealm *rlmRealm = [self currThreadRealmInstance];
     [rlmRealm beginWriteTransaction];
-    [Chater createOrUpdateInRealm:rlmRealm withValue:chater];
+    [IMChater createOrUpdateInRealm:rlmRealm withValue:chater];
     self.chater = chater;
     [rlmRealm commitWriteTransaction];
 }
