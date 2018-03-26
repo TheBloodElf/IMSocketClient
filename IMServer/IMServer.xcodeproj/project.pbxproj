@@ -13,6 +13,8 @@
 		04FC7A8A2065E88F0085D9F2 /* IMUserSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FC7A892065E88F0085D9F2 /* IMUserSocket.m */; };
 		04FC7A8D2065E9110085D9F2 /* IMHostResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FC7A8B2065E9100085D9F2 /* IMHostResolver.m */; };
 		04FC7ABA20688FA40085D9F2 /* IMChater.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FC7AB920688FA40085D9F2 /* IMChater.m */; };
+		04FC7ABD2068B92A0085D9F2 /* IMChatMesssage.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FC7ABC2068B92A0085D9F2 /* IMChatMesssage.m */; };
+		04FC7AC02068C57B0085D9F2 /* IMChatMessageContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FC7ABF2068C57B0085D9F2 /* IMChatMessageContent.m */; };
 		04FF1D92206491B900E2702C /* IMSocketControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FF1D7A206491B900E2702C /* IMSocketControl.m */; };
 		04FF1D93206491B900E2702C /* IMSocketHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FF1D7D206491B900E2702C /* IMSocketHeader.m */; };
 		04FF1D94206491B900E2702C /* IMSocketIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FF1D7F206491B900E2702C /* IMSocketIO.m */; };
@@ -71,6 +73,10 @@
 		04FC7A8C2065E9110085D9F2 /* IMHostResolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMHostResolver.h; sourceTree = "<group>"; };
 		04FC7AB820688FA40085D9F2 /* IMChater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMChater.h; sourceTree = "<group>"; };
 		04FC7AB920688FA40085D9F2 /* IMChater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMChater.m; sourceTree = "<group>"; };
+		04FC7ABB2068B92A0085D9F2 /* IMChatMesssage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMChatMesssage.h; sourceTree = "<group>"; };
+		04FC7ABC2068B92A0085D9F2 /* IMChatMesssage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IMChatMesssage.m; sourceTree = "<group>"; };
+		04FC7ABE2068C57B0085D9F2 /* IMChatMessageContent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMChatMessageContent.h; sourceTree = "<group>"; };
+		04FC7ABF2068C57B0085D9F2 /* IMChatMessageContent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IMChatMessageContent.m; sourceTree = "<group>"; };
 		04FF1D78206491B900E2702C /* IMSocketCallBackBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMSocketCallBackBlock.h; sourceTree = "<group>"; };
 		04FF1D79206491B900E2702C /* IMSocketControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMSocketControl.h; sourceTree = "<group>"; };
 		04FF1D7A206491B900E2702C /* IMSocketControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMSocketControl.m; sourceTree = "<group>"; };
@@ -143,6 +149,10 @@
 			children = (
 				04FC7AB820688FA40085D9F2 /* IMChater.h */,
 				04FC7AB920688FA40085D9F2 /* IMChater.m */,
+				04FC7ABB2068B92A0085D9F2 /* IMChatMesssage.h */,
+				04FC7ABC2068B92A0085D9F2 /* IMChatMesssage.m */,
+				04FC7ABE2068C57B0085D9F2 /* IMChatMessageContent.h */,
+				04FC7ABF2068C57B0085D9F2 /* IMChatMessageContent.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -321,8 +331,10 @@
 				04FC7A8A2065E88F0085D9F2 /* IMUserSocket.m in Sources */,
 				04FC7A842065E81C0085D9F2 /* IMProtocolClientReq.m in Sources */,
 				04FC7A8D2065E9110085D9F2 /* IMHostResolver.m in Sources */,
+				04FC7ABD2068B92A0085D9F2 /* IMChatMesssage.m in Sources */,
 				04FF1D95206491B900E2702C /* IMSocketListener.m in Sources */,
 				04FF1D98206491B900E2702C /* IMSocketRespAgent.m in Sources */,
+				04FC7AC02068C57B0085D9F2 /* IMChatMessageContent.m in Sources */,
 				04FC7ABA20688FA40085D9F2 /* IMChater.m in Sources */,
 				04FC7A872065E85D0085D9F2 /* IMProtocolServerResp.m in Sources */,
 				04FF1D99206491B900E2702C /* IMSocketUserHandler.m in Sources */,

@@ -78,6 +78,25 @@ typedef enum {
     PACK_TYPE_NOTIFY = 3
 } E_SERVER_PACK_TYPE;
 
+//消息内容类型
+typedef NS_ENUM(NSUInteger, CHAT_CONTENT_TYPE) {
+    /**文字消息*/
+    E_CHAT_CONTENT_TYPE_TEXT        = 0,
+    /**照片消息*/
+    E_CHAT_CONTENT_TYPE_PHOTO       = 1,
+    /**GIF消息*/
+    E_CHAT_CONTENT_TYPE_GIF         = 2,
+    /**音频消息*/
+    E_CHAT_CONTENT_TYPE_AUDIO       = 3,
+    /**位置消息*/
+    E_CHAT_CONTENT_TYPE_ADDR        = 4,
+    
+    /**群通知消息 xxx退出群、加入群等*/
+    E_CHAT_CONTENT_TYPE_GROUP_NOTIFY    = 20,
+    /**群创建通知*/
+    E_CHAT_CONTENT_TYPE_GROUP_CREATE_NOTIFY    = 21,
+};
+
 //聊天消息发送状态
 typedef enum {
     /**发送中*/
@@ -95,20 +114,6 @@ typedef enum {
     /**消息由其他人发出*/
     E_CHAT_FROM_OTHER   = 1,
 } E_CHAT_FROM_TYPE;
-
-//聊天消息类型
-typedef enum {
-    /**文字消息*/
-    E_CHAT_CONTENT_TYPE_TEXT        = 0,
-    /**照片消息*/
-    E_CHAT_CONTENT_TYPE_PHOTO       = 1,
-    /**GIF消息*/
-    E_CHAT_CONTENT_TYPE_GIF         = 2,
-    /**音频消息*/
-    E_CHAT_CONTENT_TYPE_AUDIO       = 3,
-    /**位置消息*/
-    E_CHAT_CONTENT_TYPE_ADDR        = 4,
-} E_CHAT_CONTENT_TYPE;
 
 #endif
 
