@@ -10,4 +10,6 @@
 
 @implementation IMChatMessageContent
 
+MJExtensionCodingImplementation
+
 @end
