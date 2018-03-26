@@ -43,6 +43,7 @@ target 'SocketIMDemo' do
    pod 'SDAutoLayout'       #自动布局
    pod 'MJRefresh'          #上/下拉刷新/加载
    pod 'SDWebImage'         #加载网络图片
+   pod 'IQKeyboardManager', '~> 5.0.2' #自动解决键盘遮挡
 end
 
 #假设项目 A 引用了静态库 B(或者是动态库，也是一样)，那么 A 编译后得到的静态库中，并不含有静态库 B 的目标文件。如果有人拿到这样的静态库 A，就必须补齐静态库 B，否则就会遇到 “Undefined symbol” 错误。

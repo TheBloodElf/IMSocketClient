@@ -15,6 +15,7 @@
 @import UIKit;
 
 #import <UIImageView+WebCache.h>
+#import <IQKeyboardManager/IQKeyboardManager.h>
 #import <SDAutoLayout/SDAutoLayout.h>
 
 #import "AppCustoms.h"

@@ -51,6 +51,12 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = mainViewController;
     [self.window makeKeyAndVisible];
+    
+    //键盘遮挡问题解决方案
+    [IQKeyboardManager sharedManager].enable = YES;
+    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
+    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
+    
     return YES;
 }
 

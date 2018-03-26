@@ -13,6 +13,8 @@
 #import "UserManager.h"
 #import "ChatFriendTableViewManager.h"
 
+#import "PrivateChatController.h"
+
 @interface ChatFriendController ()<UserDidSelectDelegate> {
     /**用户数据管理器*/
     UserManager *_userManager;
@@ -68,7 +70,9 @@
         [self.navigationController.tabBarController setSelectedIndex:2];
     }
     else {//进入聊天界面
-        
+        PrivateChatController *privateChat = [[PrivateChatController alloc] initWithTargetId:@(user.uid).stringValue];
+        privateChat.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:privateChat animated:YES];
     }
 }
 

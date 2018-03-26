@@ -27,6 +27,7 @@
 		04FC7AA62065F76F0085D9F2 /* ChatFriendTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FC7AA42065F76F0085D9F2 /* ChatFriendTableCell.m */; };
 		04FC7AA72065F76F0085D9F2 /* ChatFriendTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04FC7AA52065F76F0085D9F2 /* ChatFriendTableCell.xib */; };
 		04FC7AAA2065FCBF0085D9F2 /* ChatFriendTableViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FC7AA92065FCBF0085D9F2 /* ChatFriendTableViewManager.m */; };
+		04FC7AB0206650DF0085D9F2 /* PrivateChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FC7AAF206650DF0085D9F2 /* PrivateChatController.m */; };
 		04FF1DA32064953B00E2702C /* libCommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04FF1DA42064953B00E2702C /* libCommon.a */; };
 		04FF1DA52064953E00E2702C /* libIMServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04FF1DA62064953E00E2702C /* libIMServer.a */; };
 		04FF1DA72064954300E2702C /* libModelManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04FF1DA82064954300E2702C /* libModelManager.a */; };
@@ -121,6 +122,8 @@
 		04FC7AA52065F76F0085D9F2 /* ChatFriendTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatFriendTableCell.xib; sourceTree = "<group>"; };
 		04FC7AA82065FCBF0085D9F2 /* ChatFriendTableViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatFriendTableViewManager.h; sourceTree = "<group>"; };
 		04FC7AA92065FCBF0085D9F2 /* ChatFriendTableViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatFriendTableViewManager.m; sourceTree = "<group>"; };
+		04FC7AAE206650DF0085D9F2 /* PrivateChatController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivateChatController.h; sourceTree = "<group>"; };
+		04FC7AAF206650DF0085D9F2 /* PrivateChatController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrivateChatController.m; sourceTree = "<group>"; };
 		04FF1D702063C6ED00E2702C /* libCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		04FF1D722063C6F100E2702C /* libIMServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libIMServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		04FF1DA22064943F00E2702C /* libIMServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libIMServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +189,7 @@
 		0472982B205AA5BB00930A83 /* ChatListController */ = {
 			isa = PBXGroup;
 			children = (
+				04FC7AAC20664E7F0085D9F2 /* ChatViewController */,
 				0472982C205AA5BB00930A83 /* ChatListController.h */,
 				0472982D205AA5BB00930A83 /* ChatListController.m */,
 			);
@@ -309,6 +313,23 @@
 			children = (
 			);
 			path = AppCustoms;
+			sourceTree = "<group>";
+		};
+		04FC7AAC20664E7F0085D9F2 /* ChatViewController */ = {
+			isa = PBXGroup;
+			children = (
+				04FC7AAD2066501D0085D9F2 /* PrivateChatController */,
+			);
+			path = ChatViewController;
+			sourceTree = "<group>";
+		};
+		04FC7AAD2066501D0085D9F2 /* PrivateChatController */ = {
+			isa = PBXGroup;
+			children = (
+				04FC7AAE206650DF0085D9F2 /* PrivateChatController.h */,
+				04FC7AAF206650DF0085D9F2 /* PrivateChatController.m */,
+			);
+			path = PrivateChatController;
 			sourceTree = "<group>";
 		};
 		9AE467BFF5CC865195794C6A /* Frameworks */ = {
@@ -534,6 +555,7 @@
 				04D48556205CC45600140C73 /* ChatMineView.m in Sources */,
 				04729889205AA5BC00930A83 /* ChatMineController.m in Sources */,
 				047298A1205AA5BC00930A83 /* main.m in Sources */,
+				04FC7AB0206650DF0085D9F2 /* PrivateChatController.m in Sources */,
 				0472988D205AA5BC00930A83 /* MainViewController.m in Sources */,
 				047298B2205AA5C200930A83 /* AppDelegate.m in Sources */,
 				04FC7AAA2065FCBF0085D9F2 /* ChatFriendTableViewManager.m in Sources */,
@@ -686,7 +708,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = JG5S22U38L;
 				GCC_PREFIX_HEADER = "$(TARGET_NAME)/Supporting Files/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -730,7 +752,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = JG5S22U38L;
 				GCC_PREFIX_HEADER = "$(TARGET_NAME)/Supporting Files/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
