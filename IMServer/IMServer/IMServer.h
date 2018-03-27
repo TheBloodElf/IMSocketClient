@@ -8,4 +8,6 @@
 
 #import "IMUserManager.h"
 #import "IMUserSocket.h"
-#import "Chater.h"
+
+#import "IMChater.h"
+#Import "IMChatMesssage.h"

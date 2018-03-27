@@ -76,4 +76,11 @@ static IMUserManager *IM_USER_MANAGER_INSTANCE;
     [rlmRealm commitWriteTransaction];
 }
 
+- (void)updateChatMessage:(IMChatMesssage*)message {
+    RLMRealm *rlmRealm = [self currThreadRealmInstance];
+    [rlmRealm beginWriteTransaction];
+    [IMChatMesssage createOrUpdateInRealm:rlmRealm withValue:message];
+    [rlmRealm commitWriteTransaction];
+}
+
 @end

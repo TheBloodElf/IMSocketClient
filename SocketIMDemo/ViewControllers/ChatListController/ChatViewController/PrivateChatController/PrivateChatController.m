@@ -88,4 +88,36 @@
 
 #pragma mark -- Instance Public Methods
 
+/**
+ 发送文本消息
+
+ @param message 文本消息内容
+ */
+- (void)sendTextMessage:(NSString *)message {
+    //内容为空 不执行操作
+    if([NSString isBlank:message]) {
+        return;
+    }
+    
+    //构造聊天消息
+    IMChatMesssage *chatMessage = [IMChatMesssage new];
+    chatMessage.id = [NSDate new].timeIntervalSince1970 * 1000;
+    chatMessage.ownerImid = _otherChater.imid;
+    chatMessage.status = E_CHAT_SEND_STATUS_SENDING;
+    chatMessage.time = [NSDate new].timeIntervalSince1970 * 1000;
+    chatMessage.showTime = NO;
+    chatMessage.sender = _ownerChater;
+    chatMessage.reciver = _otherChater;
+    //构造消息内容
+    IMChatMessageContent *chatMessageContent = [IMChatMessageContent new];
+    chatMessageContent.type = E_CHAT_CONTENT_TYPE_TEXT;
+    chatMessageContent.text = message;
+    chatMessage.content = chatMessageContent;
+    chatMessage.from = E_CHAT_FROM_ME;
+    chatMessage.senderImid = _ownerChater.imid;
+    
+    //把消息放进数据库
+    
+}
+
 @end
