@@ -9,6 +9,7 @@
 #import "IMUserSocket.h"
 #import "IMSocketModules.h"
 #import "IMHostResolver.h"
+
 #import "IMUserManager.h"
 
 /**IMUserSocket单例对象*/
@@ -179,6 +180,29 @@ static int RECONNECT_SERVER_COUNT = 5;
     //设置socket状态
     _socketStatus = IM_SOCKET_STATUS_NONE;
     [_iMSocketModules disconnect];
+}
+
+- (void)sendChatMessage:(IMChatMesssage*)chatMessage {
+    //构造消息内容
+    MsgContent *content = [MsgContent new];
+    content.msgid = chatMessage.id;
+    content.from_source_type = E_SOCKET_CLIENT_TYPE_PHONE_IOS;
+    content.reciver_imid = chatMessage.reciver.imid;
+    content.sender_imid = chatMessage.sender.imid;
+    content.time = chatMessage.time;
+    content.msg_data = [[chatMessage JSONDictionary] mj_JSONString];
+    //发送消息
+    [_iMSocketModules.messageHandler send:content function:^(IMSocketRespAgent *resp) {
+        //发送错误
+        if ([self transformCode:resp.code] != E_SOCKET_ERROR_NONE) {
+            chatMessage.status = E_CHAT_SEND_STATUS_SENDFIAL;
+        }
+        else {
+            chatMessage.status = E_CHAT_SEND_STATUS_SENDED;
+        }
+        //更新数据库
+        [[IMUserManager manager] updateChatMessage:chatMessage];
+    }];
 }
 
 #pragma mark -- IMHostResolverDelegate

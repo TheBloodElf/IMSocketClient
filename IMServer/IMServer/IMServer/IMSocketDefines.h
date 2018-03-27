@@ -64,8 +64,6 @@ typedef enum {
     
     /**登录信息错误*/
     E_SOCKET_ERROR_LOGIN_INFO_ERROR   = 4001,
-    /**用户不在线*/
-    E_SOCKET_ERROR_USER_NOT_EXIST     = 4002,
 } E_SOCKET_ERROR;
 
 //服务器返回的包类型

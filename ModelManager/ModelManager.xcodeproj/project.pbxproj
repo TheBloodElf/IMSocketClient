@@ -366,7 +366,6 @@
 					"\"${PODS_ROOT}/Headers/Public/Realm\"",
 					"\"${PODS_ROOT}/Headers/Public/SDAutoLayout\"",
 					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
-					"$(PROJECT_DIR)/../IMServer/**",
 					"$(PROJECT_DIR)/../Common/**",
 				);
 				LIBRARY_SEARCH_PATHS = (
@@ -376,7 +375,6 @@
 					"\"$PODS_CONFIGURATION_BUILD_DIR/Realm\"",
 					"$(inherited)",
 					"\"${PODS_ROOT}/Realm/core\"",
-					"$(PROJECT_DIR)/../IMServer/**",
 					"$(PROJECT_DIR)/../Common/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";
@@ -401,7 +399,6 @@
 					"\"${PODS_ROOT}/Headers/Public/Realm\"",
 					"\"${PODS_ROOT}/Headers/Public/SDAutoLayout\"",
 					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
-					"$(PROJECT_DIR)/../IMServer/**",
 					"$(PROJECT_DIR)/../Common/**",
 				);
 				LIBRARY_SEARCH_PATHS = (
@@ -411,7 +408,6 @@
 					"\"$PODS_CONFIGURATION_BUILD_DIR/Realm\"",
 					"$(inherited)",
 					"\"${PODS_ROOT}/Realm/core\"",
-					"$(PROJECT_DIR)/../IMServer/**",
 					"$(PROJECT_DIR)/../Common/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";

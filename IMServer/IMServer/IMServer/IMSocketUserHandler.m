@@ -14,6 +14,8 @@
 
 @end
 
+#pragma mark -- 登录
+
 @implementation UserLoginReq
 
 - (instancetype)init {
@@ -34,6 +36,8 @@
 @implementation UserLoginResp
 
 @end
+
+#pragma mark -- 被踢通知
 
 @implementation UserKickoutNotify
 
