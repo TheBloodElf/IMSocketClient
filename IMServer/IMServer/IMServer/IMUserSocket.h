@@ -6,6 +6,8 @@
 //  Copyright (c) 2018年李勇. All rights reserved.
 //
 
+#import "IMChatMesssage.h"
+
 /**
  用户聊天总类
  */
@@ -28,7 +30,11 @@
  */
 - (void)disconnect;
 
+/**
+ 发送单聊消息到服务器
 
-
+ @param chatMessage 单聊聊天消息
+ */
+- (void)sendChatMessage:(IMChatMesssage*)chatMessage;
 
 @end

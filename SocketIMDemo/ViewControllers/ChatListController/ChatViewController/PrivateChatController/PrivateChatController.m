@@ -51,6 +51,7 @@
             _otherChater.nick = currUser.nick;
             break;
         }
+        
         assert(_otherChater != nil);
         self.navigationItem.title = _otherChater.nick;
     }
@@ -62,6 +63,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(rightClicked:)];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -86,6 +88,10 @@
 
 #pragma mark -- Instance Private Methods
 
+- (void)rightClicked:(UIBarButtonItem*)item {
+    [self sendTextMessage:@"hello world!"];
+}
+
 #pragma mark -- Instance Public Methods
 
 /**
@@ -102,10 +108,10 @@
     //构造聊天消息
     IMChatMesssage *chatMessage = [IMChatMesssage new];
     chatMessage.id = [NSDate new].timeIntervalSince1970 * 1000;
-    chatMessage.ownerImid = _otherChater.imid;
+    chatMessage.owner_imid = _otherChater.imid;
     chatMessage.status = E_CHAT_SEND_STATUS_SENDING;
     chatMessage.time = [NSDate new].timeIntervalSince1970 * 1000;
-    chatMessage.showTime = NO;
+    chatMessage.show_time = NO;
     chatMessage.sender = _ownerChater;
     chatMessage.reciver = _otherChater;
     //构造消息内容
@@ -114,10 +120,12 @@
     chatMessageContent.text = message;
     chatMessage.content = chatMessageContent;
     chatMessage.from = E_CHAT_FROM_ME;
-    chatMessage.senderImid = _ownerChater.imid;
+    chatMessage.sender_imid = _ownerChater.imid;
     
     //把消息放进数据库
-    
+    [_iMUserManager updateChatMessage:chatMessage];
+    //开始向服务器发送数据
+    [_iMUserSocket sendChatMessage:chatMessage];
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "IMSocketUserHandler.h"
+#import "IMSocketMessageHandler.h"
 
 /**
  聊天模块，只添加相应的IMSocketListener，不做其他的操作
@@ -34,5 +35,12 @@
  @return 用户消息监听对象
  */
 - (IMSocketUserHandler *)userHandler;
+
+/**
+ 获取消息消息监听对象
+ 
+ @return 用户消息监听对象
+ */
+- (IMSocketMessageHandler *)messageHandler;
 
 @end

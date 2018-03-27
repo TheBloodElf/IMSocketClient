@@ -14,6 +14,8 @@
     IMSocketControl *_iMSocketControl;
     /**用户消息监听*/
     IMSocketUserHandler *_iMSocketUserHandler;
+    /**消息消息监听*/
+    IMSocketMessageHandler *_iMSocketMessageHandler;
 }
 @end
 
@@ -30,9 +32,14 @@
         _iMSocketUserHandler = [IMSocketUserHandler new];
         //设置IMSocketControl，方便_iMSocketUserHandler向IMSocketControl添加请求
         [_iMSocketUserHandler setControl:_iMSocketControl];
+        //初始化msg消息监听者
+        _iMSocketMessageHandler = [IMSocketMessageHandler new];
+        [_iMSocketMessageHandler setControl:_iMSocketControl];
         
         //向_iMSocketControl注册user的监听者为_iMSocketUserHandler
         [_iMSocketControl regeistReceiver:@"user" interface:_iMSocketUserHandler];
+        //向_iMSocketControl注册user的监听者为_iMSocketUserHandler
+        [_iMSocketControl regeistReceiver:@"msg" interface:_iMSocketMessageHandler];
     }
     return self;
 }
@@ -53,6 +60,10 @@
 
 - (IMSocketUserHandler *)userHandler {
     return _iMSocketUserHandler;
+}
+
+- (IMSocketMessageHandler *)messageHandler {
+    return _iMSocketMessageHandler;
 }
 
 @end

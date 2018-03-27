@@ -16,6 +16,8 @@ static IMUserManager *IM_USER_MANAGER_INSTANCE;
     NSString *_pathUrl;
     /**主线程创建的realm数据库对象  用来创建数据观察者使用*/
     RLMRealm *_mainThreadRLMRealm;
+    /**持有RLMNotificationToken对象，不然创建后就消失了*/
+    NSMutableArray<RLMNotificationToken*> *_allNotificationTokenArr;
 }
 @end
 
@@ -33,6 +35,8 @@ static IMUserManager *IM_USER_MANAGER_INSTANCE;
         _pathUrl = [_pathUrl stringByAppendingPathComponent:@"imUser"];
         //创建数据库
         _mainThreadRLMRealm = [RLMRealm realmWithURL:[NSURL URLWithString:_pathUrl]];
+        //持有RLMNotificationToken对象
+        _allNotificationTokenArr = [@[] mutableCopy];
     }
     return self;
 }
@@ -81,6 +85,25 @@ static IMUserManager *IM_USER_MANAGER_INSTANCE;
     [rlmRealm beginWriteTransaction];
     [IMChatMesssage createOrUpdateInRealm:rlmRealm withValue:message];
     [rlmRealm commitWriteTransaction];
+}
+
+- (NSMutableArray<IMChatMesssage*>*)chatMessagesWithOwnerId:(int64_t)imid {
+    NSMutableArray<IMChatMesssage*> *resultArr = [@[] mutableCopy];
+    RLMRealm *rlmRealm = [self currThreadRealmInstance];
+    RLMResults *results = [IMChatMesssage objectsInRealm:rlmRealm withPredicate:[NSPredicate predicateWithFormat:@"owner_imid = %@",@(imid)]];
+    //依次填充所有的用户信息
+    for (int index = 0; index < results.count; index ++) {
+        //使用deepCopy拷贝一份数据
+        [resultArr addObject:[results[index] deepCopy]];
+    }
+    return resultArr;
+}
+- (void)addChatMessageChangeListener:(modelChangeHandler)changeHandler {
+    //监听数据库中IMChatMesssage表变化，实时通知外部
+    RLMNotificationToken *notificationToken = [[IMChatMesssage allObjectsInRealm:_mainThreadRLMRealm] addNotificationBlock:^(RLMResults * _Nullable results, RLMCollectionChange * _Nullable change, NSError * _Nullable error) {
+        changeHandler();
+    }];
+    [_allNotificationTokenArr addObject:notificationToken];
 }
 
 @end

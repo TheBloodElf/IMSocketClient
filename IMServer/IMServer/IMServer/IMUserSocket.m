@@ -9,6 +9,7 @@
 #import "IMUserSocket.h"
 #import "IMSocketModules.h"
 #import "IMHostResolver.h"
+
 #import "IMUserManager.h"
 
 /**IMUserSocket单例对象*/
@@ -50,6 +51,25 @@ static int RECONNECT_SERVER_COUNT = 5;
         [_iMSocketModules.userHandler addEventListener:@"kickout" withFunction:^(IMSocketRespAgent *resp) {
             //断开连接
             [self disconnect];
+        }];
+        //注册收到消息的通知
+        [_iMSocketModules.messageHandler addEventListener:@"push" withFunction:^(IMSocketRespAgent *resp) {
+            MsgPushNotify *content = (MsgPushNotify *)resp.content;
+            IMChatMesssage *chatMessage = [IMChatMesssage new];
+            [chatMessage mj_setKeyValues:content.msg_data.mj_keyValues];
+            chatMessage.owner_imid = content.sender_imid;
+            chatMessage.from = E_CHAT_FROM_OTHER;
+            //添加到数据库
+            [[IMUserManager manager] updateChatMessage:chatMessage];
+            
+            //如果是在线消息，需要发送回执
+            if(resp.type == E_MSG_TYPE_ONLINE) {
+                MsgAckContent *ackContent = [MsgAckContent new];
+                ackContent.ack_msgid = content.msg_id;
+                ackContent.ack_source_type = E_SOCKET_CLIENT_TYPE_PHONE_IOS;
+                ackContent.ack_imid = content.sender_imid;
+                ackContent.sender_imid = content.reciver_imid;
+            }
         }];
     }
     return self;
@@ -179,6 +199,29 @@ static int RECONNECT_SERVER_COUNT = 5;
     //设置socket状态
     _socketStatus = IM_SOCKET_STATUS_NONE;
     [_iMSocketModules disconnect];
+}
+
+- (void)sendChatMessage:(IMChatMesssage*)chatMessage {
+    //构造消息内容
+    MsgContent *content = [MsgContent new];
+    content.msg_id = chatMessage.id;
+    content.from_source_type = E_SOCKET_CLIENT_TYPE_PHONE_IOS;
+    content.reciver_imid = chatMessage.reciver.imid;
+    content.sender_imid = chatMessage.sender.imid;
+    content.time = chatMessage.time;
+    content.msg_data = [[chatMessage JSONDictionary] mj_JSONString];
+    //发送消息
+    [_iMSocketModules.messageHandler send:content function:^(IMSocketRespAgent *resp) {
+        //发送成功
+        if ([self transformCode:resp.code] != E_SOCKET_ERROR_NONE) {
+            chatMessage.status = E_CHAT_SEND_STATUS_SENDFIAL;
+        }
+        else {//发送错误
+            chatMessage.status = E_CHAT_SEND_STATUS_SENDED;
+        }
+        //更新数据库
+        [[IMUserManager manager] updateChatMessage:chatMessage];
+    }];
 }
 
 #pragma mark -- IMHostResolverDelegate

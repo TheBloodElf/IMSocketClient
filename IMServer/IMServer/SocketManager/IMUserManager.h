@@ -12,6 +12,11 @@
 #import "IMChatMesssage.h"
 
 /**
+ 数据库中模型改变的回调通知
+ */
+typedef void(^modelChangeHandler)(void);
+
+/**
 聊天体系中的数据库管理器，所有的数据操作通过本类完成
 应用体系有单独的manager
 */
@@ -40,5 +45,20 @@
  @param message 消息内容
  */
 - (void)updateChatMessage:(IMChatMesssage*)message;
+
+/**
+ 获取该用户所有的聊天消息
+
+ @param imid 用户imid
+ @return 所有聊天消息
+ */
+- (NSMutableArray<IMChatMesssage*>*)chatMessagesWithOwnerId:(int64_t)imid;
+
+/**
+ 创建用户的数据库观察者
+
+ @param changeHandler 回调通知
+ */
+- (void)addChatMessageChangeListener:(modelChangeHandler)changeHandler;
 
 @end

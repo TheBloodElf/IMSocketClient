@@ -15,6 +15,7 @@
  */
 @interface IMSocketReqContext : NSObject
 
+/**请求结果回调*/
 @property(nonatomic, strong) CallBackBlock handler;
 /**错误码*/
 @property(nonatomic, assign) E_SOCKET_ERROR code;
@@ -28,7 +29,7 @@
 @property(nonatomic, strong) NSString *cmd;
 /**例如user区分login、logout、setinfo等*/
 @property(nonatomic, strong) NSString *sub_cmd;
-/**请求添加的事件*/
+/**请求添加的时间，用于失败重发，设置请求超时*/
 @property(nonatomic, strong) NSDate *time;
 /**内容 json格式字符串 如cmd为user、sub_cmd为login，请求时则body为UserLoginReq对象的json格式字符串 响应时则body为UserLoginResp对象的json格式字符串*/
 @property(nonatomic, strong) NSString *body;

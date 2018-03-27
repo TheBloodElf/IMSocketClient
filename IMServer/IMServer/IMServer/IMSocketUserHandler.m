@@ -14,6 +14,8 @@
 
 @end
 
+#pragma mark -- 登录
+
 @implementation UserLoginReq
 
 - (instancetype)init {
@@ -34,6 +36,8 @@
 @implementation UserLoginResp
 
 @end
+
+#pragma mark -- 被踢通知
 
 @implementation UserKickoutNotify
 
@@ -69,8 +73,10 @@
 - (void)receive:(IMSocketReqContext*)context {
     //初始化一个代理对象
     IMSocketRespAgent *respAgent = [IMSocketRespAgent new];
-    respAgent.cmd = context.cmd;//本类中固定为user
-    respAgent.sub_cmd = context.sub_cmd;//login等
+    //本类中固定为user
+    respAgent.cmd = context.cmd;
+    //login等
+    respAgent.sub_cmd = context.sub_cmd;
     respAgent.code = context.code;
     respAgent.type = context.type;
     //如果是登录，且有数据

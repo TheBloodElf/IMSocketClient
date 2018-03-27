@@ -10,6 +10,7 @@
 #import "UIColor+FlatUI.h"
 #import "UIImage+Category.h"
 #import "RLMObject+Copying.h"
+#import "RLMObject+JSON.h"
 
 #import "CMDeviceInfo.h"
 

@@ -10,6 +10,7 @@
 #import "IMSocketListener.h"
 #import "IMSocketReqContext.h"
 
+#pragma mark -- 登录
 /**
  用户登录请求
  */
@@ -36,6 +37,8 @@
 
 @end
 
+#pragma mark -- 被踢通知
+
 /**
  用户被踢下线通知
  */
@@ -53,7 +56,6 @@
  user消息监听者，主要是登录、设置用户信息等请求
  */
 @interface IMSocketUserHandler : IMSocketListener <IMSocketReceiver>
-
 
 /**
  设置控制中心
