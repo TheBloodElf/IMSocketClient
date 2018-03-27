@@ -69,6 +69,9 @@ static int RECONNECT_SERVER_COUNT = 5;
                 ackContent.ack_source_type = E_SOCKET_CLIENT_TYPE_PHONE_IOS;
                 ackContent.ack_imid = content.sender_imid;
                 ackContent.sender_imid = content.reciver_imid;
+                [_iMSocketModules.messageHandler send_ack:ackContent function:^(IMSocketRespAgent *resp) {
+                    
+                }];
             }
         }];
     }

@@ -264,9 +264,19 @@
         }
         //如果是通知，则self.registerMaps没有对应的响应，需要自己组装一个响应向外发送
         if(serverResp.type == PACK_TYPE_NOTIFY) {
-            
+            IMSocketReqContext *reqContext = [IMSocketReqContext new];
+            //设置响应结果，成功还是失败
+            reqContext.code = serverResp.code;
+            //设置消息类型
+            reqContext.type = type;
+            //设置cmd 和 sub_cmd，理论上是不用设置的，因为addReqContext时已经设置了，但是为了保证万无一失
+            reqContext.cmd = serverResp.cmd;
+            reqContext.sub_cmd = serverResp.sub_cmd;
+            //设置服务器返回的数据
+            reqContext.body = serverResp.body;
+            //通知监听者，请求已经得到回应了
+            [receiver receive:reqContext];
         }
-        
     }
 }
 
