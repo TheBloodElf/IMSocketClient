@@ -14,8 +14,23 @@
 
 @import UIKit;
 
-#import "Utikles.h"
+#import <UIImageView+WebCache.h>
+#import <IQKeyboardManager/IQKeyboardManager.h>
+#import <SDAutoLayout/SDAutoLayout.h>
+
 #import "AppCustoms.h"
-#import "InterfaceService.h"
+
+//基础组件
+#import <Common/Common.h>
+
+//网络请求组件
+//#import <HttpServer/HttpServer.h>
+
+//聊天组件
+#import <IMServer/IMServer.h>
+
+//数据模型组件
+#import <ModelManager/ModelManager.h>
+
 
 #endif /* PrefixHeader_pch */
