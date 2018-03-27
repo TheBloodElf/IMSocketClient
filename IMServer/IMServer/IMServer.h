@@ -6,8 +6,10 @@
 //  Copyright © 2018年 Mac. All rights reserved.
 //
 
+#import "IMSocketDefines.h"
+
 #import "IMUserManager.h"
 #import "IMUserSocket.h"
 
 #import "IMChater.h"
-#Import "IMChatMesssage.h"
+#import "IMChatMesssage.h"
