@@ -7,12 +7,16 @@
 //
 
 #import "YJNChatInputBar.h"
+#import "YJNInputTextView.h"
 
 @interface YJNChatInputBar()
 @property (nonatomic, strong) UIView *inputBarView;
 @property (nonatomic, strong) UICollectionView *functionPadView;
+@property (nonatomic, strong) YJNInputTextView *inputTextView;
 @end
-@implementation YJNChatInputBar
+@implementation YJNChatInputBar {
+    CGFloat _previousTextViewContentHeight;//上一次inputTextView的contentSize.height
+}
 
 -(instancetype)initWithFrame:(CGRect)frame {
     
@@ -49,7 +53,7 @@
     CGFloat duration    = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     UIViewAnimationCurve curve = [userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue];
     
-    void(^animations)() = ^{
+    void(^animations)(void) = ^{
         [self _willShowKeyboardFromFrame:beginFrame toFrame:endFrame];
     };
     
@@ -138,8 +142,32 @@
 -(UIView *)inputBarView {
     if (!_inputBarView) {
         _inputBarView = [[UIView alloc] initWithFrame:self.bounds];
+        [_inputBarView addSubview:self.inputTextView];
     }
     return _inputBarView;
+}
+
+-(YJNInputTextView *)inputTextView {
+    if (!_inputTextView) {
+        _inputTextView = [YJNInputTextView alloc] initWithFrame:CGRectMake(self.horizontalPadding, self.verticalPadding, self.frame.size.width - self.verticalPadding * 2, self.frame.size.height - self.verticalPadding * 2)];
+        _inputTextView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+        _inputTextView.scrollEnabled = YES;
+        _inputTextView.returnKeyType = UIReturnKeySend;
+        _inputTextView.enablesReturnKeyAutomatically = YES; // UITextView内部判断send按钮是否可以用
+        _inputTextView.placeHolder = NSEaseLocalizedString(@"message.toolBar.inputPlaceHolder", @"input a new message");
+        _inputTextView.delegate = self;
+        _inputTextView.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"#ffffff"];
+        _inputTextView.layer.borderColor = [UIColor colorWithWhite:0.8f alpha:1.0f].CGColor;
+        _inputTextView.layer.borderWidth = 0.65f;
+        _inputTextView.layer.cornerRadius = 4.0f;
+        _previousTextViewContentHeight = [self _getTextViewContentH:_inputTextView];
+    }
+    return _inputTextView;
+}
+
+#pragma mark - inputView相关私有方法
+- (CGFloat)_getTextViewContentH:(UITextView *)textView {
+    return ceilf([textView sizeThatFits:textView.frame.size].height);
 }
 
 @end

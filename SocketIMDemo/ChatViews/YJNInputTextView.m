@@ -76,10 +76,7 @@
     [super drawRect:rect];
     
     if([self.text length] == 0 && self.placeHolder) {
-        CGRect placeHolderRect = CGRectMake(10.0f,
-                                            7.0f,
-                                            rect.size.width,
-                                            rect.size.height);
+        CGRect placeHolderRect = CGRectMake(10.0f,7.0f,rect.size.width,rect.size.height);
         
         UIColor *placeHolderColor = [UIColor lightGrayColor];
         
@@ -94,6 +91,7 @@
                                         NSParagraphStyleAttributeName : paragraphStyle }];
     }
 }
+
 -(void)setText:(NSString *)text {
     [super setText:text];
     [self setNeedsDisplay];
