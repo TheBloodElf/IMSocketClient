@@ -13,4 +13,6 @@
 @property (nonatomic, assign) CGFloat horizontalPadding UI_APPEARANCE_SELECTOR;
 @property (nonatomic, assign) CGFloat inputViewMinHeight UI_APPEARANCE_SELECTOR;
 @property (nonatomic, assign) CGFloat inputViewMaxHeight UI_APPEARANCE_SELECTOR;
+
++ (CGFloat)defaultHeight;
 @end
