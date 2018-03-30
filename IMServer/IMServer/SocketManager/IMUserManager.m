@@ -98,9 +98,36 @@ static IMUserManager *IM_USER_MANAGER_INSTANCE;
     }
     return resultArr;
 }
+
 - (void)addChatMessageChangeListener:(modelChangeHandler)changeHandler {
     //监听数据库中IMChatMesssage表变化，实时通知外部
     RLMNotificationToken *notificationToken = [[IMChatMesssage allObjectsInRealm:_mainThreadRLMRealm] addNotificationBlock:^(RLMResults * _Nullable results, RLMCollectionChange * _Nullable change, NSError * _Nullable error) {
+        changeHandler();
+    }];
+    [_allNotificationTokenArr addObject:notificationToken];
+}
+
+- (void)updateClientLog:(IMClientLog*)clientLog {
+    RLMRealm *rlmRealm = [self currThreadRealmInstance];
+    [rlmRealm beginWriteTransaction];
+    [IMClientLog createOrUpdateInRealm:rlmRealm withValue:clientLog];
+    [rlmRealm commitWriteTransaction];
+}
+
+- (NSMutableArray<IMClientLog*>*)allClientLogs {
+    NSMutableArray<IMClientLog*> *resultArr = [@[] mutableCopy];
+    RLMRealm *rlmRealm = [self currThreadRealmInstance];
+    RLMResults *results = [[IMClientLog objectsInRealm:rlmRealm withPredicate:nil] sortedResultsUsingKeyPath:@"id" ascending:NO];
+    //依次填充所有的用户信息
+    for (int index = 0; index < results.count; index ++) {
+        //使用deepCopy拷贝一份数据
+        [resultArr addObject:[results[index] deepCopy]];
+    }
+    return resultArr;
+}
+
+- (void)addClientLogChangeListener:(modelChangeHandler)changeHandler {
+    RLMNotificationToken *notificationToken = [[IMClientLog allObjectsInRealm:_mainThreadRLMRealm] addNotificationBlock:^(RLMResults * _Nullable results, RLMCollectionChange * _Nullable change, NSError * _Nullable error) {
         changeHandler();
     }];
     [_allNotificationTokenArr addObject:notificationToken];

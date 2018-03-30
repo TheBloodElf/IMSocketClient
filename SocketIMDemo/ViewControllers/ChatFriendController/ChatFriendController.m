@@ -30,7 +30,6 @@
 
 - (instancetype)init {
     if(self = [super init]) {
-        self.navigationItem.title = @"好友";
         _userManager = [UserManager manager];
     }
     return self;
@@ -40,6 +39,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"好友";
     self.view.backgroundColor = [UIColor whiteColor];
     //创建视图部分
     ChatFriendView *chatFriendView = [[ChatFriendView alloc] initWithFrame:CGRectMake(0, 0, MAIN_SCREEN_WIDTH, MAIN_SCREEN_HEIGHT - 64)];

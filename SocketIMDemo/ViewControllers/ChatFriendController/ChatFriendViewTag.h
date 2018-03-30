@@ -12,5 +12,4 @@
 /**表格视图*/
 static NSUInteger FRIEND_TABLEVIEW_TAG = 3000;
 
-
 #endif /* ChatFriendViewTag_h */

@@ -18,7 +18,7 @@
 
 - (instancetype)init {
     if(self = [super init]) {
-        self.navigationItem.title = @"会话";
+        
     }
     return self;
 }
@@ -27,6 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"会话";
     self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
 }

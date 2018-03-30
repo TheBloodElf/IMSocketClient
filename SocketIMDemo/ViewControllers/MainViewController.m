@@ -52,7 +52,7 @@
 }
 - (UIViewController*)mineController {
     UINavigationController *viewController = [[UINavigationController alloc] initWithRootViewController:[ChatMineController new]];
-    viewController.tabBarItem.title = @"我的";
+    viewController.tabBarItem.title = @"日志";
     viewController.navigationBar.translucent = NO;
     return viewController;
 }

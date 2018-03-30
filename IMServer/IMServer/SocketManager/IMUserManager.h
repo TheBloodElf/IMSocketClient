@@ -10,6 +10,7 @@
 
 #import "IMChater.h"
 #import "IMChatMesssage.h"
+#import "IMClientLog.h"
 
 /**
  数据库中模型改变的回调通知
@@ -60,5 +61,26 @@ typedef void(^modelChangeHandler)(void);
  @param changeHandler 回调通知
  */
 - (void)addChatMessageChangeListener:(modelChangeHandler)changeHandler;
+
+/**
+ 创建或更新日志消息
+ 
+ @param clientLog 日志内容
+ */
+- (void)updateClientLog:(IMClientLog*)clientLog;
+
+/**
+ 获取所有的日志
+
+ @return 日志
+ */
+- (NSMutableArray<IMClientLog*>*)allClientLogs;
+
+/**
+ 创建日志的数据库观察者
+ 
+ @param changeHandler 回调通知
+ */
+- (void)addClientLogChangeListener:(modelChangeHandler)changeHandler;
 
 @end

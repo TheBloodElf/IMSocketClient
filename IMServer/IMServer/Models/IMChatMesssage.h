@@ -24,7 +24,8 @@
 @interface IMChatMesssage : RLMObject
 
 #pragma mark -- 必需属性
-/**主键，取时间戳毫秒*/
+/**主键，取时间戳毫秒，和服务器IMMsgContent的msg_id对应
+ 用作Timeline逻辑模型中的顺序ID*/
 @property (nonatomic, assign) int64_t id;
 /**消息拥有者id，和a的所有聊天记录则获取数据库中ownerImid=a.imid即可*/
 @property (nonatomic, assign) int64_t owner_imid;

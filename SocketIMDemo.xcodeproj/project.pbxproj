@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042D9BBD206E6B5000A3CBFE /* ChatMineTableViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 042D9BBC206E6B5000A3CBFE /* ChatMineTableViewManager.m */; };
+		042D9BC1206E73C000A3CBFE /* ChatLogTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 042D9BBF206E73C000A3CBFE /* ChatLogTableCell.m */; };
+		042D9BC2206E73C000A3CBFE /* ChatLogTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042D9BC0206E73C000A3CBFE /* ChatLogTableCell.xib */; };
 		04729887205AA5BC00930A83 /* ChatFriendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0472982A205AA5BB00930A83 /* ChatFriendController.m */; };
 		04729888205AA5BC00930A83 /* ChatListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0472982D205AA5BB00930A83 /* ChatListController.m */; };
 		04729889205AA5BC00930A83 /* ChatMineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04729830205AA5BB00930A83 /* ChatMineController.m */; };
@@ -45,6 +48,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		042D9BBB206E6B5000A3CBFE /* ChatMineTableViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMineTableViewManager.h; sourceTree = "<group>"; };
+		042D9BBC206E6B5000A3CBFE /* ChatMineTableViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatMineTableViewManager.m; sourceTree = "<group>"; };
+		042D9BBE206E73C000A3CBFE /* ChatLogTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatLogTableCell.h; sourceTree = "<group>"; };
+		042D9BBF206E73C000A3CBFE /* ChatLogTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatLogTableCell.m; sourceTree = "<group>"; };
+		042D9BC0206E73C000A3CBFE /* ChatLogTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatLogTableCell.xib; sourceTree = "<group>"; };
 		04729829205AA5BB00930A83 /* ChatFriendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatFriendController.h; sourceTree = "<group>"; };
 		0472982A205AA5BB00930A83 /* ChatFriendController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatFriendController.m; sourceTree = "<group>"; };
 		0472982C205AA5BB00930A83 /* ChatListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatListController.h; sourceTree = "<group>"; };
@@ -160,11 +168,11 @@
 		04729827205AA5BB00930A83 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				04729837205AA5BC00930A83 /* MainViewController.h */,
+				04729838205AA5BC00930A83 /* MainViewController.m */,
 				04729828205AA5BB00930A83 /* ChatFriendController */,
 				0472982B205AA5BB00930A83 /* ChatListController */,
 				0472982E205AA5BB00930A83 /* ChatMineController */,
-				04729837205AA5BC00930A83 /* MainViewController.h */,
-				04729838205AA5BC00930A83 /* MainViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -202,8 +210,13 @@
 				04D48557205CC47B00140C73 /* ChatMineViewTag.h */,
 				04D48554205CC45600140C73 /* ChatMineView.h */,
 				04D48555205CC45600140C73 /* ChatMineView.m */,
+				042D9BBB206E6B5000A3CBFE /* ChatMineTableViewManager.h */,
+				042D9BBC206E6B5000A3CBFE /* ChatMineTableViewManager.m */,
 				0472982F205AA5BB00930A83 /* ChatMineController.h */,
 				04729830205AA5BB00930A83 /* ChatMineController.m */,
+				042D9BBE206E73C000A3CBFE /* ChatLogTableCell.h */,
+				042D9BBF206E73C000A3CBFE /* ChatLogTableCell.m */,
+				042D9BC0206E73C000A3CBFE /* ChatLogTableCell.xib */,
 			);
 			path = ChatMineController;
 			sourceTree = "<group>";
@@ -481,6 +494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0485694D2061F939007C4C53 /* README.md in Resources */,
+				042D9BC2206E73C000A3CBFE /* ChatLogTableCell.xib in Resources */,
 				04FC7AA72065F76F0085D9F2 /* ChatFriendTableCell.xib in Resources */,
 				047C439E202D7D0F00BB3400 /* LaunchScreen.storyboard in Resources */,
 				047C439B202D7D0F00BB3400 /* Assets.xcassets in Resources */,
@@ -550,10 +564,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				042D9BBD206E6B5000A3CBFE /* ChatMineTableViewManager.m in Sources */,
 				04729887205AA5BC00930A83 /* ChatFriendController.m in Sources */,
 				04729888205AA5BC00930A83 /* ChatListController.m in Sources */,
 				04D48556205CC45600140C73 /* ChatMineView.m in Sources */,
 				04729889205AA5BC00930A83 /* ChatMineController.m in Sources */,
+				042D9BC1206E73C000A3CBFE /* ChatLogTableCell.m in Sources */,
 				047298A1205AA5BC00930A83 /* main.m in Sources */,
 				04FC7AB0206650DF0085D9F2 /* PrivateChatController.m in Sources */,
 				0472988D205AA5BC00930A83 /* MainViewController.m in Sources */,

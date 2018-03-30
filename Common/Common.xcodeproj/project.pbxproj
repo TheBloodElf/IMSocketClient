@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042D9BC5206E7C6A00A3CBFE /* NSDate+Format.m in Sources */ = {isa = PBXBuildFile; fileRef = 042D9BC3206E7C6800A3CBFE /* NSDate+Format.m */; };
 		04D430A12063A9FD00B9D5D8 /* CMDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D430892063A9FB00B9D5D8 /* CMDeviceInfo.m */; };
 		04D430A22063A9FD00B9D5D8 /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D4308C2063A9FB00B9D5D8 /* NSString+Category.m */; };
 		04D430A32063A9FD00B9D5D8 /* UIColor+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D4308E2063A9FB00B9D5D8 /* UIColor+FlatUI.m */; };
@@ -33,6 +34,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		042D9BC3206E7C6800A3CBFE /* NSDate+Format.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Format.m"; sourceTree = "<group>"; };
+		042D9BC4206E7C6900A3CBFE /* NSDate+Format.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Format.h"; sourceTree = "<group>"; };
 		04D4307B2063A9E200B9D5D8 /* libCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D430882063A9FB00B9D5D8 /* CMDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMDeviceInfo.h; sourceTree = "<group>"; };
 		04D430892063A9FB00B9D5D8 /* CMDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMDeviceInfo.m; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 		04D4308A2063A9FB00B9D5D8 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				042D9BC4206E7C6900A3CBFE /* NSDate+Format.h */,
+				042D9BC3206E7C6800A3CBFE /* NSDate+Format.m */,
 				04D4308B2063A9FB00B9D5D8 /* NSString+Category.h */,
 				04D4308C2063A9FB00B9D5D8 /* NSString+Category.m */,
 				04D4308D2063A9FB00B9D5D8 /* UIColor+FlatUI.h */,
@@ -270,6 +275,7 @@
 				04D430A82063A9FD00B9D5D8 /* MCJSONValueTransformer.m in Sources */,
 				04D430A32063A9FD00B9D5D8 /* UIColor+FlatUI.m in Sources */,
 				04D430AA2063A9FD00B9D5D8 /* RLMObject+JSON.m in Sources */,
+				042D9BC5206E7C6A00A3CBFE /* NSDate+Format.m in Sources */,
 				04D430A42063A9FD00B9D5D8 /* UIImage+Category.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

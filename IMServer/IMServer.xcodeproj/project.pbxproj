@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042D9BBA206E69AB00A3CBFE /* IMClientLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 042D9BB9206E69AB00A3CBFE /* IMClientLog.m */; };
 		04894FED2063363400BC0ECE /* IMServer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04894FEA2063363400BC0ECE /* IMServer.h */; };
 		04B44B7F206A0BDE00F68C5C /* IMSocketMessageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B44B7E206A0BDE00F68C5C /* IMSocketMessageHandler.m */; };
 		04FC7A842065E81C0085D9F2 /* IMProtocolClientReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FC7A832065E81C0085D9F2 /* IMProtocolClientReq.m */; };
@@ -43,6 +44,8 @@
 
 /* Begin PBXFileReference section */
 		0126B2BFEB340208A737674C /* Pods-IMServer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMServer.release.xcconfig"; path = "../Pods/Target Support Files/Pods-IMServer/Pods-IMServer.release.xcconfig"; sourceTree = "<group>"; };
+		042D9BB8206E69AB00A3CBFE /* IMClientLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMClientLog.h; sourceTree = "<group>"; };
+		042D9BB9206E69AB00A3CBFE /* IMClientLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IMClientLog.m; sourceTree = "<group>"; };
 		04894FE72063363400BC0ECE /* libIMServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIMServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		04894FEA2063363400BC0ECE /* IMServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMServer.h; sourceTree = "<group>"; };
 		0489502120633AE700BC0ECE /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -156,6 +159,8 @@
 				04FC7ABC2068B92A0085D9F2 /* IMChatMesssage.m */,
 				04FC7ABE2068C57B0085D9F2 /* IMChatMessageContent.h */,
 				04FC7ABF2068C57B0085D9F2 /* IMChatMessageContent.m */,
+				042D9BB8206E69AB00A3CBFE /* IMClientLog.h */,
+				042D9BB9206E69AB00A3CBFE /* IMClientLog.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -347,6 +352,7 @@
 				04FF1D96206491B900E2702C /* IMSocketModules.m in Sources */,
 				04FF1D94206491B900E2702C /* IMSocketIO.m in Sources */,
 				04FF1D97206491B900E2702C /* IMSocketReqContext.m in Sources */,
+				042D9BBA206E69AB00A3CBFE /* IMClientLog.m in Sources */,
 				04FF1D92206491B900E2702C /* IMSocketControl.m in Sources */,
 				04FF1D93206491B900E2702C /* IMSocketHeader.m in Sources */,
 			);
