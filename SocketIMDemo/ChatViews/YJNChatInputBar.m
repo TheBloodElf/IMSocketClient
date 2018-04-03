@@ -39,6 +39,18 @@
     
 }
 
+#pragma mark - UITextViewDelegate
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    if ([text isEqualToString:@"\n"]) {
+        if (_delegate && [_delegate respondsToSelector:@selector(yjn_sendMsgButtonTouched:)]) {
+            [_delegate yjn_sendMsgButtonTouched:textView.text];
+            [textView resignFirstResponder];
+            textView.text = @"";
+        }
+        return NO;
+    }
+    return YES;
+}
 -(void)p_initNotification {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(chatKeyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
 }
@@ -51,7 +63,7 @@
     [styleChangeButton setImage:[UIImage imageNamed:@"XmsgUIResource.bundle/chatBar_keyboard"] forState:UIControlStateSelected];
     [styleChangeButton addTarget:self action:@selector(styleButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     
-    CGFloat itemHeight = self.inputBarView.frame.size.height - self.verticalPadding * 2;
+//    CGFloat itemHeight = self.inputBarView.frame.size.height - self.verticalPadding * 2;
 }
 
 -(void)styleButtonAction:(UIButton *)sender {

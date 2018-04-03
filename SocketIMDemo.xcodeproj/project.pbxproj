@@ -137,6 +137,7 @@
 		60E31DF6636A636A70262FDC /* libPods-SocketIMDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SocketIMDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC4D0465206A8890009760DC /* YJNChatInputBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJNChatInputBar.h; sourceTree = "<group>"; };
 		DC4D0466206A8890009760DC /* YJNChatInputBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJNChatInputBar.m; sourceTree = "<group>"; };
+		DC54E27E207343F900FC8937 /* YJNChatBarProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJNChatBarProtocol.h; sourceTree = "<group>"; };
 		DCC2DDCB206A99A2004A398C /* YJNInputTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJNInputTextView.h; sourceTree = "<group>"; };
 		DCC2DDCC206A99A2004A398C /* YJNInputTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJNInputTextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -405,12 +406,21 @@
 		DC4D0464206A8843009760DC /* ChatViews */ = {
 			isa = PBXGroup;
 			children = (
+				DC54E27D207343D700FC8937 /* Protocol */,
 				DC4D0465206A8890009760DC /* YJNChatInputBar.h */,
 				DC4D0466206A8890009760DC /* YJNChatInputBar.m */,
 				DCC2DDCB206A99A2004A398C /* YJNInputTextView.h */,
 				DCC2DDCC206A99A2004A398C /* YJNInputTextView.m */,
 			);
 			path = ChatViews;
+			sourceTree = "<group>";
+		};
+		DC54E27D207343D700FC8937 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				DC54E27E207343F900FC8937 /* YJNChatBarProtocol.h */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
