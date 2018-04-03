@@ -8,10 +8,6 @@
 
 #import "ChatMineController.h"
 
-//Managers
-#import "UserManager.h"
-#import "UserIMSocket.h"
-
 //Views
 #import "ChatMineView.h"
 
@@ -19,7 +15,7 @@
     /**用户数据管理器*/
     UserManager *_userManager;
     /**聊天模块*/
-    UserIMSocket *_userIMSocket;
+    IMUserSocket *_iMUserSocket;
     
 }
 
@@ -33,7 +29,7 @@
     if(self = [super init]) {
         self.navigationItem.title = @"我";
         _userManager = [UserManager manager];
-        _userIMSocket = [UserIMSocket socket];
+        _iMUserSocket = [IMUserSocket socket];
     }
     return self;
 }
@@ -44,7 +40,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     //创建视图部分
-    ChatMineView *chatMineView = [[ChatMineView alloc] initWithFrame:CGRectMake(0, 0, MAIN_SCREEN_WIDTH, MAIN_SCREEN_HEIGHT)];
+    ChatMineView *chatMineView = [[ChatMineView alloc] initWithFrame:CGRectMake(0, 0, MAIN_SCREEN_WIDTH, MAIN_SCREEN_HEIGHT - 64)];
     [self.view addSubview:chatMineView];
     //用当前登录用户信息配置界面
     [self configViewsUseUserInfo];
@@ -82,7 +78,7 @@
 
 - (void)navigationRightItemClick:(UIBarButtonItem*)item {
     //退出聊天服务器
-    [_userIMSocket disconnect];
+    [_iMUserSocket disconnect];
 }
 
 @end

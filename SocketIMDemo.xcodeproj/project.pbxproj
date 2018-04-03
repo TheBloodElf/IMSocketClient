@@ -11,34 +11,9 @@
 		04729888205AA5BC00930A83 /* ChatListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0472982D205AA5BB00930A83 /* ChatListController.m */; };
 		04729889205AA5BC00930A83 /* ChatMineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04729830205AA5BB00930A83 /* ChatMineController.m */; };
 		0472988D205AA5BC00930A83 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04729838205AA5BC00930A83 /* MainViewController.m */; };
-		04729891205AA5BC00930A83 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04729845205AA5BC00930A83 /* UserManager.m */; };
-		04729892205AA5BC00930A83 /* IMSocketControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0472984A205AA5BC00930A83 /* IMSocketControl.m */; };
-		04729893205AA5BC00930A83 /* IMSocketIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 0472984C205AA5BC00930A83 /* IMSocketIO.m */; };
-		04729894205AA5BC00930A83 /* IMSocketModules.m in Sources */ = {isa = PBXBuildFile; fileRef = 0472984E205AA5BC00930A83 /* IMSocketModules.m */; };
-		04729895205AA5BC00930A83 /* UserIMSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 04729850205AA5BC00930A83 /* UserIMSocket.m */; };
-		04729896205AA5BC00930A83 /* Chater.m in Sources */ = {isa = PBXBuildFile; fileRef = 04729853205AA5BC00930A83 /* Chater.m */; };
-		04729899205AA5BC00930A83 /* IMSocketHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0472985B205AA5BC00930A83 /* IMSocketHeader.m */; };
-		0472989A205AA5BC00930A83 /* IMSocketListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 0472985D205AA5BC00930A83 /* IMSocketListener.m */; };
-		0472989C205AA5BC00930A83 /* IMSocketReqContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 04729862205AA5BC00930A83 /* IMSocketReqContext.m */; };
-		0472989D205AA5BC00930A83 /* IMSocketRespAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 04729864205AA5BC00930A83 /* IMSocketRespAgent.m */; };
-		0472989E205AA5BC00930A83 /* IMSocketUserHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 04729866205AA5BC00930A83 /* IMSocketUserHandler.m */; };
-		0472989F205AA5BC00930A83 /* ProtocolClientReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 04729868205AA5BC00930A83 /* ProtocolClientReq.m */; };
-		047298A0205AA5BC00930A83 /* ProtocolServerResp.m in Sources */ = {isa = PBXBuildFile; fileRef = 0472986A205AA5BC00930A83 /* ProtocolServerResp.m */; };
 		047298A1205AA5BC00930A83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0472986C205AA5BC00930A83 /* main.m */; };
-		047298A2205AA5BC00930A83 /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 0472986E205AA5BC00930A83 /* readme.md */; };
-		047298A3205AA5BC00930A83 /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 04729872205AA5BC00930A83 /* NSString+Category.m */; };
-		047298A4205AA5BC00930A83 /* UIColor+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 04729874205AA5BC00930A83 /* UIColor+FlatUI.m */; };
-		047298A5205AA5BC00930A83 /* UIImage+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 04729876205AA5BC00930A83 /* UIImage+Category.m */; };
-		047298A6205AA5BC00930A83 /* MCJSONDateTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0472987B205AA5BC00930A83 /* MCJSONDateTransformer.m */; };
-		047298A7205AA5BC00930A83 /* MCJSONNonNullStringTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0472987D205AA5BC00930A83 /* MCJSONNonNullStringTransformer.m */; };
-		047298A8205AA5BC00930A83 /* MCJSONPrimaryKeyTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0472987F205AA5BC00930A83 /* MCJSONPrimaryKeyTransformer.m */; };
-		047298A9205AA5BC00930A83 /* MCJSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 04729881205AA5BC00930A83 /* MCJSONValueTransformer.m */; };
-		047298AA205AA5BC00930A83 /* RLMObject+Copying.m in Sources */ = {isa = PBXBuildFile; fileRef = 04729883205AA5BC00930A83 /* RLMObject+Copying.m */; };
-		047298AB205AA5BC00930A83 /* RLMObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 04729885205AA5BC00930A83 /* RLMObject+JSON.m */; };
 		047298B2205AA5C200930A83 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 047298AE205AA5C200930A83 /* AppDelegate.m */; };
 		047298B3205AA5C200930A83 /* AppCustoms.m in Sources */ = {isa = PBXBuildFile; fileRef = 047298B1205AA5C200930A83 /* AppCustoms.m */; };
-		047298B9205AACD200930A83 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 047298B8205AACD200930A83 /* User.m */; };
-		047298BF205AAF9B00930A83 /* CMDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 047298BE205AAF9B00930A83 /* CMDeviceInfo.m */; };
 		047C439B202D7D0F00BB3400 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047C439A202D7D0F00BB3400 /* Assets.xcassets */; };
 		047C439E202D7D0F00BB3400 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 047C439C202D7D0F00BB3400 /* LaunchScreen.storyboard */; };
 		048569332060F9E3007C4C53 /* iOS代码规范文档.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 048569322060F9E3007C4C53 /* iOS代码规范文档.pdf */; };
@@ -47,9 +22,18 @@
 		048569492061E80F007C4C53 /* CMDeviceInfoTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 048569482061E80F007C4C53 /* CMDeviceInfoTest.m */; };
 		0485694B2061EB16007C4C53 /* UIColorFlatUITest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0485694A2061EB16007C4C53 /* UIColorFlatUITest.m */; };
 		0485694D2061F939007C4C53 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0485694C2061F938007C4C53 /* README.md */; };
-		04C79023205FA43800D976A3 /* HostResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C79021205FA43800D976A3 /* HostResolver.m */; };
 		04D48556205CC45600140C73 /* ChatMineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D48555205CC45600140C73 /* ChatMineView.m */; };
-		BB3DEFB7F44A3728ED0FDEF5 /* libPods-SocketIMDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60E31DF6636A636A70262FDC /* libPods-SocketIMDemo.a */; };
+		04FC7A9A2065EC3F0085D9F2 /* ChatFriendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FC7A992065EC3F0085D9F2 /* ChatFriendView.m */; };
+		04FC7AA62065F76F0085D9F2 /* ChatFriendTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FC7AA42065F76F0085D9F2 /* ChatFriendTableCell.m */; };
+		04FC7AA72065F76F0085D9F2 /* ChatFriendTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04FC7AA52065F76F0085D9F2 /* ChatFriendTableCell.xib */; };
+		04FC7AAA2065FCBF0085D9F2 /* ChatFriendTableViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FC7AA92065FCBF0085D9F2 /* ChatFriendTableViewManager.m */; };
+		04FC7AB0206650DF0085D9F2 /* PrivateChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FC7AAF206650DF0085D9F2 /* PrivateChatController.m */; };
+		04FF1DA32064953B00E2702C /* libCommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04FF1DA42064953B00E2702C /* libCommon.a */; };
+		04FF1DA52064953E00E2702C /* libIMServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04FF1DA62064953E00E2702C /* libIMServer.a */; };
+		04FF1DA72064954300E2702C /* libModelManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04FF1DA82064954300E2702C /* libModelManager.a */; };
+		1D1B3E249759FF8319BD38EF /* libPods-SocketIMDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04AC7C582063972E000DB907 /* libPods-SocketIMDemo.a */; };
+		DC4D0467206A8890009760DC /* YJNChatInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4D0466206A8890009760DC /* YJNChatInputBar.m */; };
+		DCC2DDCD206A99A2004A398C /* YJNInputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC2DDCC206A99A2004A398C /* YJNInputTextView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,66 +55,12 @@
 		04729830205AA5BB00930A83 /* ChatMineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMineController.m; sourceTree = "<group>"; };
 		04729837205AA5BC00930A83 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		04729838205AA5BC00930A83 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		04729844205AA5BC00930A83 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
-		04729845205AA5BC00930A83 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
-		04729849205AA5BC00930A83 /* IMSocketControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMSocketControl.h; sourceTree = "<group>"; };
-		0472984A205AA5BC00930A83 /* IMSocketControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMSocketControl.m; sourceTree = "<group>"; };
-		0472984B205AA5BC00930A83 /* IMSocketIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMSocketIO.h; sourceTree = "<group>"; };
-		0472984C205AA5BC00930A83 /* IMSocketIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMSocketIO.m; sourceTree = "<group>"; };
-		0472984D205AA5BC00930A83 /* IMSocketModules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMSocketModules.h; sourceTree = "<group>"; };
-		0472984E205AA5BC00930A83 /* IMSocketModules.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMSocketModules.m; sourceTree = "<group>"; };
-		0472984F205AA5BC00930A83 /* UserIMSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserIMSocket.h; sourceTree = "<group>"; };
-		04729850205AA5BC00930A83 /* UserIMSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserIMSocket.m; sourceTree = "<group>"; };
-		04729852205AA5BC00930A83 /* Chater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chater.h; sourceTree = "<group>"; };
-		04729853205AA5BC00930A83 /* Chater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chater.m; sourceTree = "<group>"; };
-		04729858205AA5BC00930A83 /* IMSocketCallBackBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMSocketCallBackBlock.h; sourceTree = "<group>"; };
-		04729859205AA5BC00930A83 /* IMSocketDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMSocketDefines.h; sourceTree = "<group>"; };
-		0472985A205AA5BC00930A83 /* IMSocketHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMSocketHeader.h; sourceTree = "<group>"; };
-		0472985B205AA5BC00930A83 /* IMSocketHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMSocketHeader.m; sourceTree = "<group>"; };
-		0472985C205AA5BC00930A83 /* IMSocketListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMSocketListener.h; sourceTree = "<group>"; };
-		0472985D205AA5BC00930A83 /* IMSocketListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMSocketListener.m; sourceTree = "<group>"; };
-		04729860205AA5BC00930A83 /* IMSocketReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMSocketReceiver.h; sourceTree = "<group>"; };
-		04729861205AA5BC00930A83 /* IMSocketReqContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMSocketReqContext.h; sourceTree = "<group>"; };
-		04729862205AA5BC00930A83 /* IMSocketReqContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMSocketReqContext.m; sourceTree = "<group>"; };
-		04729863205AA5BC00930A83 /* IMSocketRespAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMSocketRespAgent.h; sourceTree = "<group>"; };
-		04729864205AA5BC00930A83 /* IMSocketRespAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMSocketRespAgent.m; sourceTree = "<group>"; };
-		04729865205AA5BC00930A83 /* IMSocketUserHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMSocketUserHandler.h; sourceTree = "<group>"; };
-		04729866205AA5BC00930A83 /* IMSocketUserHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMSocketUserHandler.m; sourceTree = "<group>"; };
-		04729867205AA5BC00930A83 /* ProtocolClientReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolClientReq.h; sourceTree = "<group>"; };
-		04729868205AA5BC00930A83 /* ProtocolClientReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProtocolClientReq.m; sourceTree = "<group>"; };
-		04729869205AA5BC00930A83 /* ProtocolServerResp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolServerResp.h; sourceTree = "<group>"; };
-		0472986A205AA5BC00930A83 /* ProtocolServerResp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProtocolServerResp.m; sourceTree = "<group>"; };
 		0472986C205AA5BC00930A83 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0472986D205AA5BC00930A83 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		0472986E205AA5BC00930A83 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
-		04729871205AA5BC00930A83 /* NSString+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Category.h"; sourceTree = "<group>"; };
-		04729872205AA5BC00930A83 /* NSString+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Category.m"; sourceTree = "<group>"; };
-		04729873205AA5BC00930A83 /* UIColor+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FlatUI.h"; sourceTree = "<group>"; };
-		04729874205AA5BC00930A83 /* UIColor+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FlatUI.m"; sourceTree = "<group>"; };
-		04729875205AA5BC00930A83 /* UIImage+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Category.h"; sourceTree = "<group>"; };
-		04729876205AA5BC00930A83 /* UIImage+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Category.m"; sourceTree = "<group>"; };
-		0472987A205AA5BC00930A83 /* MCJSONDateTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCJSONDateTransformer.h; sourceTree = "<group>"; };
-		0472987B205AA5BC00930A83 /* MCJSONDateTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCJSONDateTransformer.m; sourceTree = "<group>"; };
-		0472987C205AA5BC00930A83 /* MCJSONNonNullStringTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCJSONNonNullStringTransformer.h; sourceTree = "<group>"; };
-		0472987D205AA5BC00930A83 /* MCJSONNonNullStringTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCJSONNonNullStringTransformer.m; sourceTree = "<group>"; };
-		0472987E205AA5BC00930A83 /* MCJSONPrimaryKeyTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCJSONPrimaryKeyTransformer.h; sourceTree = "<group>"; };
-		0472987F205AA5BC00930A83 /* MCJSONPrimaryKeyTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCJSONPrimaryKeyTransformer.m; sourceTree = "<group>"; };
-		04729880205AA5BC00930A83 /* MCJSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCJSONValueTransformer.h; sourceTree = "<group>"; };
-		04729881205AA5BC00930A83 /* MCJSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCJSONValueTransformer.m; sourceTree = "<group>"; };
-		04729882205AA5BC00930A83 /* RLMObject+Copying.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RLMObject+Copying.h"; sourceTree = "<group>"; };
-		04729883205AA5BC00930A83 /* RLMObject+Copying.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RLMObject+Copying.m"; sourceTree = "<group>"; };
-		04729884205AA5BC00930A83 /* RLMObject+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RLMObject+JSON.h"; sourceTree = "<group>"; };
-		04729885205AA5BC00930A83 /* RLMObject+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RLMObject+JSON.m"; sourceTree = "<group>"; };
-		04729886205AA5BC00930A83 /* Utikles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utikles.h; sourceTree = "<group>"; };
 		047298AD205AA5C200930A83 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		047298AE205AA5C200930A83 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		047298B0205AA5C200930A83 /* AppCustoms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCustoms.h; sourceTree = "<group>"; };
 		047298B1205AA5C200930A83 /* AppCustoms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppCustoms.m; sourceTree = "<group>"; };
-		047298B6205AAC1D00930A83 /* InterfaceService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceService.h; sourceTree = "<group>"; };
-		047298B7205AACD200930A83 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		047298B8205AACD200930A83 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		047298BD205AAF9B00930A83 /* CMDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMDeviceInfo.h; sourceTree = "<group>"; };
-		047298BE205AAF9B00930A83 /* CMDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMDeviceInfo.m; sourceTree = "<group>"; };
 		047C438E202D7D0F00BB3400 /* SocketIMDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocketIMDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		047C439A202D7D0F00BB3400 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		047C439D202D7D0F00BB3400 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -143,14 +73,73 @@
 		048569482061E80F007C4C53 /* CMDeviceInfoTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMDeviceInfoTest.m; sourceTree = "<group>"; };
 		0485694A2061EB16007C4C53 /* UIColorFlatUITest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIColorFlatUITest.m; sourceTree = "<group>"; };
 		0485694C2061F938007C4C53 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		04C79021205FA43800D976A3 /* HostResolver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostResolver.m; sourceTree = "<group>"; };
-		04C79022205FA43800D976A3 /* HostResolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostResolver.h; sourceTree = "<group>"; };
+		04894FDC206332AA00BC0ECE /* libHttpServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libHttpServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04894FF42063364F00BC0ECE /* libIMServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libIMServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0489508B2063425200BC0ECE /* libModelManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libModelManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0489508D2063425B00BC0ECE /* libUtikles.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libUtikles.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04895133206356A900BC0ECE /* libCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		048951B72063863200BC0ECE /* libCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		048951B92063863700BC0ECE /* libIMServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libIMServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		048951BB2063863E00BC0ECE /* libModelManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libModelManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		048951BD2063864400BC0ECE /* libHttpServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libHttpServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04AC7C48206394F5000DB907 /* libCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04AC7C4A206394F9000DB907 /* libHttpServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libHttpServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04AC7C4C206394FD000DB907 /* libIMServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libIMServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04AC7C4E20639501000DB907 /* libModelManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libModelManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04AC7C5020639568000DB907 /* libHttpServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libHttpServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04AC7C582063972E000DB907 /* libPods-SocketIMDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-SocketIMDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04AC7C61206397E8000DB907 /* libPods-IMServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-IMServer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04AC7C62206397E8000DB907 /* libPods-ModelManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-ModelManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04AC7C64206397EB000DB907 /* libPods-Common.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-Common.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04AC7C7520639D74000DB907 /* libCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04AC7C7620639D74000DB907 /* libIMServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libIMServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04AC7C7820639D7A000DB907 /* libModelManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libModelManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04AC7C7A20639DEA000DB907 /* libRealm.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRealm.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D430AE2063ACEB00B9D5D8 /* libCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D430B02063ACEE00B9D5D8 /* libModelManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libModelManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D430B22063ACF400B9D5D8 /* libIMServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libIMServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D430BB2063AFC000B9D5D8 /* libCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D430BC2063AFC000B9D5D8 /* libIMServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libIMServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D430BE2063AFC400B9D5D8 /* libModelManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libModelManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D430C72063B20F00B9D5D8 /* libCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D430C82063B20F00B9D5D8 /* libIMServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libIMServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D430CA2063B21200B9D5D8 /* libModelManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libModelManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D430CD2063B2A300B9D5D8 /* libCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D430CE2063B2A300B9D5D8 /* libIMServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libIMServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D430D22063B96F00B9D5D8 /* libCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D430D42063B99700B9D5D8 /* libModelManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libModelManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D430EB2063BBB400B9D5D8 /* libHttpServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libHttpServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D430ED2063BC2600B9D5D8 /* libHttpServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libHttpServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D430EF2063BD3800B9D5D8 /* libIMServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libIMServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D430F12063BD5800B9D5D8 /* libHttpServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libHttpServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D430F32063C35500B9D5D8 /* libModelManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libModelManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D48554205CC45600140C73 /* ChatMineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMineView.h; sourceTree = "<group>"; };
 		04D48555205CC45600140C73 /* ChatMineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatMineView.m; sourceTree = "<group>"; };
 		04D48557205CC47B00140C73 /* ChatMineViewTag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMineViewTag.h; sourceTree = "<group>"; };
+		04FC7A972065EC2C0085D9F2 /* ChatFriendViewTag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatFriendViewTag.h; sourceTree = "<group>"; };
+		04FC7A982065EC3F0085D9F2 /* ChatFriendView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatFriendView.h; sourceTree = "<group>"; };
+		04FC7A992065EC3F0085D9F2 /* ChatFriendView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatFriendView.m; sourceTree = "<group>"; };
+		04FC7AA32065F76F0085D9F2 /* ChatFriendTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatFriendTableCell.h; sourceTree = "<group>"; };
+		04FC7AA42065F76F0085D9F2 /* ChatFriendTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatFriendTableCell.m; sourceTree = "<group>"; };
+		04FC7AA52065F76F0085D9F2 /* ChatFriendTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatFriendTableCell.xib; sourceTree = "<group>"; };
+		04FC7AA82065FCBF0085D9F2 /* ChatFriendTableViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatFriendTableViewManager.h; sourceTree = "<group>"; };
+		04FC7AA92065FCBF0085D9F2 /* ChatFriendTableViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatFriendTableViewManager.m; sourceTree = "<group>"; };
+		04FC7AAE206650DF0085D9F2 /* PrivateChatController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivateChatController.h; sourceTree = "<group>"; };
+		04FC7AAF206650DF0085D9F2 /* PrivateChatController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrivateChatController.m; sourceTree = "<group>"; };
+		04FF1D702063C6ED00E2702C /* libCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04FF1D722063C6F100E2702C /* libIMServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libIMServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04FF1DA22064943F00E2702C /* libIMServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libIMServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04FF1DA42064953B00E2702C /* libCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04FF1DA62064953E00E2702C /* libIMServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libIMServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04FF1DA82064954300E2702C /* libModelManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libModelManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		158F2C10FF848294CACF75F3 /* Pods-SocketIMDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocketIMDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocketIMDemo/Pods-SocketIMDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		2409064FD3F8FEF9220BAB7E /* Pods-SocketIMDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocketIMDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocketIMDemo/Pods-SocketIMDemo.release.xcconfig"; sourceTree = "<group>"; };
 		60E31DF6636A636A70262FDC /* libPods-SocketIMDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SocketIMDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC4D0465206A8890009760DC /* YJNChatInputBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJNChatInputBar.h; sourceTree = "<group>"; };
+		DC4D0466206A8890009760DC /* YJNChatInputBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJNChatInputBar.m; sourceTree = "<group>"; };
+		DC54E27E207343F900FC8937 /* YJNChatBarProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJNChatBarProtocol.h; sourceTree = "<group>"; };
+		DCC2DDCB206A99A2004A398C /* YJNInputTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJNInputTextView.h; sourceTree = "<group>"; };
+		DCC2DDCC206A99A2004A398C /* YJNInputTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJNInputTextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +147,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB3DEFB7F44A3728ED0FDEF5 /* libPods-SocketIMDemo.a in Frameworks */,
+				04FF1DA72064954300E2702C /* libModelManager.a in Frameworks */,
+				04FF1DA52064953E00E2702C /* libIMServer.a in Frameworks */,
+				04FF1DA32064953B00E2702C /* libCommon.a in Frameworks */,
+				1D1B3E249759FF8319BD38EF /* libPods-SocketIMDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,8 +179,16 @@
 		04729828205AA5BB00930A83 /* ChatFriendController */ = {
 			isa = PBXGroup;
 			children = (
+				04FC7A972065EC2C0085D9F2 /* ChatFriendViewTag.h */,
+				04FC7A982065EC3F0085D9F2 /* ChatFriendView.h */,
+				04FC7A992065EC3F0085D9F2 /* ChatFriendView.m */,
+				04FC7AA82065FCBF0085D9F2 /* ChatFriendTableViewManager.h */,
+				04FC7AA92065FCBF0085D9F2 /* ChatFriendTableViewManager.m */,
 				04729829205AA5BB00930A83 /* ChatFriendController.h */,
 				0472982A205AA5BB00930A83 /* ChatFriendController.m */,
+				04FC7AA32065F76F0085D9F2 /* ChatFriendTableCell.h */,
+				04FC7AA42065F76F0085D9F2 /* ChatFriendTableCell.m */,
+				04FC7AA52065F76F0085D9F2 /* ChatFriendTableCell.xib */,
 			);
 			path = ChatFriendController;
 			sourceTree = "<group>";
@@ -196,6 +196,7 @@
 		0472982B205AA5BB00930A83 /* ChatListController */ = {
 			isa = PBXGroup;
 			children = (
+				04FC7AAC20664E7F0085D9F2 /* ChatViewController */,
 				0472982C205AA5BB00930A83 /* ChatListController.h */,
 				0472982D205AA5BB00930A83 /* ChatListController.m */,
 			);
@@ -214,160 +215,13 @@
 			path = ChatMineController;
 			sourceTree = "<group>";
 		};
-		04729839205AA5BC00930A83 /* ModelManager */ = {
-			isa = PBXGroup;
-			children = (
-				0472983A205AA5BC00930A83 /* Models */,
-				04729843205AA5BC00930A83 /* UserManager */,
-			);
-			path = ModelManager;
-			sourceTree = "<group>";
-		};
-		0472983A205AA5BC00930A83 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				047298B7205AACD200930A83 /* User.h */,
-				047298B8205AACD200930A83 /* User.m */,
-				04729852205AA5BC00930A83 /* Chater.h */,
-				04729853205AA5BC00930A83 /* Chater.m */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		04729843205AA5BC00930A83 /* UserManager */ = {
-			isa = PBXGroup;
-			children = (
-				04729844205AA5BC00930A83 /* UserManager.h */,
-				04729845205AA5BC00930A83 /* UserManager.m */,
-			);
-			path = UserManager;
-			sourceTree = "<group>";
-		};
-		04729846205AA5BC00930A83 /* InterfaceService */ = {
-			isa = PBXGroup;
-			children = (
-				047298B6205AAC1D00930A83 /* InterfaceService.h */,
-				04729847205AA5BC00930A83 /* ImService */,
-			);
-			path = InterfaceService;
-			sourceTree = "<group>";
-		};
-		04729847205AA5BC00930A83 /* ImService */ = {
-			isa = PBXGroup;
-			children = (
-				04729848205AA5BC00930A83 /* BusinessIMClass */,
-				04729851205AA5BC00930A83 /* ToolIMClass */,
-			);
-			path = ImService;
-			sourceTree = "<group>";
-		};
-		04729848205AA5BC00930A83 /* BusinessIMClass */ = {
-			isa = PBXGroup;
-			children = (
-				0472984F205AA5BC00930A83 /* UserIMSocket.h */,
-				04729850205AA5BC00930A83 /* UserIMSocket.m */,
-				0472984D205AA5BC00930A83 /* IMSocketModules.h */,
-				0472984E205AA5BC00930A83 /* IMSocketModules.m */,
-				04729849205AA5BC00930A83 /* IMSocketControl.h */,
-				0472984A205AA5BC00930A83 /* IMSocketControl.m */,
-				0472984B205AA5BC00930A83 /* IMSocketIO.h */,
-				0472984C205AA5BC00930A83 /* IMSocketIO.m */,
-			);
-			path = BusinessIMClass;
-			sourceTree = "<group>";
-		};
-		04729851205AA5BC00930A83 /* ToolIMClass */ = {
-			isa = PBXGroup;
-			children = (
-				04729858205AA5BC00930A83 /* IMSocketCallBackBlock.h */,
-				04729859205AA5BC00930A83 /* IMSocketDefines.h */,
-				0472985A205AA5BC00930A83 /* IMSocketHeader.h */,
-				0472985B205AA5BC00930A83 /* IMSocketHeader.m */,
-				0472985C205AA5BC00930A83 /* IMSocketListener.h */,
-				0472985D205AA5BC00930A83 /* IMSocketListener.m */,
-				04729860205AA5BC00930A83 /* IMSocketReceiver.h */,
-				04729861205AA5BC00930A83 /* IMSocketReqContext.h */,
-				04729862205AA5BC00930A83 /* IMSocketReqContext.m */,
-				04729863205AA5BC00930A83 /* IMSocketRespAgent.h */,
-				04729864205AA5BC00930A83 /* IMSocketRespAgent.m */,
-				04729865205AA5BC00930A83 /* IMSocketUserHandler.h */,
-				04729866205AA5BC00930A83 /* IMSocketUserHandler.m */,
-				04729867205AA5BC00930A83 /* ProtocolClientReq.h */,
-				04729868205AA5BC00930A83 /* ProtocolClientReq.m */,
-				04729869205AA5BC00930A83 /* ProtocolServerResp.h */,
-				0472986A205AA5BC00930A83 /* ProtocolServerResp.m */,
-			);
-			path = ToolIMClass;
-			sourceTree = "<group>";
-		};
 		0472986B205AA5BC00930A83 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				0472986C205AA5BC00930A83 /* main.m */,
 				0472986D205AA5BC00930A83 /* PrefixHeader.pch */,
-				0472986E205AA5BC00930A83 /* readme.md */,
 			);
 			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		0472986F205AA5BC00930A83 /* Utikles */ = {
-			isa = PBXGroup;
-			children = (
-				04729886205AA5BC00930A83 /* Utikles.h */,
-				04729870205AA5BC00930A83 /* Category */,
-				04729877205AA5BC00930A83 /* CMDeviceInfo */,
-				04729878205AA5BC00930A83 /* ThirdParty */,
-			);
-			path = Utikles;
-			sourceTree = "<group>";
-		};
-		04729870205AA5BC00930A83 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				04729871205AA5BC00930A83 /* NSString+Category.h */,
-				04729872205AA5BC00930A83 /* NSString+Category.m */,
-				04729873205AA5BC00930A83 /* UIColor+FlatUI.h */,
-				04729874205AA5BC00930A83 /* UIColor+FlatUI.m */,
-				04729875205AA5BC00930A83 /* UIImage+Category.h */,
-				04729876205AA5BC00930A83 /* UIImage+Category.m */,
-			);
-			path = Category;
-			sourceTree = "<group>";
-		};
-		04729877205AA5BC00930A83 /* CMDeviceInfo */ = {
-			isa = PBXGroup;
-			children = (
-				047298BD205AAF9B00930A83 /* CMDeviceInfo.h */,
-				047298BE205AAF9B00930A83 /* CMDeviceInfo.m */,
-			);
-			path = CMDeviceInfo;
-			sourceTree = "<group>";
-		};
-		04729878205AA5BC00930A83 /* ThirdParty */ = {
-			isa = PBXGroup;
-			children = (
-				04729879205AA5BC00930A83 /* Realm+JSON */,
-			);
-			path = ThirdParty;
-			sourceTree = "<group>";
-		};
-		04729879205AA5BC00930A83 /* Realm+JSON */ = {
-			isa = PBXGroup;
-			children = (
-				0472987A205AA5BC00930A83 /* MCJSONDateTransformer.h */,
-				0472987B205AA5BC00930A83 /* MCJSONDateTransformer.m */,
-				0472987C205AA5BC00930A83 /* MCJSONNonNullStringTransformer.h */,
-				0472987D205AA5BC00930A83 /* MCJSONNonNullStringTransformer.m */,
-				0472987E205AA5BC00930A83 /* MCJSONPrimaryKeyTransformer.h */,
-				0472987F205AA5BC00930A83 /* MCJSONPrimaryKeyTransformer.m */,
-				04729880205AA5BC00930A83 /* MCJSONValueTransformer.h */,
-				04729881205AA5BC00930A83 /* MCJSONValueTransformer.m */,
-				04729882205AA5BC00930A83 /* RLMObject+Copying.h */,
-				04729883205AA5BC00930A83 /* RLMObject+Copying.m */,
-				04729884205AA5BC00930A83 /* RLMObject+JSON.h */,
-				04729885205AA5BC00930A83 /* RLMObject+JSON.m */,
-			);
-			path = "Realm+JSON";
 			sourceTree = "<group>";
 		};
 		047298AC205AA5C200930A83 /* AppDelegate */ = {
@@ -384,7 +238,6 @@
 			children = (
 				047298B0205AA5C200930A83 /* AppCustoms.h */,
 				047298B1205AA5C200930A83 /* AppCustoms.m */,
-				04C7901D205FA38500D976A3 /* HostResolver */,
 			);
 			path = AppCustoms;
 			sourceTree = "<group>";
@@ -414,16 +267,14 @@
 			isa = PBXGroup;
 			children = (
 				048569322060F9E3007C4C53 /* iOS代码规范文档.pdf */,
-				047298AC205AA5C200930A83 /* AppDelegate */,
-				0472986F205AA5BC00930A83 /* Utikles */,
-				04729846205AA5BC00930A83 /* InterfaceService */,
-				047298AF205AA5C200930A83 /* AppCustoms */,
-				04729839205AA5BC00930A83 /* ModelManager */,
-				04729827205AA5BB00930A83 /* ViewControllers */,
-				0472986B205AA5BC00930A83 /* Supporting Files */,
-				047C439A202D7D0F00BB3400 /* Assets.xcassets */,
-				047C439C202D7D0F00BB3400 /* LaunchScreen.storyboard */,
 				047C439F202D7D0F00BB3400 /* Info.plist */,
+				047C439A202D7D0F00BB3400 /* Assets.xcassets */,
+				047298AF205AA5C200930A83 /* AppCustoms */,
+				047298AC205AA5C200930A83 /* AppDelegate */,
+				DC4D0464206A8843009760DC /* ChatViews */,
+				047C439C202D7D0F00BB3400 /* LaunchScreen.storyboard */,
+				0472986B205AA5BC00930A83 /* Supporting Files */,
+				04729827205AA5BB00930A83 /* ViewControllers */,
 			);
 			path = SocketIMDemo;
 			sourceTree = "<group>";
@@ -472,18 +323,72 @@
 			path = AppCustoms;
 			sourceTree = "<group>";
 		};
-		04C7901D205FA38500D976A3 /* HostResolver */ = {
+		04FC7AAC20664E7F0085D9F2 /* ChatViewController */ = {
 			isa = PBXGroup;
 			children = (
-				04C79022205FA43800D976A3 /* HostResolver.h */,
-				04C79021205FA43800D976A3 /* HostResolver.m */,
+				04FC7AAD2066501D0085D9F2 /* PrivateChatController */,
 			);
-			path = HostResolver;
+			path = ChatViewController;
+			sourceTree = "<group>";
+		};
+		04FC7AAD2066501D0085D9F2 /* PrivateChatController */ = {
+			isa = PBXGroup;
+			children = (
+				04FC7AAE206650DF0085D9F2 /* PrivateChatController.h */,
+				04FC7AAF206650DF0085D9F2 /* PrivateChatController.m */,
+			);
+			path = PrivateChatController;
 			sourceTree = "<group>";
 		};
 		9AE467BFF5CC865195794C6A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04FF1DA82064954300E2702C /* libModelManager.a */,
+				04FF1DA62064953E00E2702C /* libIMServer.a */,
+				04FF1DA42064953B00E2702C /* libCommon.a */,
+				04FF1DA22064943F00E2702C /* libIMServer.a */,
+				04FF1D722063C6F100E2702C /* libIMServer.a */,
+				04FF1D702063C6ED00E2702C /* libCommon.a */,
+				04D430F32063C35500B9D5D8 /* libModelManager.a */,
+				04D430F12063BD5800B9D5D8 /* libHttpServer.a */,
+				04D430EF2063BD3800B9D5D8 /* libIMServer.a */,
+				04D430ED2063BC2600B9D5D8 /* libHttpServer.a */,
+				04D430EB2063BBB400B9D5D8 /* libHttpServer.a */,
+				04D430D42063B99700B9D5D8 /* libModelManager.a */,
+				04D430D22063B96F00B9D5D8 /* libCommon.a */,
+				04D430CD2063B2A300B9D5D8 /* libCommon.a */,
+				04D430CE2063B2A300B9D5D8 /* libIMServer.a */,
+				04D430CA2063B21200B9D5D8 /* libModelManager.a */,
+				04D430C72063B20F00B9D5D8 /* libCommon.a */,
+				04D430C82063B20F00B9D5D8 /* libIMServer.a */,
+				04D430BE2063AFC400B9D5D8 /* libModelManager.a */,
+				04D430BB2063AFC000B9D5D8 /* libCommon.a */,
+				04D430BC2063AFC000B9D5D8 /* libIMServer.a */,
+				04D430B22063ACF400B9D5D8 /* libIMServer.a */,
+				04D430B02063ACEE00B9D5D8 /* libModelManager.a */,
+				04D430AE2063ACEB00B9D5D8 /* libCommon.a */,
+				04AC7C7A20639DEA000DB907 /* libRealm.a */,
+				04AC7C7820639D7A000DB907 /* libModelManager.a */,
+				04AC7C7520639D74000DB907 /* libCommon.a */,
+				04AC7C7620639D74000DB907 /* libIMServer.a */,
+				04AC7C64206397EB000DB907 /* libPods-Common.a */,
+				04AC7C61206397E8000DB907 /* libPods-IMServer.a */,
+				04AC7C62206397E8000DB907 /* libPods-ModelManager.a */,
+				04AC7C582063972E000DB907 /* libPods-SocketIMDemo.a */,
+				04AC7C5020639568000DB907 /* libHttpServer.a */,
+				04AC7C4E20639501000DB907 /* libModelManager.a */,
+				04AC7C4C206394FD000DB907 /* libIMServer.a */,
+				04AC7C4A206394F9000DB907 /* libHttpServer.a */,
+				04AC7C48206394F5000DB907 /* libCommon.a */,
+				048951BD2063864400BC0ECE /* libHttpServer.a */,
+				048951BB2063863E00BC0ECE /* libModelManager.a */,
+				048951B92063863700BC0ECE /* libIMServer.a */,
+				048951B72063863200BC0ECE /* libCommon.a */,
+				04895133206356A900BC0ECE /* libCommon.a */,
+				0489508D2063425B00BC0ECE /* libUtikles.a */,
+				0489508B2063425200BC0ECE /* libModelManager.a */,
+				04894FF42063364F00BC0ECE /* libIMServer.a */,
+				04894FDC206332AA00BC0ECE /* libHttpServer.a */,
 				60E31DF6636A636A70262FDC /* libPods-SocketIMDemo.a */,
 			);
 			name = Frameworks;
@@ -496,6 +401,26 @@
 				2409064FD3F8FEF9220BAB7E /* Pods-SocketIMDemo.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		DC4D0464206A8843009760DC /* ChatViews */ = {
+			isa = PBXGroup;
+			children = (
+				DC54E27D207343D700FC8937 /* Protocol */,
+				DC4D0465206A8890009760DC /* YJNChatInputBar.h */,
+				DC4D0466206A8890009760DC /* YJNChatInputBar.m */,
+				DCC2DDCB206A99A2004A398C /* YJNInputTextView.h */,
+				DCC2DDCC206A99A2004A398C /* YJNInputTextView.m */,
+			);
+			path = ChatViews;
+			sourceTree = "<group>";
+		};
+		DC54E27D207343D700FC8937 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				DC54E27E207343F900FC8937 /* YJNChatBarProtocol.h */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -584,8 +509,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0485694D2061F939007C4C53 /* README.md in Resources */,
+				04FC7AA72065F76F0085D9F2 /* ChatFriendTableCell.xib in Resources */,
 				047C439E202D7D0F00BB3400 /* LaunchScreen.storyboard in Resources */,
-				047298A2205AA5BC00930A83 /* readme.md in Resources */,
 				047C439B202D7D0F00BB3400 /* Assets.xcassets in Resources */,
 				048569332060F9E3007C4C53 /* iOS代码规范文档.pdf in Resources */,
 			);
@@ -607,9 +532,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SocketIMDemo/Pods-SocketIMDemo-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -622,13 +552,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SocketIMDemo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		688CC96A531A04C0540C3C24 /* [CP] Embed Pods Frameworks */ = {
@@ -653,39 +586,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				047298A0205AA5BC00930A83 /* ProtocolServerResp.m in Sources */,
-				04729892205AA5BC00930A83 /* IMSocketControl.m in Sources */,
-				0472989D205AA5BC00930A83 /* IMSocketRespAgent.m in Sources */,
-				04729893205AA5BC00930A83 /* IMSocketIO.m in Sources */,
+				DC4D0467206A8890009760DC /* YJNChatInputBar.m in Sources */,
 				04729887205AA5BC00930A83 /* ChatFriendController.m in Sources */,
-				04729895205AA5BC00930A83 /* UserIMSocket.m in Sources */,
-				047298A3205AA5BC00930A83 /* NSString+Category.m in Sources */,
-				047298A7205AA5BC00930A83 /* MCJSONNonNullStringTransformer.m in Sources */,
-				04729891205AA5BC00930A83 /* UserManager.m in Sources */,
 				04729888205AA5BC00930A83 /* ChatListController.m in Sources */,
-				04729894205AA5BC00930A83 /* IMSocketModules.m in Sources */,
-				047298AB205AA5BC00930A83 /* RLMObject+JSON.m in Sources */,
-				04C79023205FA43800D976A3 /* HostResolver.m in Sources */,
-				0472989A205AA5BC00930A83 /* IMSocketListener.m in Sources */,
 				04D48556205CC45600140C73 /* ChatMineView.m in Sources */,
-				047298A8205AA5BC00930A83 /* MCJSONPrimaryKeyTransformer.m in Sources */,
-				047298BF205AAF9B00930A83 /* CMDeviceInfo.m in Sources */,
-				04729896205AA5BC00930A83 /* Chater.m in Sources */,
-				047298A6205AA5BC00930A83 /* MCJSONDateTransformer.m in Sources */,
 				04729889205AA5BC00930A83 /* ChatMineController.m in Sources */,
-				047298AA205AA5BC00930A83 /* RLMObject+Copying.m in Sources */,
-				047298B9205AACD200930A83 /* User.m in Sources */,
 				047298A1205AA5BC00930A83 /* main.m in Sources */,
-				04729899205AA5BC00930A83 /* IMSocketHeader.m in Sources */,
+				04FC7AB0206650DF0085D9F2 /* PrivateChatController.m in Sources */,
 				0472988D205AA5BC00930A83 /* MainViewController.m in Sources */,
 				047298B2205AA5C200930A83 /* AppDelegate.m in Sources */,
-				0472989F205AA5BC00930A83 /* ProtocolClientReq.m in Sources */,
-				047298A4205AA5BC00930A83 /* UIColor+FlatUI.m in Sources */,
+				04FC7AAA2065FCBF0085D9F2 /* ChatFriendTableViewManager.m in Sources */,
+				DCC2DDCD206A99A2004A398C /* YJNInputTextView.m in Sources */,
 				047298B3205AA5C200930A83 /* AppCustoms.m in Sources */,
-				0472989E205AA5BC00930A83 /* IMSocketUserHandler.m in Sources */,
-				0472989C205AA5BC00930A83 /* IMSocketReqContext.m in Sources */,
-				047298A9205AA5BC00930A83 /* MCJSONValueTransformer.m in Sources */,
-				047298A5205AA5BC00930A83 /* UIImage+Category.m in Sources */,
+				04FC7A9A2065EC3F0085D9F2 /* ChatFriendView.m in Sources */,
+				04FC7AA62065F76F0085D9F2 /* ChatFriendTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -832,12 +746,39 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = N6P8WZG8ZC;
 				GCC_PREFIX_HEADER = "$(TARGET_NAME)/Supporting Files/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaAsyncSocket\"",
+					"\"${PODS_ROOT}/Headers/Public/MJExtension\"",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"\"${PODS_ROOT}/Headers/Public/Realm\"",
+					"\"${PODS_ROOT}/Headers/Public/SDAutoLayout\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"$(PROJECT_DIR)/ModelManager/**",
+					"$(PROJECT_DIR)/Common/**",
+					"$(PROJECT_DIR)/ImServer/**",
+				);
 				INFOPLIST_FILE = SocketIMDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = fuck.SocketIMDemo.client;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/CocoaAsyncSocket\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/MJExtension\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/MJRefresh\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Realm\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/SDAutoLayout\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/SDWebImage\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Realm/core\"",
+					"$(PROJECT_DIR)/ModelManager/**",
+					"$(PROJECT_DIR)/ImServer/**",
+					"$(PROJECT_DIR)/Common/**",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = vanduza.SocketIMDemo.client;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -849,12 +790,39 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = N6P8WZG8ZC;
 				GCC_PREFIX_HEADER = "$(TARGET_NAME)/Supporting Files/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaAsyncSocket\"",
+					"\"${PODS_ROOT}/Headers/Public/MJExtension\"",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"\"${PODS_ROOT}/Headers/Public/Realm\"",
+					"\"${PODS_ROOT}/Headers/Public/SDAutoLayout\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"$(PROJECT_DIR)/ModelManager/**",
+					"$(PROJECT_DIR)/Common/**",
+					"$(PROJECT_DIR)/ImServer/**",
+				);
 				INFOPLIST_FILE = SocketIMDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = fuck.SocketIMDemo.client;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/CocoaAsyncSocket\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/MJExtension\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/MJRefresh\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Realm\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/SDAutoLayout\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/SDWebImage\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Realm/core\"",
+					"$(PROJECT_DIR)/ModelManager/**",
+					"$(PROJECT_DIR)/ImServer/**",
+					"$(PROJECT_DIR)/Common/**",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = vanduza.SocketIMDemo.client;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

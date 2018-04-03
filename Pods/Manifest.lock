@@ -1,5 +1,6 @@
 PODS:
   - CocoaAsyncSocket (7.6.2)
+  - IQKeyboardManager (5.0.7)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.15.3)
   - Realm (2.8.3):
@@ -12,6 +13,7 @@ PODS:
 
 DEPENDENCIES:
   - CocoaAsyncSocket (~> 7.6.2)
+  - IQKeyboardManager (~> 5.0.2)
   - MJExtension
   - MJRefresh
   - Realm (~> 2.8.1)
@@ -20,12 +22,13 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   CocoaAsyncSocket: 3541e024f48c54b251638ef72d51dd42808de932
+  IQKeyboardManager: 0bfa4607d39924116b5c0c8b55b5d789288b5cba
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   Realm: 3601ef091c8c499a31101d8563b991e75546cdce
   SDAutoLayout: c5509e77ae75735d9a39f7bc83dba6d3f75d49d8
   SDWebImage: 6da6c8bca115addc4de8613362e1b15f66333825
 
-PODFILE CHECKSUM: 9e102a4a36fe65925092fb7d8c012930baf83e7a
+PODFILE CHECKSUM: 444e650100785481b424ef5139f1647e294823f0
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.4.0

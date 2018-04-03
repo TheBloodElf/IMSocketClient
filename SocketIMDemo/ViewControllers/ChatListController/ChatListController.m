@@ -7,8 +7,9 @@
 //
 
 #import "ChatListController.h"
+#import "YJNChatInputBar.h"
 
-@interface ChatListController ()
+@interface ChatListController ()<YJNChatBarProtocol>
 
 @end
 
@@ -29,6 +30,16 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
+    CGFloat chatbarHeight = [YJNChatInputBar defaultHeight];
+    YJNChatInputBar *inputBar = [[YJNChatInputBar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - chatbarHeight - 49 - 64, self.view.frame.size.width, chatbarHeight)];
+    inputBar.delegate = self;
+    inputBar.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:inputBar];
+}
+
+#pragma mark - 输入框事件
+-(void)yjn_sendMsgButtonTouched:(NSString *)message {
+    NSLog(@"message=%@",message);
 }
 
 #pragma mark -- Class Private Methods
