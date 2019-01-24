@@ -24,9 +24,6 @@
  */
 @interface IMSocketListener : NSObject
 
-/**该类型消息来了，会通知哪些观察者*/
-@property (nonatomic,strong) NSMutableDictionary<NSString*,NSMutableArray<HandlerObject*>*> *observers;
-
 /**
  添加一个类型对应的回调
 

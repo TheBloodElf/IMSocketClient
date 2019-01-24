@@ -15,11 +15,13 @@
 
 #pragma mark - init
 
-- (id)init {
-    if(self = [super init]) {
-        _version = DF_SOCKET_HEADER_VERSION;
-        _magic_num = DF_SOCKET_HEADER_MAGIC_NUM;
+- (instancetype)init {
+    if(!self) {
+        return nil;
     }
+    
+    _version = DF_SOCKET_HEADER_VERSION;
+    _magic_num = DF_SOCKET_HEADER_MAGIC_NUM;
     return self;
 }
 

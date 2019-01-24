@@ -85,8 +85,8 @@
 - (void)receive:(IMSocketReqContext *)context {
     //初始化一个代理对象
     IMSocketRespAgent *respAgent = [IMSocketRespAgent new];
-    //本类中固定为user
-    respAgent.cmd = context.cmd;
+    //本类中固定为msg
+    respAgent.cmd = context.cmd ?: @"user";
     //login等
     respAgent.sub_cmd = context.sub_cmd;
     respAgent.code = context.code;
@@ -105,11 +105,11 @@
         respAgent.content = resp;
     }
     //收到别人主动发的聊天消息
-    if(context.body && [respAgent.sub_cmd isEqualToString:@"push"]) {
-        MsgPushNotify *resp = [MsgPushNotify new];
+    if(context.body && [respAgent.sub_cmd isEqualToString:@"msg"]) {
+        MsgContent *resp = [MsgContent new];
         [resp mj_setKeyValues:context.body.mj_keyValues];
         respAgent.content = resp;
-        [self dispach:@"push" withAgent:respAgent];
+        [self dispach:@"msg" withAgent:respAgent];
     }
     //如果该请求发起的时候有回调，就执行
     if(context.handler) {

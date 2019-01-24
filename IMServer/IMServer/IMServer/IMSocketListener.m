@@ -12,6 +12,13 @@
 
 @end
 
+@interface IMSocketListener ()
+
+/**该类型消息来了，会通知哪些观察者 为什么需要这个呢？因为发送消息时你有handler，发送成功后可以通过handler回调，但是接收消息时并不能注册handler，所以就需要注册好勾子并分发出来*/
+@property (nonatomic,strong) NSMutableDictionary<NSString*,NSMutableArray<HandlerObject*>*> *observers;
+
+@end
+
 @implementation IMSocketListener
 
 - (void)addEventListener:(NSString *)type withFunction:(CallBackBlock)call {

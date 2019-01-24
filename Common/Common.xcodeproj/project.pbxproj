@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		042D9BC5206E7C6A00A3CBFE /* NSDate+Format.m in Sources */ = {isa = PBXBuildFile; fileRef = 042D9BC3206E7C6800A3CBFE /* NSDate+Format.m */; };
+		04186A9021F9E1AE00FC9B19 /* NSString+CMBlank.m in Sources */ = {isa = PBXBuildFile; fileRef = 04186A8721F9E1AD00FC9B19 /* NSString+CMBlank.m */; };
+		04186A9121F9E1AE00FC9B19 /* NSObject+CMData.m in Sources */ = {isa = PBXBuildFile; fileRef = 04186A8821F9E1AD00FC9B19 /* NSObject+CMData.m */; };
+		04186A9221F9E1AE00FC9B19 /* UIColor+CMFlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 04186A8B21F9E1AD00FC9B19 /* UIColor+CMFlatUI.m */; };
+		04186A9321F9E1AE00FC9B19 /* NSDate+CMFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 04186A8C21F9E1AE00FC9B19 /* NSDate+CMFormat.m */; };
+		04186A9421F9E1AE00FC9B19 /* UIImage+CMScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 04186A8E21F9E1AE00FC9B19 /* UIImage+CMScale.m */; };
 		04D430A12063A9FD00B9D5D8 /* CMDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D430892063A9FB00B9D5D8 /* CMDeviceInfo.m */; };
-		04D430A22063A9FD00B9D5D8 /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D4308C2063A9FB00B9D5D8 /* NSString+Category.m */; };
-		04D430A32063A9FD00B9D5D8 /* UIColor+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D4308E2063A9FB00B9D5D8 /* UIColor+FlatUI.m */; };
-		04D430A42063A9FD00B9D5D8 /* UIImage+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D430902063A9FB00B9D5D8 /* UIImage+Category.m */; };
 		04D430A52063A9FD00B9D5D8 /* MCJSONDateTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D430952063A9FC00B9D5D8 /* MCJSONDateTransformer.m */; };
 		04D430A62063A9FD00B9D5D8 /* MCJSONNonNullStringTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D430972063A9FC00B9D5D8 /* MCJSONNonNullStringTransformer.m */; };
 		04D430A72063A9FD00B9D5D8 /* MCJSONPrimaryKeyTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D430992063A9FC00B9D5D8 /* MCJSONPrimaryKeyTransformer.m */; };
@@ -34,17 +35,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		042D9BC3206E7C6800A3CBFE /* NSDate+Format.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Format.m"; sourceTree = "<group>"; };
-		042D9BC4206E7C6900A3CBFE /* NSDate+Format.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Format.h"; sourceTree = "<group>"; };
+		04186A8621F9E1AD00FC9B19 /* NSString+CMBlank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CMBlank.h"; sourceTree = "<group>"; };
+		04186A8721F9E1AD00FC9B19 /* NSString+CMBlank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CMBlank.m"; sourceTree = "<group>"; };
+		04186A8821F9E1AD00FC9B19 /* NSObject+CMData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CMData.m"; sourceTree = "<group>"; };
+		04186A8921F9E1AD00FC9B19 /* NSObject+CMData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CMData.h"; sourceTree = "<group>"; };
+		04186A8A21F9E1AD00FC9B19 /* UIColor+CMFlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CMFlatUI.h"; sourceTree = "<group>"; };
+		04186A8B21F9E1AD00FC9B19 /* UIColor+CMFlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CMFlatUI.m"; sourceTree = "<group>"; };
+		04186A8C21F9E1AE00FC9B19 /* NSDate+CMFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CMFormat.m"; sourceTree = "<group>"; };
+		04186A8D21F9E1AE00FC9B19 /* NSDate+CMFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CMFormat.h"; sourceTree = "<group>"; };
+		04186A8E21F9E1AE00FC9B19 /* UIImage+CMScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CMScale.m"; sourceTree = "<group>"; };
+		04186A8F21F9E1AE00FC9B19 /* UIImage+CMScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CMScale.h"; sourceTree = "<group>"; };
 		04D4307B2063A9E200B9D5D8 /* libCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D430882063A9FB00B9D5D8 /* CMDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMDeviceInfo.h; sourceTree = "<group>"; };
 		04D430892063A9FB00B9D5D8 /* CMDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMDeviceInfo.m; sourceTree = "<group>"; };
-		04D4308B2063A9FB00B9D5D8 /* NSString+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Category.h"; sourceTree = "<group>"; };
-		04D4308C2063A9FB00B9D5D8 /* NSString+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Category.m"; sourceTree = "<group>"; };
-		04D4308D2063A9FB00B9D5D8 /* UIColor+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FlatUI.h"; sourceTree = "<group>"; };
-		04D4308E2063A9FB00B9D5D8 /* UIColor+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FlatUI.m"; sourceTree = "<group>"; };
-		04D4308F2063A9FB00B9D5D8 /* UIImage+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Category.h"; sourceTree = "<group>"; };
-		04D430902063A9FB00B9D5D8 /* UIImage+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Category.m"; sourceTree = "<group>"; };
 		04D430912063A9FC00B9D5D8 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		04D430942063A9FC00B9D5D8 /* MCJSONDateTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCJSONDateTransformer.h; sourceTree = "<group>"; };
 		04D430952063A9FC00B9D5D8 /* MCJSONDateTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCJSONDateTransformer.m; sourceTree = "<group>"; };
@@ -127,14 +130,16 @@
 		04D4308A2063A9FB00B9D5D8 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				042D9BC4206E7C6900A3CBFE /* NSDate+Format.h */,
-				042D9BC3206E7C6800A3CBFE /* NSDate+Format.m */,
-				04D4308B2063A9FB00B9D5D8 /* NSString+Category.h */,
-				04D4308C2063A9FB00B9D5D8 /* NSString+Category.m */,
-				04D4308D2063A9FB00B9D5D8 /* UIColor+FlatUI.h */,
-				04D4308E2063A9FB00B9D5D8 /* UIColor+FlatUI.m */,
-				04D4308F2063A9FB00B9D5D8 /* UIImage+Category.h */,
-				04D430902063A9FB00B9D5D8 /* UIImage+Category.m */,
+				04186A8D21F9E1AE00FC9B19 /* NSDate+CMFormat.h */,
+				04186A8C21F9E1AE00FC9B19 /* NSDate+CMFormat.m */,
+				04186A8921F9E1AD00FC9B19 /* NSObject+CMData.h */,
+				04186A8821F9E1AD00FC9B19 /* NSObject+CMData.m */,
+				04186A8621F9E1AD00FC9B19 /* NSString+CMBlank.h */,
+				04186A8721F9E1AD00FC9B19 /* NSString+CMBlank.m */,
+				04186A8A21F9E1AD00FC9B19 /* UIColor+CMFlatUI.h */,
+				04186A8B21F9E1AD00FC9B19 /* UIColor+CMFlatUI.m */,
+				04186A8F21F9E1AE00FC9B19 /* UIImage+CMScale.h */,
+				04186A8E21F9E1AE00FC9B19 /* UIImage+CMScale.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -185,7 +190,6 @@
 				04D430772063A9E200B9D5D8 /* Sources */,
 				04D430782063A9E200B9D5D8 /* Frameworks */,
 				04D430792063A9E200B9D5D8 /* CopyFiles */,
-				CD98576BC1CB402609DB8748 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -202,7 +206,7 @@
 		04D430732063A9E200B9D5D8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = Mac;
 				TargetAttributes = {
 					04D4307A2063A9E200B9D5D8 = {
@@ -229,34 +233,22 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		CD98576BC1CB402609DB8748 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Common/Pods-Common-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		E48AB1DF9A67F8F47E1895D2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Common-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -266,17 +258,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04186A9421F9E1AE00FC9B19 /* UIImage+CMScale.m in Sources */,
+				04186A9021F9E1AE00FC9B19 /* NSString+CMBlank.m in Sources */,
+				04186A9321F9E1AE00FC9B19 /* NSDate+CMFormat.m in Sources */,
 				04D430A62063A9FD00B9D5D8 /* MCJSONNonNullStringTransformer.m in Sources */,
 				04D430A12063A9FD00B9D5D8 /* CMDeviceInfo.m in Sources */,
 				04D430A92063A9FD00B9D5D8 /* RLMObject+Copying.m in Sources */,
-				04D430A22063A9FD00B9D5D8 /* NSString+Category.m in Sources */,
+				04186A9221F9E1AE00FC9B19 /* UIColor+CMFlatUI.m in Sources */,
 				04D430A52063A9FD00B9D5D8 /* MCJSONDateTransformer.m in Sources */,
 				04D430A72063A9FD00B9D5D8 /* MCJSONPrimaryKeyTransformer.m in Sources */,
 				04D430A82063A9FD00B9D5D8 /* MCJSONValueTransformer.m in Sources */,
-				04D430A32063A9FD00B9D5D8 /* UIColor+FlatUI.m in Sources */,
 				04D430AA2063A9FD00B9D5D8 /* RLMObject+JSON.m in Sources */,
-				042D9BC5206E7C6A00A3CBFE /* NSDate+Format.m in Sources */,
-				04D430A42063A9FD00B9D5D8 /* UIImage+Category.m in Sources */,
+				04186A9121F9E1AE00FC9B19 /* NSObject+CMData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +290,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -304,6 +298,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -352,6 +347,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -359,6 +355,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -393,6 +390,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREFIX_HEADER = "$(TARGET_NAME)/PrefixHeader.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -406,6 +404,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREFIX_HEADER = "$(TARGET_NAME)/PrefixHeader.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

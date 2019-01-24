@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>14</integer>
 		</dict>
+		<key>Common.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>14</integer>
+		</dict>
 	</dict>
 </dict>
 </plist>

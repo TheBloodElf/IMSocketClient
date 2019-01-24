@@ -21,6 +21,10 @@
 @property(nonatomic, strong) NSString *cmd;
 /**例如user区分login、logout、setinfo等*/
 @property(nonatomic, strong) NSString *sub_cmd;
+/**应用版本号*/
+@property(nonatomic, strong) NSString *version;
+/**用户唯一标识符*/
+@property(nonatomic, assign) int64_t imid;
 /**内容 json格式字符串 如cmd为user、sub_cmd为login，则body为UserLoginReq对象的json格式字符串*/
 @property(nonatomic, strong) NSString *body;
 

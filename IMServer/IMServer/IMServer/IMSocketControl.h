@@ -16,11 +16,6 @@
  */
 @interface IMSocketControl : NSObject
 
-/**这里面存放的是所有的订阅信息 只有订阅了才会向外转发收到的消息*/
-@property(strong, nonatomic,readonly) NSMutableDictionary<NSString*,id<IMSocketReceiver>> *registerMaps;
-/**这里面存放的是所有的正在执行的操作，有个定时器会一直检查还在执行的操作*/
-@property(strong, nonatomic,readonly) NSMutableDictionary<NSString*,IMSocketReqContext*> *operationMaps;
-
 /**
  注册一个消息接受类型  cmd为：user用户登录、msg消息发送、friend关系改变、group群聊
 

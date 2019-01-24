@@ -13,9 +13,9 @@
 #import "IMUserManager.h"
 
 /**IMUserSocket单例对象*/
-static IMUserSocket * USER_IMSOCKET_SINGLETON;
+static IMUserSocket * USER_IMSOCKET_SINGLETON = nil;
 /**断开连接后，与服务器重连次数*/
-static int RECONNECT_SERVER_COUNT = 5;
+static const int RECONNECT_SERVER_COUNT = 5;
 
 @interface IMUserSocket ()<IMHostResolverDelegate> {
     /**当前Socket状态*/
@@ -35,48 +35,49 @@ static int RECONNECT_SERVER_COUNT = 5;
 
 #pragma mark -- Init Methods
 
-- (id)init {
-    if (self = [super init]) {
-        //重连次数重置为0
-        _currReConnectCount = 0;
-        //初始化socket状态
-        _socketStatus = IM_SOCKET_STATUS_NONE;
-        //聊天模块初始化
-        _iMSocketModules = [IMSocketModules new];
-        //初始化域名解析
-        _hostResolver = [[IMHostResolver alloc] initWithName:@"localhost"];
-        _hostResolver.delegate = self;
-        
-        //注册被踢下线的回调
-        [_iMSocketModules.userHandler addEventListener:@"kickout" withFunction:^(IMSocketRespAgent *resp) {
-            [[IMUserManager manager] updateClientLog:[IMClientLog clientLogWithMessage:@"被踢下线。"]];
-            //断开连接
-            [self disconnect];
-        }];
-        //注册收到消息的通知
-        [_iMSocketModules.messageHandler addEventListener:@"push" withFunction:^(IMSocketRespAgent *resp) {
-            MsgPushNotify *content = (MsgPushNotify *)resp.content;
-            IMChatMesssage *chatMessage = [IMChatMesssage new];
-            [chatMessage mj_setKeyValues:content.msg_data.mj_keyValues];
-            chatMessage.owner_imid = content.sender_imid;
-            chatMessage.from = E_CHAT_FROM_OTHER;
-            //添加到数据库
-            [[IMUserManager manager] updateChatMessage:chatMessage];
-            [[IMUserManager manager] updateClientLog:[IMClientLog clientLogWithMessage:[NSString stringWithFormat:@"收到消息：%@。",@(content.msg_id)]]];
-            //如果是在线消息，需要发送回执
-            if(resp.type == E_MSG_TYPE_ONLINE) {
-                MsgAckContent *ackContent = [MsgAckContent new];
-                ackContent.ack_msgid = content.msg_id;
-                ackContent.ack_source_type = E_SOCKET_CLIENT_TYPE_PHONE_IOS;
-                ackContent.ack_imid = content.sender_imid;
-                ackContent.sender_imid = content.reciver_imid;
-                [[IMUserManager manager] updateClientLog:[IMClientLog clientLogWithMessage:[NSString stringWithFormat:@"向服务器发送ack消息：%@。",@(content.msg_id)]]];
-                [_iMSocketModules.messageHandler send_ack:ackContent function:^(IMSocketRespAgent *resp) {
-                    [[IMUserManager manager] updateClientLog:[IMClientLog clientLogWithMessage:[NSString stringWithFormat:@"收到服务器ack消息：%@响应。",@(content.msg_id)]]];
-                }];
-            }
-        }];
+- (instancetype)init {
+    self = [super init];
+    if(!self) {
+        return NULL;
     }
+    
+    //重连次数重置为0
+    _currReConnectCount = 0;
+    //初始化socket状态为默认状态
+    _socketStatus = IM_SOCKET_STATUS_NONE;
+    //聊天模块初始化
+    _iMSocketModules = [IMSocketModules new];
+    //初始化域名解析
+    _hostResolver = [[IMHostResolver alloc] initWithName:@"localhost"];
+    _hostResolver.delegate = self;
+    
+    //注册被踢下线的回调
+    [_iMSocketModules.userHandler addEventListener:@"kickout" withFunction:^(IMSocketRespAgent *resp) {
+        [[IMUserManager manager] updateClientLog:[IMClientLog clientLogWithMessage:@"被踢下线。"]];
+        //断开连接
+        [self disconnect];
+    }];
+    //注册收到消息的通知
+    [_iMSocketModules.messageHandler addEventListener:@"msg" withFunction:^(IMSocketRespAgent *resp) {
+        MsgContent *content = (MsgContent *)resp.content;
+        IMChatMesssage *chatMessage = [IMChatMesssage new];
+        [chatMessage mj_setKeyValues:content.msg_data.mj_keyValues];
+        //添加到数据库
+        [[IMUserManager manager] updateChatMessage:chatMessage];
+        [[IMUserManager manager] updateClientLog:[IMClientLog clientLogWithMessage:[NSString stringWithFormat:@"收到消息：%@。",@(content.msg_id)]]];
+        //如果是在线消息，需要发送回执 这个回执用"对方已读"功能
+        if(resp.type == E_MSG_TYPE_ONLINE) {
+            MsgAckContent *ackContent = [MsgAckContent new];
+            ackContent.ack_msgid = content.msg_id;
+            ackContent.ack_source_type = E_SOCKET_CLIENT_TYPE_PHONE_IOS;
+            ackContent.ack_imid = content.sender_imid;
+            ackContent.sender_imid = content.reciver_imid;
+            [[IMUserManager manager] updateClientLog:[IMClientLog clientLogWithMessage:[NSString stringWithFormat:@"向服务器发送ack消息：%@。",@(content.msg_id)]]];
+            [self->_iMSocketModules.messageHandler send_ack:ackContent function:^(IMSocketRespAgent *resp) {
+                [[IMUserManager manager] updateClientLog:[IMClientLog clientLogWithMessage:[NSString stringWithFormat:@"收到服务器ack消息：%@响应。",@(content.msg_id)]]];
+            }];
+        }
+    }];
     return self;
 }
 
@@ -94,6 +95,7 @@ static int RECONNECT_SERVER_COUNT = 5;
     if([NSString isBlank:ipAdressString]) {
         ipAdressString = @"127.0.0.1";
     }
+    //使用解析出来的地址进行连接
     else {
         NSArray *ipArray = [ipAdressString componentsSeparatedByString:@":"];
         //不为4个区间
@@ -114,31 +116,31 @@ static int RECONNECT_SERVER_COUNT = 5;
     //开始连接，地址要填写正确
     [_iMSocketModules connect:ipAdressString port:6868 connectCallBack:^(IMSocketRespAgent *resp) {
         //重连次数重置为0
-        _currReConnectCount = 0;
+        self->_currReConnectCount = 0;
         [[IMUserManager manager] updateClientLog:[IMClientLog clientLogWithMessage:@"已连接到服务器。"]];
         //连接错误
         if ([self transformCode:resp.code] != E_SOCKET_ERROR_NONE) {
-            _socketStatus = IM_SOCKET_STATUS_NONE;
+            self->_socketStatus = IM_SOCKET_STATUS_NONE;
             [[IMUserManager manager] updateClientLog:[IMClientLog clientLogWithMessage:@"服务器连接失败。"]];
             return;
         }
         //设置连接状态为已经连接
-        _socketStatus = IM_SOCKET_STATUS_LOGINED;
+        self->_socketStatus = IM_SOCKET_STATUS_LOGINED;
         //开始进行登录操作
         [self execLoginProcesses];
     } disconnectCallBack:^(IMSocketRespAgent *resp) {
         //超过重连次数，不进行重连
-        if(_currReConnectCount >= RECONNECT_SERVER_COUNT) {
+        if(self->_currReConnectCount >= RECONNECT_SERVER_COUNT) {
             //清除重连次数
-            _currReConnectCount = 0;
+            self->_currReConnectCount = 0;
             [[IMUserManager manager] updateClientLog:[IMClientLog clientLogWithMessage:@"重新连接服务器失败。"]];
             return ;
         }
-        [[IMUserManager manager] updateClientLog:[IMClientLog clientLogWithMessage:[NSString stringWithFormat:@"进行第%@次重新连接服务器。",@(_currReConnectCount)]]];
+        [[IMUserManager manager] updateClientLog:[IMClientLog clientLogWithMessage:[NSString stringWithFormat:@"进行第%@次重新连接服务器。",@(self->_currReConnectCount)]]];
         //连接断开，5s后重连
-        _socketStatus = IM_SOCKET_STATUS_NONE;
+        self->_socketStatus = IM_SOCKET_STATUS_NONE;
         [self performSelector:@selector(connect) withObject:nil afterDelay:5.0f];
-        _currReConnectCount ++;
+        self->_currReConnectCount ++;
     }];
 }
 
@@ -157,13 +159,13 @@ static int RECONNECT_SERVER_COUNT = 5;
     [_iMSocketModules.userHandler login:loginReq function:^(IMSocketRespAgent *resp) {
         //登录错误，重设socket状态，之后不进行任何的处理
         if(resp.code != E_SOCKET_ERROR_NONE) {
-            _socketStatus = IM_SOCKET_STATUS_NONE;
+            self->_socketStatus = IM_SOCKET_STATUS_NONE;
             [[IMUserManager manager] updateClientLog:[IMClientLog clientLogWithMessage:@"登录请求失败。"]];
             return;
         }
         [[IMUserManager manager] updateClientLog:[IMClientLog clientLogWithMessage:@"登录请求成功。"]];
         //状态为用户已经登录
-        _socketStatus = IM_SOCKET_STATUS_LOGINED;
+        self->_socketStatus = IM_SOCKET_STATUS_LOGINED;
         //TODO：登录后应该拉取哪些内容 http://www.52im.net/thread-787-1-1.html
         //一次性拉取离线消息很卡怎么办 http://www.52im.net/thread-594-1-1.html
     }];
@@ -220,7 +222,7 @@ static int RECONNECT_SERVER_COUNT = 5;
 - (void)sendChatMessage:(IMChatMesssage*)chatMessage {
     //构造消息内容
     MsgContent *content = [MsgContent new];
-    content.msg_id = chatMessage.id;
+    content.msg_id = chatMessage.msg_id;
     content.from_source_type = E_SOCKET_CLIENT_TYPE_PHONE_IOS;
     content.reciver_imid = chatMessage.reciver.imid;
     content.sender_imid = chatMessage.sender.imid;
@@ -234,7 +236,8 @@ static int RECONNECT_SERVER_COUNT = 5;
             chatMessage.status = E_CHAT_SEND_STATUS_SENDFIAL;
             [[IMUserManager manager] updateClientLog:[IMClientLog clientLogWithMessage:[NSString stringWithFormat:@"消息：%@发送失败。",@(content.msg_id)]]];
         }
-        else {//发送成功
+        //发送成功 并不代表对方已读
+        else {
             chatMessage.status = E_CHAT_SEND_STATUS_SENDED;
             [[IMUserManager manager] updateClientLog:[IMClientLog clientLogWithMessage:[NSString stringWithFormat:@"消息：%@发送成功。",@(content.msg_id)]]];
         }

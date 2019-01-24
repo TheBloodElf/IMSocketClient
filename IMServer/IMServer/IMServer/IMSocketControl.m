@@ -33,6 +33,11 @@
     NSTimer *_heartbeatTimer;
 }
 
+/**这里面存放的是所有的订阅信息 只有订阅了才会向外转发收到的消息*/
+@property(nonatomic, strong) NSMutableDictionary<NSString*,id<IMSocketReceiver>> *registerMaps;
+/**这里面存放的是所有的正在执行的操作，有个定时器会一直检查还在执行的操作*/
+@property(nonatomic, strong) NSMutableDictionary<NSString*,IMSocketReqContext*> *operationMaps;
+
 @end
 
 @implementation IMSocketControl
@@ -41,16 +46,18 @@
 
 - (instancetype)init {
     self = [super init];
-    if (self) {
-        //初始化属性
-        _operationMaps = [@{} mutableCopy];
-        _registerMaps = [@{} mutableCopy];
-        //不断的定时检查operationMaps，判断发送失败、或者需要重试
-        _timeOutTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(handleTimeOutTimer) userInfo:nil repeats:YES];
-        //初始化IMSocketIO
-        _iMSocketIO = [IMSocketIO new];
-        _iMSocketIO.delegate = self;
+    if(!self) {
+        return nil;
     }
+    
+    //初始化属性
+    _operationMaps = [@{} mutableCopy];
+    _registerMaps = [@{} mutableCopy];
+    //不断的定时检查operationMaps，判断发送失败、或者需要重试
+    _timeOutTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(handleTimeOutTimer) userInfo:nil repeats:YES];
+    //初始化IMSocketIO
+    _iMSocketIO = [IMSocketIO new];
+    _iMSocketIO.delegate = self;
     return self;
 }
 
@@ -73,7 +80,7 @@
 /**
  发送心跳
  */
--(void)handleHeartbeatTimer {
+- (void)handleHeartbeatTimer {
     if (_iMSocketIO && [_iMSocketIO isSocketConnect]) {
         [_iMSocketIO sendData:nil headerType:E_SOCKET_HEADER_CMD_KEEPALIVE];
     }
@@ -82,7 +89,7 @@
 /**
  处理超时请求
  */
--(void)handleTimeOutTimer {
+- (void)handleTimeOutTimer {
     @synchronized(self) {
         //现在的时间
         uint32_t nowTime = [[NSDate date] timeIntervalSince1970];
@@ -100,7 +107,8 @@
                 [self addReqContext:context];
                 [self.operationMaps removeObjectForKey:key];
             }
-            else if(context.res >= 2) {//如果已经重试两次了，设置失败，并通知对应cmd监听者
+            //如果已经重试两次了，设置失败，并通知对应cmd监听者
+            else if(context.res >= 2) {
                 id<IMSocketReceiver> receiver = [self.registerMaps objectForKey:context.cmd];
                 if (receiver != nil) {
                     //连接超时
@@ -216,13 +224,14 @@
 - (void)didReceiveWithHeader:(IMSocketHeader *)header bodyData:(NSData *)bodyData {
     //开始解析数据
     switch (header.command) {
-            //握手数据不向外分发，自己处理，告诉外部连接成功
-        case E_SOCKET_HEADER_CMD_HANDSHAKE:
+        //握手数据不向外分发，自己处理，告诉外部连接成功
+        case E_SOCKET_HEADER_CMD_HANDSHAKE: {
             //获取加密字符 这也是单独握手一次的目的
             [bodyData getBytes:&_cryptKey length:1];
             //通知回调，连接完成
             _connectCallBackBlock(nil);
             break;
+        }
         default: {
             //加解密数据
             [self encryptData:bodyData cryptKey:_cryptKey];
@@ -241,10 +250,12 @@
         [serverResp mj_setKeyValues:serverString.mj_keyValues];
         //得到该请求的cmd类别对应的监听者
         id<IMSocketReceiver> receiver = [self.registerMaps objectForKey:serverResp.cmd];
-        if(receiver == nil)
+        if(receiver == nil) {
             return;
-        //判断该响应包的类型
-        //如果是对某个请求的响应
+        }
+        
+        
+        //判断该响应包的类型 如果是对某个请求的响应
         if(serverResp.type == PACK_TYPE_RESP) {
             //得到该响应对应的请求 并修改部分值
             IMSocketReqContext *reqContext = [self.operationMaps objectForKey:@(serverResp.seq).stringValue];
@@ -262,14 +273,20 @@
             //该消息已经得到处理，从self.operationMaps中删除
             [self.operationMaps removeObjectForKey:@(serverResp.seq).stringValue];
         }
-        //如果是通知，则self.registerMaps没有对应的响应，需要自己组装一个响应向外发送
-        if(serverResp.type == PACK_TYPE_NOTIFY) {
+        
+        //如果是请求，目前没有涉及到服务器主动向客户端拉取数据的场景，暂时不处理
+        if(serverResp.type == PACK_TYPE_REQ) {
+            
+        }
+        
+        //如果是转发，则self.registerMaps没有对应的响应，需要自己组装一个响应向外发送 body是MsgPushNotify类型的json字符串
+        if(serverResp.type == PACK_TYPE_TRANSMIT) {
             IMSocketReqContext *reqContext = [IMSocketReqContext new];
             //设置响应结果，成功还是失败
             reqContext.code = serverResp.code;
             //设置消息类型
             reqContext.type = type;
-            //设置cmd 和 sub_cmd，理论上是不用设置的，因为addReqContext时已经设置了，但是为了保证万无一失
+            //设置cmd 和 sub_cmd
             reqContext.cmd = serverResp.cmd;
             reqContext.sub_cmd = serverResp.sub_cmd;
             //设置服务器返回的数据

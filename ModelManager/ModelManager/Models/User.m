@@ -12,6 +12,18 @@
 
 MJExtensionCodingImplementation
 
+- (instancetype)initWithUid:(int)uid nick:(NSString*)nick avatar:(NSString*)avatar {
+    self = [super init];
+    if(!self) {
+        return nil;
+    }
+    
+    _uid = uid;
+    _nick = nick;
+    _avatar = avatar;
+    return self;
+}
+
 + (NSString*)primaryKey {
     return @"uid";
 }

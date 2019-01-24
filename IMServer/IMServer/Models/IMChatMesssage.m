@@ -19,7 +19,7 @@ MJExtensionCodingImplementation
 #pragma mark -- Private Methods
 
 + (NSString*)primaryKey {
-    return @"id";
+    return @"msg_id";
 }
 
 #pragma mark -- Public Methods

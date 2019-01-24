@@ -12,9 +12,11 @@
 
 -(instancetype)init {
     self = [super init];
-    if(self){
-        _res = 0;
+    if(!self) {
+        return nil;
     }
+    
+    _res = 0;
     return self;
 }
 

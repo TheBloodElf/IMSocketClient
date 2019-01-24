@@ -14,11 +14,11 @@
 @interface PrivateChatController : UIViewController
 
 /**
- 通过uid初始化对象
+ 通过uid初始化聊天界面
 
  @param targetId 对方的uid
  @return instancetype
  */
-- (instancetype)initWithTargetId:(NSString*)targetId;
+- (instancetype)initWithTargetId:(int)targetId;
 
 @end

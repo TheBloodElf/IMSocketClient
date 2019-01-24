@@ -17,6 +17,7 @@
     /**接收服务器发回来的数据*/
     NSMutableData *_mutableData;
 }
+
 /**tcp协议的socket句柄*/
 @property(nonatomic,strong) GCDAsyncSocket *gCDAsyncSocket;
 /**服务器地址*/
@@ -32,11 +33,13 @@
 
 - (instancetype)init {
     self = [super init];
-    if (self) {
-        _mutableData = [NSMutableData new];
-        //初始化socket
-        _gCDAsyncSocket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
+    if(!self) {
+        return nil;
     }
+    
+    _mutableData = [NSMutableData new];
+    //初始化socket
+    _gCDAsyncSocket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
     return self;
 }
 
@@ -90,7 +93,9 @@
         NSInteger len = [_mutableData length] - loc;
         [_mutableData setData:[_mutableData subdataWithRange:NSMakeRange(loc, len)]];
         [self tryParseReceivedData];
-    } else {//出现错误，去掉这部分数据
+    }
+    //出现错误，去掉这部分数据
+    else {
         [_mutableData setData:[NSData data]];
     }
 }

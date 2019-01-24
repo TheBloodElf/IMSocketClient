@@ -7,7 +7,7 @@
 //
 
 /**发送包头部长度*/
-#define DF_SOCKET_HEADER_LENGTH     16
+#define DF_SOCKET_HEADER_LENGTH     (16)
 /**头部版本号*/
 #define DF_SOCKET_HEADER_VERSION    (0x01)
 /**校验码*/

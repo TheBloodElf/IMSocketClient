@@ -3,9 +3,9 @@ PODS:
   - IQKeyboardManager (5.0.7)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.15.3)
-  - Realm (2.8.3):
-    - Realm/Headers (= 2.8.3)
-  - Realm/Headers (2.8.3)
+  - Realm (3.13.1):
+    - Realm/Headers (= 3.13.1)
+  - Realm/Headers (3.13.1)
   - SDAutoLayout (2.2.0)
   - SDWebImage (4.3.0):
     - SDWebImage/Core (= 4.3.0)
@@ -16,19 +16,29 @@ DEPENDENCIES:
   - IQKeyboardManager (~> 5.0.2)
   - MJExtension
   - MJRefresh
-  - Realm (~> 2.8.1)
+  - Realm (~> 3.13.1)
   - SDAutoLayout
   - SDWebImage
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - CocoaAsyncSocket
+    - IQKeyboardManager
+    - MJExtension
+    - MJRefresh
+    - Realm
+    - SDAutoLayout
+    - SDWebImage
 
 SPEC CHECKSUMS:
   CocoaAsyncSocket: 3541e024f48c54b251638ef72d51dd42808de932
   IQKeyboardManager: 0bfa4607d39924116b5c0c8b55b5d789288b5cba
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
-  Realm: 3601ef091c8c499a31101d8563b991e75546cdce
+  Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
   SDAutoLayout: c5509e77ae75735d9a39f7bc83dba6d3f75d49d8
   SDWebImage: 6da6c8bca115addc4de8613362e1b15f66333825
 
-PODFILE CHECKSUM: 444e650100785481b424ef5139f1647e294823f0
+PODFILE CHECKSUM: 247666ec91fc1b314c5503bd1442d640c5ea4382
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.5.0

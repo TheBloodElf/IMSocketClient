@@ -24,14 +24,11 @@
 @interface IMChatMesssage : RLMObject
 
 #pragma mark -- 必需属性
-/**主键，取时间戳毫秒，和服务器IMMsgContent的msg_id对应
- 用作Timeline逻辑模型中的顺序ID*/
-@property (nonatomic, assign) int64_t id;
-/**消息拥有者id，和a的所有聊天记录则获取数据库中ownerImid=a.imid即可*/
-@property (nonatomic, assign) int64_t owner_imid;
+/**主键，取时间戳毫秒，和服务器IMMsgContent的msg_id对应 用作Timeline逻辑模型中的顺序ID 拉取离线就靠这个*/
+@property (nonatomic, assign) int64_t msg_id;
 /**消息发送状态 发送中、已发送、失败*/
 @property (nonatomic, assign) E_CHAT_SEND_STATUS status;
-/**消息发送时间，取时间戳毫秒*/
+/**消息时间，发送消息时可以不关心这个字段，由server填充，如果是接收方，则是收到该消息的时间，单位秒 */
 @property (nonatomic, assign) int64_t time;
 /**是否在界面上显示当前消息的时间 当这条消息和上一条相差6分钟时设置为YES*/
 @property (nonatomic, assign) BOOL show_time;
@@ -41,11 +38,5 @@
 @property (nonatomic, strong) IMChater *reciver;
 /**消息内容*/
 @property (nonatomic, strong) IMChatMessageContent *content;
-
-#pragma mark -- 推荐属性
-/**我还是别人发送的消息 主要是显示界面时就少了一步判断 发消息时写me，收到消息时写other*/
-@property (nonatomic, assign) E_CHAT_FROM_TYPE from;
-/**发送者imid，这样服务器在转发消息时就少了一步判断*/
-@property (nonatomic, assign) int64_t sender_imid;
 
 @end

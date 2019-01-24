@@ -20,14 +20,16 @@
 
 - (instancetype)init {
     self = [super init];
-    if (self) {
-        //登录密码，默认为此，不然服务器会返回错误
-        _passwd = @"bb_password";
-        //版本号
-        _client_version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-        //设备Token，后面注册apns时可以得到正确的值进行传输
-        _device_token = @"bb_token";
+    if(!self) {
+        return nil;
     }
+    
+    //登录密码，默认为此，不然服务器会返回错误
+    _passwd = @"bb_password";
+    //版本号
+    _client_version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    //设备Token，后面注册apns时可以得到正确的值进行传输
+    _device_token = @"bb_token";
     return self;
 }
 
@@ -74,7 +76,7 @@
     //初始化一个代理对象
     IMSocketRespAgent *respAgent = [IMSocketRespAgent new];
     //本类中固定为user
-    respAgent.cmd = context.cmd;
+    respAgent.cmd = context.cmd ?: @"user";
     //login等
     respAgent.sub_cmd = context.sub_cmd;
     respAgent.code = context.code;

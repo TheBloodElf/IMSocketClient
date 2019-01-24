@@ -8,20 +8,22 @@
 
 #import "IMSocketHeader.h"
 
-//哪个端主动断开的连接
-typedef enum {
+/**
+ 哪个端主动断开的连接
+ */
+typedef NS_ENUM(NSUInteger, E_SOCKET_DISCONNECT_TYPE) {
     /**服务器断开链接，需要马上重连*/
     E_SOCKET_DISCONNECT_BY_SERVER   = 1,
     /**客户端断开链接，不需要重连*/
     E_SOCKET_DISCONNECT_BY_CLIENT   = 2
-} E_SOCKET_DISCONNECT_TYPE;
+};
 
 /**
  数据传输协议
  */
 @protocol IMSocketIODelegate <NSObject>
-@optional
 
+@optional
 /**
  已经连接到了服务器
 
@@ -56,6 +58,7 @@ typedef enum {
 
 /**IMSocketIODelegate代理对象*/
 @property (nonatomic,assign) id<IMSocketIODelegate> delegate;
+
 /**
  建立连接
 

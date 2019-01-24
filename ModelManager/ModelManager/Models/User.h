@@ -14,11 +14,20 @@
 @interface User : RLMObject
 
 /**uid*/
-@property (nonatomic, assign) int uid;
+@property (nonatomic, readwrite, assign) int uid;
 /**昵称*/
-@property (nonatomic, strong) NSString *nick;
+@property (nonatomic, readwrite,   copy) NSString *nick;
 /**头像*/
-@property (nonatomic, strong) NSString *avatar;
+@property (nonatomic, readwrite,   copy) NSString *avatar;
 
+/**
+ 传入指定参数创建用户
+
+ @param uid 用户编号
+ @param nick 昵称
+ @param avatar 头像
+ @return 用户
+ */
+- (instancetype)initWithUid:(int)uid nick:(NSString*)nick avatar:(NSString*)avatar;
 
 @end

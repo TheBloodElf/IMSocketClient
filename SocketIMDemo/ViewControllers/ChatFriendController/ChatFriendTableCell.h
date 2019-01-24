@@ -13,9 +13,4 @@
  */
 @interface ChatFriendTableCell : UITableViewCell
 
-/**头像*/
-@property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
-/**名字*/
-@property (weak, nonatomic) IBOutlet UILabel *userName;
-
 @end

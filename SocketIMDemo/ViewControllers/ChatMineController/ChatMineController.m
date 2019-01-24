@@ -8,80 +8,55 @@
 
 #import "ChatMineController.h"
 
-//Views
-#import "ChatMineView.h"
-
-//Managers
-#import "ChatMineTableViewManager.h"
-
 @interface ChatMineController () {
-    /**用户数据管理器*/
+    /**用户模型管理器*/
     UserManager *_userManager;
-    
-    /**聊天数据管理器*/
-    IMUserManager *_iMUserManager;
-    /**聊天模块*/
-    IMUserSocket *_iMUserSocket;
-    
-    /**表格视图管理者*/
-    ChatMineTableViewManager *_tableViewManager;
 }
 
 @end
 
 @implementation ChatMineController
 
-#pragma mark -- Init Methods
+#pragma mark - Init Method
 
-- (instancetype)init {
-    if(self = [super init]) {
-        _userManager = [UserManager manager];
-        _iMUserSocket = [IMUserSocket socket];
-        _iMUserManager = [IMUserManager manager];
-    }
-    return self;
-}
-
-#pragma mark -- Life Cycle
+#pragma mark - Life Cycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = [NSString stringWithFormat:@"%@日志记录",_userManager.user.nick];
     self.view.backgroundColor = [UIColor whiteColor];
-    //创建视图部分
-    ChatMineView *chatMineView = [[ChatMineView alloc] initWithFrame:CGRectMake(0, 0, MAIN_SCREEN_WIDTH, MAIN_SCREEN_HEIGHT - 64 - 49)];
-    [self.view addSubview:chatMineView];
-    UITableView *tableView = [self.view viewWithTag:LOG_TABLE_VIEW_TAG];
-    _tableViewManager = [[ChatMineTableViewManager alloc] initWithLogs:[_iMUserManager allClientLogs] tableView:tableView];
-    tableView.delegate = _tableViewManager;
-    tableView.dataSource = _tableViewManager;
-    //实时监听日志表变化
-    __weak typeof(self) weakSelf = self;
-    [_iMUserManager addClientLogChangeListener:^{
-        __strong typeof(self) strongSelf = weakSelf;
-        [strongSelf clientLogChange];
-    }];
-    //设置导航按钮
-    [self setNavigationRightBarButtonItem];
+    [self initModesAndViews];
+    self.navigationItem.title = [NSString stringWithFormat:@"%@(%d)",_userManager.user.nick,_userManager.user.uid];
 }
 
-#pragma mark -- Function Methods
+#pragma mark - Class Method
 
-#pragma mark -- Private Methods
+#pragma mark - Override Method
 
-- (void)clientLogChange {
-    [_tableViewManager updateLogs:[_iMUserManager allClientLogs]];
+#pragma mark - Function Method
+
+#pragma mark - Private Method
+
+/**
+ 初始化模型、视图
+ */
+- (void)initModesAndViews {
+    _userManager = [UserManager manager];
 }
 
 /**
- 设置右边导航
+ 添加点击事件
  */
-- (void)setNavigationRightBarButtonItem {
+- (void)setViewsClickEvents {
     
 }
 
-#pragma mark -- Public Methods
+/**
+ 设置界面圆角、边框或者其他操作
+ */
+- (void)setViewsRoundLineOrOtherOperation {
+    
+}
 
-#pragma mark -- Action Methods
+#pragma mark - Public Method
 
 @end

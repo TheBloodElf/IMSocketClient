@@ -32,13 +32,6 @@
 - (void)updateCurrUser:(User*)user;
 
 /**
- 更新当前应用体系中的所有用户
-
- @param users 用户
- */
-- (void)updateUsers:(NSMutableArray<User*>*)users;
-
-/**
  获取所有的应用体系中的用户
  
  @return 用户

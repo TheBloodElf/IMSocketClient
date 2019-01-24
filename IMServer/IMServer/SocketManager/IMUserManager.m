@@ -8,9 +8,6 @@
 
 #import "IMUserManager.h"
 
-/**IMUserManager单例对象*/
-static IMUserManager *IM_USER_MANAGER_INSTANCE;
-
 @interface IMUserManager () {
     /**realm数据库路径*/
     NSString *_pathUrl;
@@ -18,7 +15,11 @@ static IMUserManager *IM_USER_MANAGER_INSTANCE;
     RLMRealm *_mainThreadRLMRealm;
     /**持有RLMNotificationToken对象，不然创建后就消失了*/
     NSMutableArray<RLMNotificationToken*> *_allNotificationTokenArr;
+    
+    /**让更新数据库的操作异步串行执行，降低cpu峰值*/
+    NSOperationQueue *_operationQueue;
 }
+
 @end
 
 @implementation IMUserManager
@@ -27,17 +28,25 @@ static IMUserManager *IM_USER_MANAGER_INSTANCE;
 
 - (instancetype)init {
     self = [super init];
-    if (self) {
-        //得到用户对应的数据库路径
-        NSArray *pathArr = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
-        _pathUrl = pathArr[0];
-        //imUser是随便写的，因为客户端所有的数据都存在一个数据库，因为登录用户是固定写死的，没有做登录操作
-        _pathUrl = [_pathUrl stringByAppendingPathComponent:@"imUser"];
-        //创建数据库
-        _mainThreadRLMRealm = [RLMRealm realmWithURL:[NSURL URLWithString:_pathUrl]];
-        //持有RLMNotificationToken对象
-        _allNotificationTokenArr = [@[] mutableCopy];
+    if(!self) {
+        return nil;
     }
+    
+    //得到用户对应的数据库路径
+    NSArray *pathArr = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    _pathUrl = pathArr[0];
+    //imUser是随便写的，因为客户端所有的数据都存在一个数据库，因为登录用户是固定写死的，没有做登录操作
+    _pathUrl = [_pathUrl stringByAppendingPathComponent:@"imUser"];
+    //创建数据库
+    _mainThreadRLMRealm = [RLMRealm realmWithURL:[NSURL URLWithString:_pathUrl]];
+    //持有RLMNotificationToken对象
+    _allNotificationTokenArr = [@[] mutableCopy];
+    //让更新数据库的操作异步串行执行，降低cpu峰值
+    _operationQueue = [NSOperationQueue new];
+    _operationQueue.name = @"ImUserOperationQueue";
+    _operationQueue.maxConcurrentOperationCount = 1;
+    //优先级不用太高
+    _operationQueue.qualityOfService = NSQualityOfServiceUtility;
     return self;
 }
 
@@ -65,12 +74,15 @@ static IMUserManager *IM_USER_MANAGER_INSTANCE;
 #pragma mark -- Instance Public Methods
 
 + (instancetype)manager {
+    static IMUserManager *iMUserManager = nil;
     static dispatch_once_t predicate;
     dispatch_once(&predicate, ^{
-        IM_USER_MANAGER_INSTANCE = [[self class] new];
+        iMUserManager = [IMUserManager new];
     });
-    return IM_USER_MANAGER_INSTANCE;
+    return iMUserManager;
 }
+
+#pragma mark - IMChater
 
 - (void)updateCurrChater:(IMChater*)chater {
     RLMRealm *rlmRealm = [self currThreadRealmInstance];
@@ -80,26 +92,18 @@ static IMUserManager *IM_USER_MANAGER_INSTANCE;
     [rlmRealm commitWriteTransaction];
 }
 
+#pragma mark - IMChatMesssage
+
 - (void)updateChatMessage:(IMChatMesssage*)message {
-    RLMRealm *rlmRealm = [self currThreadRealmInstance];
-    [rlmRealm beginWriteTransaction];
-    [IMChatMesssage createOrUpdateInRealm:rlmRealm withValue:message];
-    [rlmRealm commitWriteTransaction];
+    [_operationQueue addOperationWithBlock:^{
+        RLMRealm *rlmRealm = [self currThreadRealmInstance];
+        [rlmRealm beginWriteTransaction];
+        [IMChatMesssage createOrUpdateInRealm:rlmRealm withValue:message];
+        [rlmRealm commitWriteTransaction];
+    }];
 }
 
-- (NSMutableArray<IMChatMesssage*>*)chatMessagesWithOwnerId:(int64_t)imid {
-    NSMutableArray<IMChatMesssage*> *resultArr = [@[] mutableCopy];
-    RLMRealm *rlmRealm = [self currThreadRealmInstance];
-    RLMResults *results = [IMChatMesssage objectsInRealm:rlmRealm withPredicate:[NSPredicate predicateWithFormat:@"owner_imid = %@",@(imid)]];
-    //依次填充所有的用户信息
-    for (int index = 0; index < results.count; index ++) {
-        //使用deepCopy拷贝一份数据
-        [resultArr addObject:[results[index] deepCopy]];
-    }
-    return resultArr;
-}
-
-- (void)addChatMessageChangeListener:(modelChangeHandler)changeHandler {
+- (void)addChatMessageChangeListener:(ModelChangeHandler)changeHandler {
     //监听数据库中IMChatMesssage表变化，实时通知外部
     RLMNotificationToken *notificationToken = [[IMChatMesssage allObjectsInRealm:_mainThreadRLMRealm] addNotificationBlock:^(RLMResults * _Nullable results, RLMCollectionChange * _Nullable change, NSError * _Nullable error) {
         changeHandler();
@@ -107,11 +111,15 @@ static IMUserManager *IM_USER_MANAGER_INSTANCE;
     [_allNotificationTokenArr addObject:notificationToken];
 }
 
+#pragma mark - IMClientLog
+
 - (void)updateClientLog:(IMClientLog*)clientLog {
-    RLMRealm *rlmRealm = [self currThreadRealmInstance];
-    [rlmRealm beginWriteTransaction];
-    [IMClientLog createOrUpdateInRealm:rlmRealm withValue:clientLog];
-    [rlmRealm commitWriteTransaction];
+    [_operationQueue addOperationWithBlock:^{
+        RLMRealm *rlmRealm = [self currThreadRealmInstance];
+        [rlmRealm beginWriteTransaction];
+        [IMClientLog createOrUpdateInRealm:rlmRealm withValue:clientLog];
+        [rlmRealm commitWriteTransaction];
+    }];
 }
 
 - (NSMutableArray<IMClientLog*>*)allClientLogs {
@@ -126,7 +134,19 @@ static IMUserManager *IM_USER_MANAGER_INSTANCE;
     return resultArr;
 }
 
-- (void)addClientLogChangeListener:(modelChangeHandler)changeHandler {
+- (void)deleteClientLogs {
+    [_operationQueue addOperationWithBlock:^{
+        RLMRealm *rlmRealm = [self currThreadRealmInstance];
+        [rlmRealm beginWriteTransaction];
+        RLMResults *results = [IMClientLog objectsInRealm:rlmRealm withPredicate:nil];
+        while (results.count) {
+            [rlmRealm deleteObject:results.firstObject];
+        }
+        [rlmRealm commitWriteTransaction];
+    }];
+}
+
+- (void)addClientLogChangeListener:(ModelChangeHandler)changeHandler {
     RLMNotificationToken *notificationToken = [[IMClientLog allObjectsInRealm:_mainThreadRLMRealm] addNotificationBlock:^(RLMResults * _Nullable results, RLMCollectionChange * _Nullable change, NSError * _Nullable error) {
         changeHandler();
     }];

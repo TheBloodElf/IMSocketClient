@@ -16,9 +16,12 @@ static AppCustoms * APP_CUSTOMS_SINGLETON;
 #pragma mark - Init
 
 - (instancetype)init {
-    if (self = [super init]) {
-        
+    self = [super init];
+    if(!self) {
+        return nil;
     }
+    
+    [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
     return self;
 }
 

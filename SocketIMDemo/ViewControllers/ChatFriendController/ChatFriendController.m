@@ -8,72 +8,138 @@
 
 #import "ChatFriendController.h"
 
-#import "ChatFriendView.h"
+//Tools
 
-#import "UserManager.h"
-#import "ChatFriendTableViewManager.h"
+//Views
+#import "ChatFriendTableCell.h"
 
+//Controllers
 #import "PrivateChatController.h"
 
-@interface ChatFriendController ()<UserDidSelectDelegate> {
+@interface ChatFriendController ()<UITableViewDelegate,UITableViewDataSource> {
     /**用户数据管理器*/
     UserManager *_userManager;
-    /**表格视图管理器*/
-    ChatFriendTableViewManager *_tableViewManager;
+    
+    /**表格视图*/
+    UITableView *_tableView;
+    /**数据源*/
+    NSArray<User*> *_allUsers;
+    
+    /**是不是第一次显示界面*/
+    BOOL _isFirstLoad;
 }
 
 @end
 
 @implementation ChatFriendController
 
-#pragma mark -- Init Methods
+#pragma mark - Init Method
 
-- (instancetype)init {
-    if(self = [super init]) {
-        _userManager = [UserManager manager];
-    }
-    return self;
-}
-
-#pragma mark -- Life Cycle
+#pragma mark - Life Cycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"好友";
     self.view.backgroundColor = [UIColor whiteColor];
-    //创建视图部分
-    ChatFriendView *chatFriendView = [[ChatFriendView alloc] initWithFrame:CGRectMake(0, 0, MAIN_SCREEN_WIDTH, MAIN_SCREEN_HEIGHT - 64)];
-    [self.view addSubview:chatFriendView];
-    //设置表格视图数据源
-    UITableView *tableView = [self.view viewWithTag:FRIEND_TABLEVIEW_TAG];
-    _tableViewManager = [[ChatFriendTableViewManager alloc] initWithUsers:[_userManager allUsers] tableView:tableView];
-    _tableViewManager.userSelectDelegate = self;
+    //初始化模型、视图
+    [self initModesAndViews];
+    //添加点击事件
+    [self setViewsClickEvents];
+    //设置界面圆角、边框或者其他操作
+    [self setViewsRoundLineOrOtherOperation];
 }
 
-#pragma mark -- Class Private Methods
-
-#pragma mark -- Class Public Methods
-
-#pragma mark -- Function Private Methods
-
-#pragma mark -- Function Public Methods
-
-#pragma mark -- Instance Private Methods
-
-#pragma mark -- Instance Public Methods
-
-#pragma mark -- UserDidSelectDelegate
-
-- (void)userDidSelect:(User*)user {
-    //点击了自己，就跳转到我界面
-    if(user.uid == _userManager.user.uid) {
-        [self.navigationController.tabBarController setSelectedIndex:2];
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if(!_isFirstLoad) {
+        return;
     }
-    else {//进入聊天界面
-        PrivateChatController *privateChat = [[PrivateChatController alloc] initWithTargetId:@(user.uid).stringValue];
-        privateChat.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:privateChat animated:YES];
+    _isFirstLoad = false;
+    
+    NSMutableArray<User*> *tempUsers = [@[] mutableCopy];
+    for (User *user in [_userManager allUsers]) {
+        //把自己排除掉
+        if(user.uid == _userManager.user.uid) {
+            continue;
+        }
+        
+        [tempUsers addObject:user];
     }
+    _allUsers = [tempUsers copy];
+    [_tableView reloadData];
 }
+
+#pragma mark - Class Method
+
+#pragma mark - Override Method
+
+#pragma mark -- UITableViewDelegate,UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if(!_allUsers) {
+        return 0;
+    }
+    return _allUsers.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    ChatFriendTableCell *friendTableCell = [tableView dequeueReusableCellWithIdentifier:@"ChatFriendTableCell"];
+    
+    //数据源被恶意修改
+    if(!_allUsers || (indexPath.row >= _allUsers.count)) {
+        return friendTableCell;
+    }
+    User *currUser = _allUsers[indexPath.row];
+    friendTableCell.data = currUser;
+    
+    return friendTableCell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - Function Method
+
+#pragma mark - Private Method
+
+/**
+ 初始化模型、视图
+ */
+- (void)initModesAndViews {
+    _isFirstLoad = true;
+    //用户模型
+    _userManager = [UserManager manager];
+    //数据源
+    _allUsers = @[];
+    
+    //表格视图
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, MAIN_SCREEN_WIDTH, MAIN_SCREEN_HEIGHT - NAVIGATION_BAR_HEIGHT - TAB_BAR_HEIGHT - STATUS_BAR_HEIGHT)];
+    _tableView.showsVerticalScrollIndicator = NO;
+    _tableView.showsHorizontalScrollIndicator = NO;
+    _tableView.tableFooterView = [UIView new];
+    _tableView.tableHeaderView = [UIView new];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    _tableView.rowHeight = 60;
+    [_tableView registerNib:[UINib nibWithNibName:@"ChatFriendTableCell" bundle:nil] forCellReuseIdentifier:@"ChatFriendTableCell"];
+    [self.view addSubview:_tableView];
+}
+
+/**
+ 添加点击事件
+ */
+- (void)setViewsClickEvents {
+    
+}
+
+/**
+ 设置界面圆角、边框或者其他操作
+ */
+- (void)setViewsRoundLineOrOtherOperation {
+    
+}
+
+#pragma mark - Public Method
 
 @end

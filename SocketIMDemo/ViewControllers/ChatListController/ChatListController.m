@@ -14,16 +14,9 @@
 
 @implementation ChatListController
 
-#pragma mark -- Init Methods
+#pragma mark - Init Method
 
-- (instancetype)init {
-    if(self = [super init]) {
-        
-    }
-    return self;
-}
-
-#pragma mark -- Life Cycle
+#pragma mark - Life Cycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,16 +25,35 @@
     // Do any additional setup after loading the view.
 }
 
-#pragma mark -- Class Private Methods
+#pragma mark - Class Method
 
-#pragma mark -- Class Public Methods
+#pragma mark - Override Method
 
-#pragma mark -- Function Private Methods
+#pragma mark - Function Method
 
-#pragma mark -- Function Public Methods
+#pragma mark - Private Method
 
-#pragma mark -- Instance Private Methods
+/**
+ 初始化模型、视图
+ */
+- (void)initModesAndViews {
+    
+}
 
-#pragma mark -- Instance Public Methods
+/**
+ 添加点击事件
+ */
+- (void)setViewsClickEvents {
+    
+}
+
+/**
+ 设置界面圆角、边框或者其他操作
+ */
+- (void)setViewsRoundLineOrOtherOperation {
+    
+}
+
+#pragma mark - Public Method
 
 @end

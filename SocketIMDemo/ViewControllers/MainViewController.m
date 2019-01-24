@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+
 #import "ChatListController.h"
 #import "ChatFriendController.h"
 #import "ChatMineController.h"
@@ -42,18 +43,24 @@
     UINavigationController *viewController = [[UINavigationController alloc] initWithRootViewController:[ChatListController new]];
     viewController.tabBarItem.title = @"会话";
     viewController.navigationBar.translucent = NO;
+    [viewController.tabBarItem setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12],NSForegroundColorAttributeName:[UIColor blackColor]} forState:UIControlStateNormal];
+    [viewController.tabBarItem setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15],NSForegroundColorAttributeName:[UIColor blackColor]} forState:UIControlStateSelected];
     return viewController;
 }
 - (UIViewController*)friendController {
     UINavigationController *viewController = [[UINavigationController alloc] initWithRootViewController:[ChatFriendController new]];
     viewController.tabBarItem.title = @"好友";
     viewController.navigationBar.translucent = NO;
+    [viewController.tabBarItem setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12],NSForegroundColorAttributeName:[UIColor blackColor]} forState:UIControlStateNormal];
+    [viewController.tabBarItem setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15],NSForegroundColorAttributeName:[UIColor blackColor]} forState:UIControlStateSelected];
     return viewController;
 }
 - (UIViewController*)mineController {
     UINavigationController *viewController = [[UINavigationController alloc] initWithRootViewController:[ChatMineController new]];
-    viewController.tabBarItem.title = @"日志";
+    viewController.tabBarItem.title = @"我的";
     viewController.navigationBar.translucent = NO;
+    [viewController.tabBarItem setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12],NSForegroundColorAttributeName:[UIColor blackColor]} forState:UIControlStateNormal];
+    [viewController.tabBarItem setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15],NSForegroundColorAttributeName:[UIColor blackColor]} forState:UIControlStateSelected];
     return viewController;
 }
 

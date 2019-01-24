@@ -23,24 +23,26 @@
 
 #pragma mark -- Init Methods
 
-- (id)init {
+- (instancetype)init {
     self = [super init];
-    if (self) {
-        //socket控制中心
-        _iMSocketControl = [IMSocketControl new];
-        //初始化user消息监听者
-        _iMSocketUserHandler = [IMSocketUserHandler new];
-        //设置IMSocketControl，方便_iMSocketUserHandler向IMSocketControl添加请求
-        [_iMSocketUserHandler setControl:_iMSocketControl];
-        //初始化msg消息监听者
-        _iMSocketMessageHandler = [IMSocketMessageHandler new];
-        [_iMSocketMessageHandler setControl:_iMSocketControl];
-        
-        //向_iMSocketControl注册user的监听者为_iMSocketUserHandler
-        [_iMSocketControl regeistReceiver:@"user" interface:_iMSocketUserHandler];
-        //向_iMSocketControl注册user的监听者为_iMSocketUserHandler
-        [_iMSocketControl regeistReceiver:@"msg" interface:_iMSocketMessageHandler];
+    if(!self) {
+        return nil;
     }
+    
+    //socket控制中心
+    _iMSocketControl = [IMSocketControl new];
+    //初始化user消息监听者
+    _iMSocketUserHandler = [IMSocketUserHandler new];
+    //设置IMSocketControl，方便_iMSocketUserHandler向IMSocketControl添加请求
+    [_iMSocketUserHandler setControl:_iMSocketControl];
+    //初始化msg消息监听者
+    _iMSocketMessageHandler = [IMSocketMessageHandler new];
+    [_iMSocketMessageHandler setControl:_iMSocketControl];
+    
+    //向_iMSocketControl注册user的监听者为_iMSocketUserHandler
+    [_iMSocketControl regeistReceiver:@"user" interface:_iMSocketUserHandler];
+    //向_iMSocketControl注册user的监听者为_iMSocketUserHandler
+    [_iMSocketControl regeistReceiver:@"msg" interface:_iMSocketMessageHandler];
     return self;
 }
 
