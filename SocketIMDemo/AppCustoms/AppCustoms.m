@@ -8,9 +8,6 @@
 
 #import "AppCustoms.h"
 
-/**AppCustoms单例对象*/
-static AppCustoms * APP_CUSTOMS_SINGLETON;
-
 @implementation AppCustoms
 
 #pragma mark - Init
@@ -20,7 +17,7 @@ static AppCustoms * APP_CUSTOMS_SINGLETON;
     if(!self) {
         return nil;
     }
-    
+    [[UITabBar appearance] setTranslucent:NO];
     [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
     return self;
 }
@@ -28,9 +25,12 @@ static AppCustoms * APP_CUSTOMS_SINGLETON;
 #pragma mark - Public Methods
 
 + (AppCustoms *)customs {
+    static AppCustoms * appCustoms;
     static dispatch_once_t predicate;
-    dispatch_once( &predicate, ^{ APP_CUSTOMS_SINGLETON = [[[self class] alloc] init]; } );
-    return APP_CUSTOMS_SINGLETON;
+    dispatch_once( &predicate, ^{
+        appCustoms = [AppCustoms new];
+    });
+    return appCustoms;
 }
 
 @end

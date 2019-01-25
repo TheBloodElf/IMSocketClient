@@ -13,6 +13,9 @@
     NSString *_pathUrl;
     /**主线程创建的realm数据库对象  用来创建数据观察者使用*/
     RLMRealm *_mainThreadRLMRealm;
+    
+    /**让更新数据库的操作异步串行执行，降低cpu峰值*/
+    NSOperationQueue *_operationQueue;
 }
 
 @end
@@ -34,6 +37,13 @@
     _pathUrl = [_pathUrl stringByAppendingPathComponent:@"user"];
     //创建数据库
     _mainThreadRLMRealm = [RLMRealm realmWithURL:[NSURL URLWithString:_pathUrl]];
+    
+    //让更新数据库的操作异步串行执行，降低cpu峰值
+    _operationQueue = [NSOperationQueue new];
+    _operationQueue.name = @"ImUserOperationQueue";
+    _operationQueue.maxConcurrentOperationCount = 1;
+    //优先级不用太高
+    _operationQueue.qualityOfService = NSQualityOfServiceUtility;
     
     //构造假数据
     [self createDefaultUsers];
@@ -69,6 +79,7 @@
 - (void)createDefaultUsers {
     //用户应该有10个
     if([self allUsers].count == 10) {
+        self.user = [self allUsers][0];
         return;
     }
     
@@ -78,11 +89,12 @@
     NSArray<NSString*> *nicks = @[@"张无忌",@"小龙女",@"孙悟空",@"沙悟净",@"唐僧",@"白龙马",@"赵云",@"诸葛亮",@"妲己",@"蔡文姬"];
     assert(nicks.count == avatars.count);
     
-    for (int index = 0; index < nicks.count; index ++) {
+    for (int index = 0; index < 10; index ++) {
         User *user = [[User alloc] initWithUid:10000 + index nick:nicks[index] avatar:avatars[index]];
         [users addObject:user];
     }
     //更新
+    self.user = users[0];
     [self updateUsers:users];
 }
 
@@ -95,18 +107,20 @@
 }
 
 - (void)updateUsers:(NSMutableArray<User*>*)users {
-    RLMRealm *rlmRealm = [self currThreadRealmInstance];
-    [rlmRealm beginWriteTransaction];
-    //先删除当前所有的用户
-    RLMResults *results = [User objectsInRealm:rlmRealm withPredicate:nil];
-    while (results.count) {
-        [rlmRealm deleteObject:results.firstObject];
-    }
-    //再添加新用户
-    for (User *user in users) {
-        [User createOrUpdateInRealm:rlmRealm withValue:user];
-    }
-    [rlmRealm commitWriteTransaction];
+    [_operationQueue addOperationWithBlock:^{
+        RLMRealm *rlmRealm = [self currThreadRealmInstance];
+        [rlmRealm beginWriteTransaction];
+        //先删除当前所有的用户
+        RLMResults *results = [User objectsInRealm:rlmRealm withPredicate:nil];
+        while (results.count) {
+            [rlmRealm deleteObject:results.firstObject];
+        }
+        //再添加新用户
+        for (User *user in users) {
+            [User createOrUpdateInRealm:rlmRealm withValue:user];
+        }
+        [rlmRealm commitWriteTransaction];
+    }];
 }
 
 - (NSMutableArray<User*>*)allUsers {

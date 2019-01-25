@@ -30,7 +30,7 @@
 @property (nonatomic, assign) E_CHAT_SEND_STATUS status;
 /**消息时间，发送消息时可以不关心这个字段，由server填充，如果是接收方，则是收到该消息的时间，单位秒 */
 @property (nonatomic, assign) int64_t time;
-/**是否在界面上显示当前消息的时间 当这条消息和上一条相差6分钟时设置为YES*/
+/**是否在界面上显示当前消息的时间 当这条消息和上一条相差6分钟时设置为YES 暂时没实现这个功能*/
 @property (nonatomic, assign) BOOL show_time;
 /**发送者*/
 @property (nonatomic, strong) IMChater *sender;

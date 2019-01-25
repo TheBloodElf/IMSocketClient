@@ -97,6 +97,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    User *currUser = _allUsers[indexPath.row];
+    PrivateChatController *privateVC = [[PrivateChatController alloc] initWithTargetId:currUser.uid];
+    privateVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:privateVC animated:YES];
 }
 
 #pragma mark - Function Method

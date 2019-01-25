@@ -103,6 +103,18 @@
     }];
 }
 
+- (NSMutableArray<IMChatMesssage*>*)chatMessageWith:(int64_t)imid {
+    NSMutableArray<IMChatMesssage*> *resultArr = [@[] mutableCopy];
+    RLMRealm *rlmRealm = [self currThreadRealmInstance];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(sender.imid == %d and reciver.imid == %d) or (sender.imid == %d and reciver.imid == %d)",_chater.imid,imid,imid,_chater.imid];
+    RLMResults *results = [[IMChatMesssage objectsInRealm:rlmRealm withPredicate:predicate] sortedResultsUsingKeyPath:@"msg_id" ascending:NO];
+    for (int index = 0; index < results.count; index ++) {
+        //使用deepCopy拷贝一份数据
+        [resultArr addObject:[results[index] deepCopy]];
+    }
+    return resultArr;
+}
+
 - (void)addChatMessageChangeListener:(ModelChangeHandler)changeHandler {
     //监听数据库中IMChatMesssage表变化，实时通知外部
     RLMNotificationToken *notificationToken = [[IMChatMesssage allObjectsInRealm:_mainThreadRLMRealm] addNotificationBlock:^(RLMResults * _Nullable results, RLMCollectionChange * _Nullable change, NSError * _Nullable error) {

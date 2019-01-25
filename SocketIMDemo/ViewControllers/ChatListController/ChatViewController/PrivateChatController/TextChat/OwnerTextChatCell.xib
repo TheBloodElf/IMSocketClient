@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OwnerTextChatCell" rowHeight="182" id="KGk-i7-Jjw" customClass="OwnerTextChatCell">
+            <rect key="frame" x="0.0" y="0.0" width="408" height="182"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="408" height="181.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rVh-Cq-gYo">
+                        <rect key="frame" x="356" y="12" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="8sK-F0-wi9"/>
+                            <constraint firstAttribute="width" constant="40" id="gXf-aD-ZW1"/>
+                        </constraints>
+                    </imageView>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="rwZ-UQ-PFP">
+                        <rect key="frame" x="39" y="12" width="305" height="157.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="ko2-6h-gaX"/>
+                        </constraints>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="lgd-17-goE">
+                        <rect key="frame" x="12" y="81" width="20" height="20"/>
+                    </activityIndicatorView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfu-zR-UNU">
+                        <rect key="frame" x="0.0" y="71.5" width="39" height="39"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="39" id="QPd-0J-kgn"/>
+                            <constraint firstAttribute="height" constant="39" id="bAK-Sh-6VJ"/>
+                        </constraints>
+                        <state key="normal" image="chat_send_status_fail"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="rVh-Cq-gYo" firstAttribute="leading" secondItem="rwZ-UQ-PFP" secondAttribute="trailing" constant="12" id="6Eh-bd-LfM"/>
+                    <constraint firstItem="rwZ-UQ-PFP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="KKP-6w-EbN"/>
+                    <constraint firstAttribute="bottom" secondItem="rwZ-UQ-PFP" secondAttribute="bottom" constant="12" id="MM3-hh-sqD"/>
+                    <constraint firstItem="rVh-Cq-gYo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="QbL-mk-Ydi"/>
+                    <constraint firstItem="rwZ-UQ-PFP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="39" id="a7v-MI-fha"/>
+                    <constraint firstAttribute="trailing" secondItem="rVh-Cq-gYo" secondAttribute="trailing" constant="12" id="dW9-cl-CR7"/>
+                    <constraint firstItem="wfu-zR-UNU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="fQy-7F-tE1"/>
+                    <constraint firstItem="lgd-17-goE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="hFm-fR-f9J"/>
+                    <constraint firstItem="wfu-zR-UNU" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="iRW-bB-qVA"/>
+                    <constraint firstItem="lgd-17-goE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="wUX-Jd-DBb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="avaterImage" destination="rVh-Cq-gYo" id="Xly-jb-oPM"/>
+                <outlet property="failButton" destination="wfu-zR-UNU" id="4wd-NO-ggQ"/>
+                <outlet property="loadActity" destination="lgd-17-goE" id="Gyi-Rf-U13"/>
+                <outlet property="messageText" destination="rwZ-UQ-PFP" id="r0X-5R-e12"/>
+            </connections>
+            <point key="canvasLocation" x="-171" y="100"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="chat_send_status_fail" width="22" height="23"/>
+    </resources>
+</document>

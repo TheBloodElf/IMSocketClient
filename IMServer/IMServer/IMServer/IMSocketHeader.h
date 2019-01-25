@@ -20,7 +20,7 @@
 
 /**版本 现固定为0x01*/
 @property (nonatomic,assign) int version;
-/**校验码*/
+/**校验码 现固定为0x20140804*/
 @property (nonatomic,assign) int magic_num;
 /**包类型*/
 @property (nonatomic,assign) E_SOCKET_HEADER_CMD_TYPE command;

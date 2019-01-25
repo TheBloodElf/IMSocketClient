@@ -103,10 +103,12 @@
 #pragma mark -- Public Methods
 
 - (void)creatConnetWithHost:(NSString *)host withPort:(UInt16)port {
-    _socketHost = host;//写入服务器ip
-    _socketPort = port;//写入服务器端口
-    [self disonnetSocket];//先断开链接，再重新连接
-    _gCDAsyncSocket.userData = @(E_SOCKET_DISCONNECT_BY_SERVER);//设置默认主动断开端为服务器，这样连接失败后可以自动重连
+    //写入服务器ip 端口
+    _socketHost = host; _socketPort = port;
+    //先断开链接，再重新连接
+    [self disonnetSocket];
+    //设置默认主动断开端为服务器，这样连接失败后可以自动重连
+    _gCDAsyncSocket.userData = @(E_SOCKET_DISCONNECT_BY_SERVER);
     [_gCDAsyncSocket connectToHost:host onPort:port error:nil];
 }
 

@@ -14,10 +14,10 @@
 @interface IMSocketControl ()<IMSocketIODelegate> {
     /**用来获取每个请求对应的唯一标识符*/
     int _seq;
-    /**用户唯一标识符*/
+    /**用户唯一标识符 登陆后才有有此值*/
     uint64_t _imid;
     
-    /**加密字符*/
+    /**加/解密字符*/
     char _cryptKey;
     
     /**发送包数据句柄*/
@@ -155,8 +155,10 @@
 }
 
 - (void)connect:(NSString *)host port:(UInt16)port callBack:(CallBackBlock)call disconnectCallBack:(CallBackBlock)disCall {
-    _connectCallBackBlock = call;//连接成功回调
-    _disconnectCallBackBlock = disCall;//连接失败回调
+    //连接成功回调
+    _connectCallBackBlock = call;
+    //连接失败回调
+    _disconnectCallBackBlock = disCall;
     [_iMSocketIO creatConnetWithHost:host withPort:port];
 }
 
@@ -210,6 +212,7 @@
 #pragma mark -- IMSocketIODelegate
 
 - (void)didConnectToHost:(NSString *)host port:(UInt16)port {
+    //连接到服务器了，则马上发一个握手消息，获取加/解密密钥
     [_iMSocketIO sendData:nil headerType:E_SOCKET_HEADER_CMD_HANDSHAKE];
 }
 
@@ -229,7 +232,9 @@
             //获取加密字符 这也是单独握手一次的目的
             [bodyData getBytes:&_cryptKey length:1];
             //通知回调，连接完成
-            _connectCallBackBlock(nil);
+            IMSocketRespAgent *respAgent = [IMSocketRespAgent new];
+            respAgent.code = E_SOCKET_ERROR_NONE;
+            _connectCallBackBlock(respAgent);
             break;
         }
         default: {
@@ -253,7 +258,6 @@
         if(receiver == nil) {
             return;
         }
-        
         
         //判断该响应包的类型 如果是对某个请求的响应
         if(serverResp.type == PACK_TYPE_RESP) {
@@ -279,7 +283,7 @@
             
         }
         
-        //如果是转发，则self.registerMaps没有对应的响应，需要自己组装一个响应向外发送 body是MsgPushNotify类型的json字符串
+        //如果是转发，则self.registerMaps没有对应的响应，需要自己组装一个响应向外发送
         if(serverResp.type == PACK_TYPE_TRANSMIT) {
             IMSocketReqContext *reqContext = [IMSocketReqContext new];
             //设置响应结果，成功还是失败

@@ -17,9 +17,8 @@
     //设置全局样式
     [AppCustoms customs];
     
-    //设置当前登录用户信息 写死，没登录操作
-    User *currUser = [[UserManager manager] allUsers][0];
-    [[UserManager manager] updateCurrUser:currUser];
+    //内部会默认一个当前登录用户信息 你自己可以修改UserManager.m的createDefaultUsers方法中的相应代码，修改当前用户
+    User *currUser = [UserManager manager].user;
     
     //设置当前聊天用户信息 这里的信息是根据当前登录用户信息来的 写死，没登录操作
     IMChater *chater = [IMChater new];

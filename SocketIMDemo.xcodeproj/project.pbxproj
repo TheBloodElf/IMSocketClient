@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04186AA821FAACB900FC9B19 /* OtherTextChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04186AA621FAACB900FC9B19 /* OtherTextChatCell.m */; };
+		04186AA921FAACB900FC9B19 /* OtherTextChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04186AA721FAACB900FC9B19 /* OtherTextChatCell.xib */; };
+		04186AAD21FAACCC00FC9B19 /* OwnerTextChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04186AAB21FAACCC00FC9B19 /* OwnerTextChatCell.m */; };
+		04186AAE21FAACCC00FC9B19 /* OwnerTextChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04186AAC21FAACCC00FC9B19 /* OwnerTextChatCell.xib */; };
 		04729887205AA5BC00930A83 /* ChatFriendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0472982A205AA5BB00930A83 /* ChatFriendController.m */; };
 		04729888205AA5BC00930A83 /* ChatListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0472982D205AA5BB00930A83 /* ChatListController.m */; };
 		04729889205AA5BC00930A83 /* ChatMineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04729830205AA5BB00930A83 /* ChatMineController.m */; };
@@ -42,6 +46,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04186AA521FAACB900FC9B19 /* OtherTextChatCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OtherTextChatCell.h; sourceTree = "<group>"; };
+		04186AA621FAACB900FC9B19 /* OtherTextChatCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OtherTextChatCell.m; sourceTree = "<group>"; };
+		04186AA721FAACB900FC9B19 /* OtherTextChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherTextChatCell.xib; sourceTree = "<group>"; };
+		04186AAA21FAACCC00FC9B19 /* OwnerTextChatCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OwnerTextChatCell.h; sourceTree = "<group>"; };
+		04186AAB21FAACCC00FC9B19 /* OwnerTextChatCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OwnerTextChatCell.m; sourceTree = "<group>"; };
+		04186AAC21FAACCC00FC9B19 /* OwnerTextChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OwnerTextChatCell.xib; sourceTree = "<group>"; };
+		04186AAF21FAB40300FC9B19 /* ChatMessageDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMessageDelegate.h; sourceTree = "<group>"; };
 		04729829205AA5BB00930A83 /* ChatFriendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatFriendController.h; sourceTree = "<group>"; };
 		0472982A205AA5BB00930A83 /* ChatFriendController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatFriendController.m; sourceTree = "<group>"; };
 		0472982C205AA5BB00930A83 /* ChatListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatListController.h; sourceTree = "<group>"; };
@@ -146,6 +157,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04186A9F21FAAC6300FC9B19 /* TextChat */ = {
+			isa = PBXGroup;
+			children = (
+				04186AAF21FAB40300FC9B19 /* ChatMessageDelegate.h */,
+				04186AA521FAACB900FC9B19 /* OtherTextChatCell.h */,
+				04186AA621FAACB900FC9B19 /* OtherTextChatCell.m */,
+				04186AA721FAACB900FC9B19 /* OtherTextChatCell.xib */,
+				04186AAA21FAACCC00FC9B19 /* OwnerTextChatCell.h */,
+				04186AAB21FAACCC00FC9B19 /* OwnerTextChatCell.m */,
+				04186AAC21FAACCC00FC9B19 /* OwnerTextChatCell.xib */,
+			);
+			path = TextChat;
+			sourceTree = "<group>";
+		};
 		04729827205AA5BB00930A83 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +332,7 @@
 		04FC7AAD2066501D0085D9F2 /* PrivateChatController */ = {
 			isa = PBXGroup;
 			children = (
+				04186A9F21FAAC6300FC9B19 /* TextChat */,
 				04FC7AAE206650DF0085D9F2 /* PrivateChatController.h */,
 				04FC7AAF206650DF0085D9F2 /* PrivateChatController.m */,
 			);
@@ -427,7 +453,7 @@
 				TargetAttributes = {
 					047C438D202D7D0F00BB3400 = {
 						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					048569372061E738007C4C53 = {
 						CreatedOnToolsVersion = 9.1;
@@ -460,8 +486,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04186AAE21FAACCC00FC9B19 /* OwnerTextChatCell.xib in Resources */,
 				0485694D2061F939007C4C53 /* README.md in Resources */,
 				04FC7AA72065F76F0085D9F2 /* ChatFriendTableCell.xib in Resources */,
+				04186AA921FAACB900FC9B19 /* OtherTextChatCell.xib in Resources */,
 				047C439E202D7D0F00BB3400 /* LaunchScreen.storyboard in Resources */,
 				047C439B202D7D0F00BB3400 /* Assets.xcassets in Resources */,
 				048569332060F9E3007C4C53 /* iOS代码规范文档.pdf in Resources */,
@@ -526,10 +554,12 @@
 				04729887205AA5BC00930A83 /* ChatFriendController.m in Sources */,
 				04729888205AA5BC00930A83 /* ChatListController.m in Sources */,
 				04729889205AA5BC00930A83 /* ChatMineController.m in Sources */,
+				04186AAD21FAACCC00FC9B19 /* OwnerTextChatCell.m in Sources */,
 				047298A1205AA5BC00930A83 /* main.m in Sources */,
 				04FC7AB0206650DF0085D9F2 /* PrivateChatController.m in Sources */,
 				0472988D205AA5BC00930A83 /* MainViewController.m in Sources */,
 				047298B2205AA5C200930A83 /* AppDelegate.m in Sources */,
+				04186AA821FAACB900FC9B19 /* OtherTextChatCell.m in Sources */,
 				047298B3205AA5C200930A83 /* AppCustoms.m in Sources */,
 				04FC7AA62065F76F0085D9F2 /* ChatFriendTableCell.m in Sources */,
 			);
@@ -681,8 +711,9 @@
 			baseConfigurationReference = 158F2C10FF848294CACF75F3 /* Pods-SocketIMDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JG5S22U38L;
 				GCC_PREFIX_HEADER = "$(TARGET_NAME)/Supporting Files/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -714,7 +745,7 @@
 					"$(PROJECT_DIR)/ImServer/**",
 					"$(PROJECT_DIR)/Common/**",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = fuck.SocketIMDemo.client;
+				PRODUCT_BUNDLE_IDENTIFIER = fuck.SocketIM.client;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -726,8 +757,9 @@
 			baseConfigurationReference = 2409064FD3F8FEF9220BAB7E /* Pods-SocketIMDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JG5S22U38L;
 				GCC_PREFIX_HEADER = "$(TARGET_NAME)/Supporting Files/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -759,7 +791,7 @@
 					"$(PROJECT_DIR)/ImServer/**",
 					"$(PROJECT_DIR)/Common/**",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = fuck.SocketIMDemo.client;
+				PRODUCT_BUNDLE_IDENTIFIER = fuck.SocketIM.client;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;

@@ -16,8 +16,8 @@
  */
 @interface UserLoginReq : NSObject
 
-/**用户名 为用户提醒的uid字符串形式*/
-@property (nonatomic, strong) NSString* username;
+/**用户uid*/
+@property (nonatomic, assign) int64_t imid;
 /**密码*/
 @property (nonatomic, strong) NSString* passwd;
 /**客户端版本号*/

@@ -64,6 +64,7 @@
     reqContext.header_cmd = E_SOCKET_HEADER_CMD_COMMON;
     reqContext.handler = call;
     reqContext.body = [value mj_JSONString];
+    reqContext.type = E_MSG_TYPE_ONLINE;
     //把IMSocketReqContext添加到IMSocketControl
     [_iMSocketControl addReqContext:reqContext];
 }

@@ -12,8 +12,6 @@
 
 #import "IMUserManager.h"
 
-/**IMUserSocket单例对象*/
-static IMUserSocket * USER_IMSOCKET_SINGLETON = nil;
 /**断开连接后，与服务器重连次数*/
 static const int RECONNECT_SERVER_COUNT = 5;
 
@@ -62,6 +60,7 @@ static const int RECONNECT_SERVER_COUNT = 5;
         MsgContent *content = (MsgContent *)resp.content;
         IMChatMesssage *chatMessage = [IMChatMesssage new];
         [chatMessage mj_setKeyValues:content.msg_data.mj_keyValues];
+        chatMessage.status = E_CHAT_SEND_STATUS_SENDED;
         //添加到数据库
         [[IMUserManager manager] updateChatMessage:chatMessage];
         [[IMUserManager manager] updateClientLog:[IMClientLog clientLogWithMessage:[NSString stringWithFormat:@"收到消息：%@。",@(content.msg_id)]]];
@@ -97,7 +96,7 @@ static const int RECONNECT_SERVER_COUNT = 5;
     }
     //使用解析出来的地址进行连接
     else {
-        NSArray *ipArray = [ipAdressString componentsSeparatedByString:@":"];
+        NSArray *ipArray = [ipAdressString componentsSeparatedByString:@"."];
         //不为4个区间
         if(ipArray.count != 4) {
             ipAdressString = @"127.0.0.1";
@@ -152,7 +151,7 @@ static const int RECONNECT_SERVER_COUNT = 5;
     //构建一个登录请求
     UserLoginReq *loginReq = [UserLoginReq new];
     //设置应用系统中的用户标志符
-    loginReq.username = @([IMUserManager manager].chater.imid).stringValue;
+    loginReq.imid = [IMUserManager manager].chater.imid;
     //TODO:设置获取到的设备Token，暂时设置为这个，后面做apns时再加
     loginReq.device_token = @"device_token";
     //开始登录
@@ -187,11 +186,12 @@ static const int RECONNECT_SERVER_COUNT = 5;
 #pragma mark -- Public Methods
 
 + (instancetype)socket {
+    static IMUserSocket * iMUserSocket = nil;
     static dispatch_once_t predicate;
     dispatch_once(&predicate, ^{
-        USER_IMSOCKET_SINGLETON = [[self class] new];
+        iMUserSocket = [IMUserSocket new];
     });
-    return USER_IMSOCKET_SINGLETON;
+    return iMUserSocket;
 }
 
 - (void)connect {

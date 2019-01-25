@@ -52,6 +52,14 @@ typedef void(^ModelChangeHandler) (void);
 - (void)updateChatMessage:(IMChatMesssage*)message;
 
 /**
+ 获取和某人的所有聊天消息
+
+ @param imid imid
+ @return 聊天消息
+ */
+- (NSMutableArray<IMChatMesssage*>*)chatMessageWith:(int64_t)imid;
+
+/**
  创建用户的数据库观察者
 
  @param changeHandler 回调通知
