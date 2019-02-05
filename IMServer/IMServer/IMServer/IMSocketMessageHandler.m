@@ -87,8 +87,8 @@
     //初始化一个代理对象
     IMSocketRespAgent *respAgent = [IMSocketRespAgent new];
     //本类中固定为msg
-    respAgent.cmd = context.cmd ?: @"user";
-    //login等
+    respAgent.cmd = context.cmd ?: @"msg";
+    //send等
     respAgent.sub_cmd = context.sub_cmd;
     respAgent.code = context.code;
     respAgent.type = context.type;

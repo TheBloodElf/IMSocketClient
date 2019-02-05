@@ -44,6 +44,11 @@
 
 /* Begin PBXFileReference section */
 		0126B2BFEB340208A737674C /* Pods-IMServer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMServer.release.xcconfig"; path = "../Pods/Target Support Files/Pods-IMServer/Pods-IMServer.release.xcconfig"; sourceTree = "<group>"; };
+		040F6A40220872B900F84759 /* 类关联图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "类关联图.png"; sourceTree = "<group>"; };
+		040F6A4122092B3E00F84759 /* 握手流程图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "握手流程图.png"; sourceTree = "<group>"; };
+		040F6A422209340B00F84759 /* 登录流程图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "登录流程图.png"; sourceTree = "<group>"; };
+		040F6A43220937E200F84759 /* 连接流程图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "连接流程图.png"; sourceTree = "<group>"; };
+		040F6A4422099A7600F84759 /* 消息发送流程图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "消息发送流程图.png"; sourceTree = "<group>"; };
 		042D9BB8206E69AB00A3CBFE /* IMClientLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMClientLog.h; sourceTree = "<group>"; };
 		042D9BB9206E69AB00A3CBFE /* IMClientLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IMClientLog.m; sourceTree = "<group>"; };
 		04894FE72063363400BC0ECE /* libIMServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIMServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +146,11 @@
 		04894FE92063363400BC0ECE /* IMServer */ = {
 			isa = PBXGroup;
 			children = (
+				040F6A4422099A7600F84759 /* 消息发送流程图.png */,
+				040F6A422209340B00F84759 /* 登录流程图.png */,
+				040F6A4122092B3E00F84759 /* 握手流程图.png */,
+				040F6A43220937E200F84759 /* 连接流程图.png */,
+				040F6A40220872B900F84759 /* 类关联图.png */,
 				0489502120633AE700BC0ECE /* PrefixHeader.pch */,
 				04894FEA2063363400BC0ECE /* IMServer.h */,
 				04FF1D9D206491BE00E2702C /* SocketManager */,
