@@ -189,6 +189,7 @@
         reqContext.time = [NSDate new];
         //把这个请求放到operationMaps中，用seq做唯一标识符
         [self.operationMaps setObject:reqContext forKey:@(seq).stringValue];
+        
         //把reqContext封装成一个消息体，再转成NSData给SocketIO对象
         IMProtocolClientReq *clientReq = [IMProtocolClientReq new];
         clientReq.cmd = reqContext.cmd;
@@ -202,6 +203,7 @@
         //把IMProtocolClientReq转换成NSData
         NSString *reqString = [clientReq mj_JSONString];
         NSData *reqData = [reqString dataUsingEncoding:NSUTF8StringEncoding];
+        
         //加解密
         [self encryptData:reqData cryptKey:_cryptKey];
         //把data传给socketIO进行发送
@@ -284,7 +286,7 @@
         }
         
         //如果是转发，则self.registerMaps没有对应的响应，需要自己组装一个响应向外发送
-        if(serverResp.type == PACK_TYPE_TRANSMIT) {
+        if(serverResp.type == PACK_TYPE_NOTIFY) {
             IMSocketReqContext *reqContext = [IMSocketReqContext new];
             //设置响应结果，成功还是失败
             reqContext.code = serverResp.code;

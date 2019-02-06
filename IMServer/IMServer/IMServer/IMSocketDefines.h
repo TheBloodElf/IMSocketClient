@@ -85,7 +85,7 @@ typedef NS_ENUM(int, E_SERVER_PACK_TYPE) {
     /**响应包 服务器响应客户端的请求*/
     PACK_TYPE_RESP = 2,
     /**消息包 转发的消息*/
-    PACK_TYPE_TRANSMIT = 3
+    PACK_TYPE_NOTIFY = 3
 };
 
 /**

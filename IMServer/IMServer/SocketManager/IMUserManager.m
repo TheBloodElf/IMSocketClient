@@ -123,46 +123,4 @@
     [_allNotificationTokenArr addObject:notificationToken];
 }
 
-#pragma mark - IMClientLog
-
-- (void)updateClientLog:(IMClientLog*)clientLog {
-    [_operationQueue addOperationWithBlock:^{
-        RLMRealm *rlmRealm = [self currThreadRealmInstance];
-        [rlmRealm beginWriteTransaction];
-        [IMClientLog createOrUpdateInRealm:rlmRealm withValue:clientLog];
-        [rlmRealm commitWriteTransaction];
-    }];
-}
-
-- (NSMutableArray<IMClientLog*>*)allClientLogs {
-    NSMutableArray<IMClientLog*> *resultArr = [@[] mutableCopy];
-    RLMRealm *rlmRealm = [self currThreadRealmInstance];
-    RLMResults *results = [[IMClientLog objectsInRealm:rlmRealm withPredicate:nil] sortedResultsUsingKeyPath:@"id" ascending:NO];
-    //依次填充所有的用户信息
-    for (int index = 0; index < results.count; index ++) {
-        //使用deepCopy拷贝一份数据
-        [resultArr addObject:[results[index] deepCopy]];
-    }
-    return resultArr;
-}
-
-- (void)deleteClientLogs {
-    [_operationQueue addOperationWithBlock:^{
-        RLMRealm *rlmRealm = [self currThreadRealmInstance];
-        [rlmRealm beginWriteTransaction];
-        RLMResults *results = [IMClientLog objectsInRealm:rlmRealm withPredicate:nil];
-        while (results.count) {
-            [rlmRealm deleteObject:results.firstObject];
-        }
-        [rlmRealm commitWriteTransaction];
-    }];
-}
-
-- (void)addClientLogChangeListener:(ModelChangeHandler)changeHandler {
-    RLMNotificationToken *notificationToken = [[IMClientLog allObjectsInRealm:_mainThreadRLMRealm] addNotificationBlock:^(RLMResults * _Nullable results, RLMCollectionChange * _Nullable change, NSError * _Nullable error) {
-        changeHandler();
-    }];
-    [_allNotificationTokenArr addObject:notificationToken];
-}
-
 @end

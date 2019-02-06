@@ -17,6 +17,10 @@
 @property(nonatomic, assign) E_SERVER_PACK_TYPE type;
 /**错误码*/
 @property(nonatomic, assign) E_SOCKET_ERROR code;
+/**这里我们对cmd和sub_cmd的组合进行定义
+ user-kickout：用户被踢下线
+ msg-notify：转发聊天消息给你
+ */
 /**区分user、group、friend、notifation等*/
 @property(nonatomic, strong) NSString *cmd;
 /**例如user区分login、logout、setinfo等*/

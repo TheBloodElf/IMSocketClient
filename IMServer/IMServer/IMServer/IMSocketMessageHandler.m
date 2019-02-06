@@ -106,11 +106,11 @@
         respAgent.content = resp;
     }
     //收到别人主动发的聊天消息
-    if(context.body && [respAgent.sub_cmd isEqualToString:@"msg"]) {
+    if(context.body && [respAgent.sub_cmd isEqualToString:@"notify"]) {
         MsgContent *resp = [MsgContent new];
         [resp mj_setKeyValues:context.body.mj_keyValues];
         respAgent.content = resp;
-        [self dispach:@"msg" withAgent:respAgent];
+        [self dispach:@"notify" withAgent:respAgent];
     }
     //如果该请求发起的时候有回调，就执行
     if(context.handler) {

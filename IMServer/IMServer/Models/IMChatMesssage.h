@@ -24,13 +24,13 @@
 @interface IMChatMesssage : RLMObject
 
 #pragma mark -- 必需属性
-/**主键，取时间戳毫秒，和服务器IMMsgContent的msg_id对应 用作Timeline逻辑模型中的顺序ID 拉取离线就靠这个*/
+/**主键，一般取时间戳毫秒，和服务器IMMsgContent的msg_id对应 用作Timeline逻辑模型中的顺序ID 拉取离线就靠这个*/
 @property (nonatomic, assign) int64_t msg_id;
 /**消息发送状态 发送中、已发送、失败*/
 @property (nonatomic, assign) E_CHAT_SEND_STATUS status;
 /**消息时间，发送消息时可以不关心这个字段，由server填充，如果是接收方，则是收到该消息的时间，单位秒 */
 @property (nonatomic, assign) int64_t time;
-/**是否在界面上显示当前消息的时间 当这条消息和上一条相差6分钟时设置为YES 暂时没实现这个功能*/
+/**是否在界面上显示当前消息的时间 当这条消息和上一条相差6分钟时设置为YES 从数据库中读取的时候实时的判断*/
 @property (nonatomic, assign) BOOL show_time;
 /**发送者*/
 @property (nonatomic, strong) IMChater *sender;

@@ -13,6 +13,11 @@
 
 /**请求唯一标识符*/
 @property(nonatomic, assign) int seq;
+/**这里我们对cmd和sub_cmd的组合进行定义
+ user-login：用户登录
+ msg-send：发送聊天消息
+ msg-send_ack：发送聊天消息ack，收到在线消息需要发送ack
+ */
 /**区分user、group、friend、notifation等*/
 @property(nonatomic, strong) NSString *cmd;
 /**例如user区分login、logout、setinfo等*/
